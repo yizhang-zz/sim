@@ -1,0 +1,893 @@
+[INFO] sim.nodes.BaseStation - T 0 C 0 N 0 intervals 0-0
+[INFO] sim.nodes.BaseStation - T 0 C 0 N 1 intervals 0-0
+[INFO] sim.nodes.BaseStation - T 0 C 0 N 2 intervals 0-0
+[INFO] sim.nodes.BaseStation - T 0 C 0 N 3 intervals 0-0
+[INFO] sim.nodes.BaseStation - T 0 C 0 type 1 [ 0:43.8515 1:39.4162 2:38.7357 3:38.872 ]
+[INFO] sim.nodes.BaseStation - T 0 C 0 intervals 0-0
+[INFO] sim.nodes.BaseStation - T 1 C 0 N 0 intervals 0-0,1-1
+[INFO] sim.nodes.BaseStation - T 1 C 0 N 1 intervals 0-0,1-1
+[INFO] sim.nodes.BaseStation - T 1 C 0 N 2 intervals 0-0,1-1
+[INFO] sim.nodes.BaseStation - T 1 C 0 N 3 intervals 0-0,1-1
+[INFO] sim.nodes.BaseStation - T 1 C 0 type 1 [ 2:37.162 ]
+[INFO] sim.nodes.BaseStation - T 1 C 0 intervals 0-0,1-1
+[INFO] sim.nodes.BaseStation - T 2 C 0 N 0 intervals 0-0,1-1,2-2
+[INFO] sim.nodes.BaseStation - T 2 C 0 N 1 intervals 0-0,1-1,2-2
+[INFO] sim.nodes.BaseStation - T 2 C 0 N 2 intervals 0-0,1-1
+[INFO] sim.nodes.BaseStation - T 2 C 0 N 3 intervals 0-0,1-1
+[INFO] sim.nodes.BaseStation - T 2 C 0 type 1 [ 0:40.6355 1:36.7495 2:37.162 ]
+[INFO] sim.nodes.BaseStation - T 2 C 0 intervals 0-0,1-1,2-2
+[INFO] sim.nodes.BaseStation - T 4 C 0 N 0 intervals 0-0,1-1,2-2,3-3
+[INFO] sim.nodes.BaseStation - T 4 C 0 N 1 intervals 0-0,1-1,2-2,3-3
+[INFO] sim.nodes.BaseStation - T 4 C 0 N 2 intervals 0-0,1-2,3-3,4-4
+[INFO] sim.nodes.BaseStation - T 4 C 0 N 3 intervals 0-0,1-2,3-3,4-4
+[WARN] sim.nodes.BaseStation - T 4 C 0 failure found @ T 3 type 1 [ 2:39.5521 ]
+[INFO] sim.nodes.BaseStation - T 4 C 0 type 1 [ 0:41.6461 2:38.258 ]
+[INFO] sim.nodes.BaseStation - T 4 C 0 intervals 0-0,1-1,2-2,!3-3,4-4
+[INFO] sim.nodes.BaseStation - T 6 C 0 N 0 intervals 0-0,1-1,2-2,3-3
+[INFO] sim.nodes.BaseStation - T 6 C 0 N 1 intervals 2-2,3-3,!4-5,6-6
+[INFO] sim.nodes.BaseStation - T 6 C 0 N 2 intervals 0-0,1-2,3-3,4-4
+[INFO] sim.nodes.BaseStation - T 6 C 0 N 3 intervals 0-0,1-2,3-3,4-4
+[INFO] sim.nodes.BaseStation - T 6 C 0 type 3 [ 0:41.6461 3:39.3143 ]
+[INFO] sim.nodes.BaseStation - T 6 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6
+[INFO] sim.nodes.BaseStation - T 7 C 0 N 0 intervals 0-0,1-1,2-2,3-3
+[INFO] sim.nodes.BaseStation - T 7 C 0 N 1 intervals 3-3,!4-5,6-6,7-7
+[INFO] sim.nodes.BaseStation - T 7 C 0 N 2 intervals 3-3,4-5,!6-6,7-7
+[INFO] sim.nodes.BaseStation - T 7 C 0 N 3 intervals 0-0,1-2,3-3,4-4
+[INFO] sim.nodes.BaseStation - T 7 C 0 type 3 [ 0:41.6461 1:40.2299 2:40.2638 3:39.3143 ]
+[INFO] sim.nodes.BaseStation - T 7 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7
+[INFO] sim.nodes.BaseStation - T 9 C 0 N 0 intervals 3-6,!7-7,8-8,9-9
+[INFO] sim.nodes.BaseStation - T 9 C 0 N 1 intervals !4-5,6-6,7-7,8-8
+[INFO] sim.nodes.BaseStation - T 9 C 0 N 2 intervals 4-5,!6-6,7-8,9-9
+[INFO] sim.nodes.BaseStation - T 9 C 0 N 3 intervals 3-3,4-6,!7-8,9-9
+[WARN] sim.nodes.BaseStation - T 9 C 0 failure found @ T 8 type 3 [ 0:44.6475 1:38.0529 2:40.2638 3:39.3143 ]
+[INFO] sim.nodes.BaseStation - T 9 C 0 type 3 [ 0:42.685 1:38.0529 2:33.3857 3:33.6302 ]
+[INFO] sim.nodes.BaseStation - T 9 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9
+[INFO] sim.nodes.BaseStation - T 10 C 0 N 0 intervals !7-7,8-8,9-9,10-10
+[INFO] sim.nodes.BaseStation - T 10 C 0 N 1 intervals 7-7,8-8,!9-9,10-10
+[INFO] sim.nodes.BaseStation - T 10 C 0 N 2 intervals !6-6,7-8,9-9,10-10
+[INFO] sim.nodes.BaseStation - T 10 C 0 N 3 intervals 4-6,!7-8,9-9,10-10
+[INFO] sim.nodes.BaseStation - T 10 C 0 type 3 [ 0:34.9528 1:30.8901 2:31.5959 3:31.772 ]
+[INFO] sim.nodes.BaseStation - T 10 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-10
+[INFO] sim.nodes.BaseStation - T 12 C 0 N 0 intervals 9-9,10-10,!11-11,12-12
+[INFO] sim.nodes.BaseStation - T 12 C 0 N 1 intervals 8-8,!9-9,10-10,11-11
+[INFO] sim.nodes.BaseStation - T 12 C 0 N 2 intervals !6-6,7-8,9-9,10-10
+[INFO] sim.nodes.BaseStation - T 12 C 0 N 3 intervals 4-6,!7-8,9-9,10-10
+[INFO] sim.nodes.BaseStation - T 12 C 0 type 3 [ 0:35.0915 1:30.3238 2:31.5959 3:31.772 ]
+[INFO] sim.nodes.BaseStation - T 12 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12
+[INFO] sim.nodes.BaseStation - T 14 C 0 N 0 intervals 10-10,!11-11,12-12,13-13
+[INFO] sim.nodes.BaseStation - T 14 C 0 N 1 intervals !9-9,10-10,11-12,13-13
+[INFO] sim.nodes.BaseStation - T 14 C 0 N 2 intervals 9-9,10-10,!11-13,14-14
+[INFO] sim.nodes.BaseStation - T 14 C 0 N 3 intervals !7-8,9-9,10-13,14-14
+[WARN] sim.nodes.BaseStation - T 14 C 0 failure found @ T 13 type 1 [ 0:33.7 1:31.0314 2:31.5959 3:31.772 ]
+[INFO] sim.nodes.BaseStation - T 14 C 0 type 3 [ 0:33.7 ]
+[INFO] sim.nodes.BaseStation - T 14 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14
+[INFO] sim.nodes.BaseStation - T 15 C 0 N 0 intervals !11-11,12-12,13-14,15-15
+[INFO] sim.nodes.BaseStation - T 15 C 0 N 1 intervals !9-9,10-10,11-12,13-13
+[INFO] sim.nodes.BaseStation - T 15 C 0 N 2 intervals 9-9,10-10,!11-13,14-14
+[INFO] sim.nodes.BaseStation - T 15 C 0 N 3 intervals !7-8,9-9,10-13,14-14
+[INFO] sim.nodes.BaseStation - T 15 C 0 type 1 [ 0:36.8183 1:31.0314 2:31.6312 ]
+[INFO] sim.nodes.BaseStation - T 15 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15
+[INFO] sim.nodes.BaseStation - T 16 C 0 N 0 intervals !11-11,12-12,13-14,15-15
+[INFO] sim.nodes.BaseStation - T 16 C 0 N 1 intervals !9-9,10-10,11-12,13-13
+[INFO] sim.nodes.BaseStation - T 16 C 0 N 2 intervals 10-10,!11-13,14-15,16-16
+[INFO] sim.nodes.BaseStation - T 16 C 0 N 3 intervals !7-8,9-9,10-13,14-14
+[INFO] sim.nodes.BaseStation - T 16 C 0 type 1 [ 0:36.8183 1:31.0314 2:35.2995 3:32.6505 ]
+[INFO] sim.nodes.BaseStation - T 16 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16
+[INFO] sim.nodes.BaseStation - T 17 C 0 N 0 intervals 13-14,15-15,!16-16,17-17
+[INFO] sim.nodes.BaseStation - T 17 C 0 N 1 intervals 11-12,13-15,!16-16,17-17
+[INFO] sim.nodes.BaseStation - T 17 C 0 N 2 intervals !11-13,14-15,16-16,17-17
+[INFO] sim.nodes.BaseStation - T 17 C 0 N 3 intervals !7-8,9-9,10-13,14-14
+[INFO] sim.nodes.BaseStation - T 17 C 0 type 3 [ 0:53.7266 1:42.4174 2:35.9912 3:32.6505 ]
+[INFO] sim.nodes.BaseStation - T 17 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17
+[INFO] sim.nodes.BaseStation - T 18 C 0 N 0 intervals 15-15,!16-16,17-17,18-18
+[INFO] sim.nodes.BaseStation - T 18 C 0 N 1 intervals 13-15,!16-16,17-17,18-18
+[INFO] sim.nodes.BaseStation - T 18 C 0 N 2 intervals !11-13,14-15,16-16,17-17
+[INFO] sim.nodes.BaseStation - T 18 C 0 N 3 intervals !7-8,9-9,10-13,14-14
+[INFO] sim.nodes.BaseStation - T 18 C 0 type 1 [ 0:65.1835 1:36.1638 2:35.9912 3:32.6505 ]
+[INFO] sim.nodes.BaseStation - T 18 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18
+[INFO] sim.nodes.BaseStation - T 20 C 0 N 0 intervals 17-17,18-18,19-19,20-20
+[INFO] sim.nodes.BaseStation - T 20 C 0 N 1 intervals 17-17,18-18,19-19,20-20
+[INFO] sim.nodes.BaseStation - T 20 C 0 N 2 intervals 16-16,17-17,!18-18,19-19
+[INFO] sim.nodes.BaseStation - T 20 C 0 N 3 intervals 10-13,14-15,!16-18,19-19
+[WARN] sim.nodes.BaseStation - T 20 C 0 failure found @ T 19 type 3 [ 0:58.3 1:34.4664 3:34.536 ]
+[INFO] sim.nodes.BaseStation - T 20 C 0 type 1 [ 0:46.0655 1:32.9659 2:33.5604 ]
+[INFO] sim.nodes.BaseStation - T 20 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20
+[INFO] sim.nodes.BaseStation - T 22 C 0 N 0 intervals 18-18,19-19,20-20,21-21
+[INFO] sim.nodes.BaseStation - T 22 C 0 N 1 intervals 18-18,19-19,20-20,21-21
+[INFO] sim.nodes.BaseStation - T 22 C 0 N 2 intervals !18-18,19-20,21-21,22-22
+[INFO] sim.nodes.BaseStation - T 22 C 0 N 3 intervals !16-18,19-20,21-21,22-22
+[WARN] sim.nodes.BaseStation - T 22 C 0 failure found @ T 21 type 1 [ 0:41.8812 1:36.4741 3:38.5311 ]
+[INFO] sim.nodes.BaseStation - T 22 C 0 type 1 [ 0:41.8812 1:36.4741 2:40.0945 ]
+[INFO] sim.nodes.BaseStation - T 22 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22
+[INFO] sim.nodes.BaseStation - T 23 C 0 N 0 intervals 20-20,21-21,!22-22,23-23
+[INFO] sim.nodes.BaseStation - T 23 C 0 N 1 intervals 20-20,21-21,!22-22,23-23
+[INFO] sim.nodes.BaseStation - T 23 C 0 N 2 intervals 19-20,21-21,22-22,23-23
+[INFO] sim.nodes.BaseStation - T 23 C 0 N 3 intervals !16-18,19-20,21-21,22-22
+[INFO] sim.nodes.BaseStation - T 23 C 0 type 3 [ 0:42.685 1:35.3687 2:35.853 3:40.7706 ]
+[INFO] sim.nodes.BaseStation - T 23 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23
+[INFO] sim.nodes.BaseStation - T 25 C 0 N 0 intervals !22-22,23-23,!24-24,25-25
+[INFO] sim.nodes.BaseStation - T 25 C 0 N 1 intervals !22-22,23-23,!24-24,25-25
+[INFO] sim.nodes.BaseStation - T 25 C 0 N 2 intervals 21-21,22-22,23-23,24-24
+[INFO] sim.nodes.BaseStation - T 25 C 0 N 3 intervals 22-22,!23-23,24-24,25-25
+[WARN] sim.nodes.BaseStation - T 25 C 0 failure found @ T 24 type 3 [ 0:42.685 1:35.3687 2:42.7519 3:43.0524 ]
+[INFO] sim.nodes.BaseStation - T 25 C 0 type 3 [ 0:51.3147 1:44.4157 2:42.7519 3:45.4732 ]
+[INFO] sim.nodes.BaseStation - T 25 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25
+[INFO] sim.nodes.BaseStation - T 27 C 0 N 0 intervals 23-23,!24-24,25-25,26-26
+[INFO] sim.nodes.BaseStation - T 27 C 0 N 1 intervals 23-23,!24-24,25-25,26-26
+[INFO] sim.nodes.BaseStation - T 27 C 0 N 2 intervals 23-23,24-24,!25-25,26-26
+[INFO] sim.nodes.BaseStation - T 27 C 0 N 3 intervals 24-24,25-25,26-26,27-27
+[WARN] sim.nodes.BaseStation - T 27 C 0 failure found @ T 26 type 3 [ 0:52.9368 1:47.8641 3:44.7798 ]
+[INFO] sim.nodes.BaseStation - T 27 C 0 type 1 [ 0:52.9368 1:47.8641 2:45.2093 3:42.7185 ]
+[INFO] sim.nodes.BaseStation - T 27 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27
+[INFO] sim.nodes.BaseStation - T 28 C 0 N 0 intervals 25-25,26-26,!27-27,28-28
+[INFO] sim.nodes.BaseStation - T 28 C 0 N 1 intervals 25-25,26-26,!27-27,28-28
+[INFO] sim.nodes.BaseStation - T 28 C 0 N 2 intervals !25-25,26-26,!27-27,28-28
+[INFO] sim.nodes.BaseStation - T 28 C 0 N 3 intervals 25-25,26-26,27-27,28-28
+[INFO] sim.nodes.BaseStation - T 28 C 0 type 3 [ 0:55.6703 1:39.3483 2:37.2993 ]
+[INFO] sim.nodes.BaseStation - T 28 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28
+[INFO] sim.nodes.BaseStation - T 30 C 0 N 0 intervals !27-27,28-28,!29-29,30-30
+[INFO] sim.nodes.BaseStation - T 30 C 0 N 1 intervals !27-27,28-28,!29-29,30-30
+[INFO] sim.nodes.BaseStation - T 30 C 0 N 2 intervals 26-26,!27-27,28-28,29-29
+[INFO] sim.nodes.BaseStation - T 30 C 0 N 3 intervals 27-27,28-28,!29-29,30-30
+[WARN] sim.nodes.BaseStation - T 30 C 0 failure found @ T 29 type 1 [ 0:55.6703 1:39.3483 2:34.8834 3:37.9161 ]
+[INFO] sim.nodes.BaseStation - T 30 C 0 type 3 [ 0:53.095 1:42.8855 2:34.8834 3:41.3435 ]
+[INFO] sim.nodes.BaseStation - T 30 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30
+[INFO] sim.nodes.BaseStation - T 31 C 0 N 0 intervals 28-28,!29-29,30-30,31-31
+[INFO] sim.nodes.BaseStation - T 31 C 0 N 1 intervals 28-28,!29-29,30-30,31-31
+[INFO] sim.nodes.BaseStation - T 31 C 0 N 2 intervals 26-26,!27-27,28-28,29-29
+[INFO] sim.nodes.BaseStation - T 31 C 0 N 3 intervals 27-27,28-28,!29-29,30-30
+[INFO] sim.nodes.BaseStation - T 31 C 0 type 1 [ 0:56.1995 1:43.4524 2:34.8834 3:41.3435 ]
+[INFO] sim.nodes.BaseStation - T 31 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31
+[INFO] sim.nodes.BaseStation - T 33 C 0 N 0 intervals 30-30,31-31,!32-32,33-33
+[INFO] sim.nodes.BaseStation - T 33 C 0 N 1 intervals 30-30,31-31,!32-32,33-33
+[INFO] sim.nodes.BaseStation - T 33 C 0 N 2 intervals 28-28,29-29,!30-31,32-32
+[INFO] sim.nodes.BaseStation - T 33 C 0 N 3 intervals 30-30,!31-31,32-32,33-33
+[WARN] sim.nodes.BaseStation - T 33 C 0 failure found @ T 32 type 3 [ 0:56.1995 1:43.4524 2:36.0603 ]
+[INFO] sim.nodes.BaseStation - T 33 C 0 type 3 [ 0:42.183 1:34.6055 2:36.0603 3:34.3273 ]
+[INFO] sim.nodes.BaseStation - T 33 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33
+[INFO] sim.nodes.BaseStation - T 36 C 0 N 0 intervals 33-33,34-34,!35-35,36-36
+[INFO] sim.nodes.BaseStation - T 36 C 0 N 1 intervals 31-31,!32-32,33-33,34-34
+[INFO] sim.nodes.BaseStation - T 36 C 0 N 2 intervals 32-32,!33-33,34-35,36-36
+[INFO] sim.nodes.BaseStation - T 36 C 0 N 3 intervals 32-32,33-33,!34-35,36-36
+[WARN] sim.nodes.BaseStation - T 36 C 0 failure found @ T 34 type 3 [ 0:39.62 2:31.4549 3:34.3273 ]
+[WARN] sim.nodes.BaseStation - T 36 C 0 failure found @ T 35 type 1 [ 0:39.62 1:32.0887 2:31.4549 3:34.3273 ]
+[INFO] sim.nodes.BaseStation - T 36 C 0 type 3 [ 0:57.1294 1:32.0887 2:32.44 ]
+[INFO] sim.nodes.BaseStation - T 36 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36
+[INFO] sim.nodes.BaseStation - T 37 C 0 N 0 intervals 33-33,34-34,!35-35,36-36
+[INFO] sim.nodes.BaseStation - T 37 C 0 N 1 intervals 33-33,34-35,!36-36,37-37
+[INFO] sim.nodes.BaseStation - T 37 C 0 N 2 intervals 32-32,!33-33,34-35,36-36
+[INFO] sim.nodes.BaseStation - T 37 C 0 N 3 intervals 32-32,33-33,!34-35,36-36
+[INFO] sim.nodes.BaseStation - T 37 C 0 type 3 [ 0:57.1294 1:34.536 ]
+[INFO] sim.nodes.BaseStation - T 37 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37
+[INFO] sim.nodes.BaseStation - T 38 C 0 N 0 intervals 33-33,34-34,!35-35,36-36
+[INFO] sim.nodes.BaseStation - T 38 C 0 N 1 intervals 33-33,34-35,!36-36,37-37
+[INFO] sim.nodes.BaseStation - T 38 C 0 N 2 intervals 34-35,36-36,!37-37,38-38
+[INFO] sim.nodes.BaseStation - T 38 C 0 N 3 intervals 32-32,33-33,!34-35,36-36
+[INFO] sim.nodes.BaseStation - T 38 C 0 type 3 [ 0:57.1294 1:34.536 3:33.1409 ]
+[INFO] sim.nodes.BaseStation - T 38 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38
+[INFO] sim.nodes.BaseStation - T 39 C 0 N 0 intervals 36-36,!37-37,!38-38,39-39
+[INFO] sim.nodes.BaseStation - T 39 C 0 N 1 intervals 33-33,34-35,!36-36,37-37
+[INFO] sim.nodes.BaseStation - T 39 C 0 N 2 intervals 36-36,!37-37,38-38,39-39
+[INFO] sim.nodes.BaseStation - T 39 C 0 N 3 intervals !34-35,36-36,!37-38,39-39
+[INFO] sim.nodes.BaseStation - T 39 C 0 type 3 [ 0:60.4353 1:34.536 3:36.6807 ]
+[INFO] sim.nodes.BaseStation - T 39 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39
+[INFO] sim.nodes.BaseStation - T 40 C 0 N 0 intervals !37-37,!38-38,39-39,40-40
+[INFO] sim.nodes.BaseStation - T 40 C 0 N 1 intervals 37-37,!38-38,!39-39,40-40
+[INFO] sim.nodes.BaseStation - T 40 C 0 N 2 intervals 36-36,!37-37,38-38,39-39
+[INFO] sim.nodes.BaseStation - T 40 C 0 N 3 intervals 36-36,!37-38,39-39,40-40
+[INFO] sim.nodes.BaseStation - T 40 C 0 type 3 [ 0:58.4534 1:37.8819 2:35.438 ]
+[INFO] sim.nodes.BaseStation - T 40 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40
+[INFO] sim.nodes.BaseStation - T 41 C 0 N 0 intervals !38-38,39-39,40-40,41-41
+[INFO] sim.nodes.BaseStation - T 41 C 0 N 1 intervals !38-38,!39-39,40-40,41-41
+[INFO] sim.nodes.BaseStation - T 41 C 0 N 2 intervals 38-38,39-39,!40-40,41-41
+[INFO] sim.nodes.BaseStation - T 41 C 0 N 3 intervals 36-36,!37-38,39-39,40-40
+[INFO] sim.nodes.BaseStation - T 41 C 0 type 3 [ 0:59.8584 1:35.2302 2:35.3687 ]
+[INFO] sim.nodes.BaseStation - T 41 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41
+[INFO] sim.nodes.BaseStation - T 42 C 0 N 0 intervals 39-39,40-40,41-41,42-42
+[INFO] sim.nodes.BaseStation - T 42 C 0 N 1 intervals !39-39,40-40,41-41,42-42
+[INFO] sim.nodes.BaseStation - T 42 C 0 N 2 intervals 38-38,39-39,!40-40,41-41
+[INFO] sim.nodes.BaseStation - T 42 C 0 N 3 intervals 36-36,!37-38,39-39,40-40
+[INFO] sim.nodes.BaseStation - T 42 C 0 type 1 [ 0:61.5227 1:42.7185 2:35.3687 ]
+[INFO] sim.nodes.BaseStation - T 42 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42
+[INFO] sim.nodes.BaseStation - T 44 C 0 N 0 intervals 41-41,42-42,43-43,44-44
+[INFO] sim.nodes.BaseStation - T 44 C 0 N 1 intervals 41-41,42-42,43-43,44-44
+[INFO] sim.nodes.BaseStation - T 44 C 0 N 2 intervals 41-41,!42-42,!43-43,44-44
+[INFO] sim.nodes.BaseStation - T 44 C 0 N 3 intervals 40-41,!42-42,43-43,44-44
+[WARN] sim.nodes.BaseStation - T 44 C 0 failure found @ T 43 type 3 [ 0:60.7078 1:46.2953 2:35.3687 3:44.1836 ]
+[INFO] sim.nodes.BaseStation - T 44 C 0 type 3 [ 1:48.449 2:46.0655 ]
+[INFO] sim.nodes.BaseStation - T 44 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44
+[INFO] sim.nodes.BaseStation - T 45 C 0 N 0 intervals 42-42,43-43,44-44,45-45
+[INFO] sim.nodes.BaseStation - T 45 C 0 N 1 intervals 42-42,43-43,44-44,45-45
+[INFO] sim.nodes.BaseStation - T 45 C 0 N 2 intervals !42-42,!43-43,44-44,45-45
+[INFO] sim.nodes.BaseStation - T 45 C 0 N 3 intervals 40-41,!42-42,43-43,44-44
+[INFO] sim.nodes.BaseStation - T 45 C 0 type 1 [ 0:62.9316 1:52.715 2:51.6658 3:46.6887 ]
+[INFO] sim.nodes.BaseStation - T 45 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45
+[INFO] sim.nodes.BaseStation - T 46 C 0 N 0 intervals 42-42,43-43,44-44,45-45
+[INFO] sim.nodes.BaseStation - T 46 C 0 N 1 intervals 43-43,44-44,45-45,46-46
+[INFO] sim.nodes.BaseStation - T 46 C 0 N 2 intervals !43-43,44-44,45-45,46-46
+[INFO] sim.nodes.BaseStation - T 46 C 0 N 3 intervals 43-43,44-44,!45-45,46-46
+[INFO] sim.nodes.BaseStation - T 46 C 0 type 3 [ 0:62.9316 1:62.7524 3:62.9912 ]
+[INFO] sim.nodes.BaseStation - T 46 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46
+[INFO] sim.nodes.BaseStation - T 48 C 0 N 0 intervals 45-45,!46-46,47-47,48-48
+[INFO] sim.nodes.BaseStation - T 48 C 0 N 1 intervals 45-45,46-46,!47-47,48-48
+[INFO] sim.nodes.BaseStation - T 48 C 0 N 2 intervals 45-45,46-46,47-47,48-48
+[INFO] sim.nodes.BaseStation - T 48 C 0 N 3 intervals 43-43,44-44,!45-45,46-46
+[WARN] sim.nodes.BaseStation - T 48 C 0 failure found @ T 47 type 3 [ 0:72.5589 1:62.7524 2:68.4719 3:62.9912 ]
+[INFO] sim.nodes.BaseStation - T 48 C 0 type 3 [ 0:76.9908 1:72.5868 2:71.7451 3:62.9912 ]
+[INFO] sim.nodes.BaseStation - T 48 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48
+[INFO] sim.nodes.BaseStation - T 49 C 0 N 0 intervals !46-46,47-47,48-48,49-49
+[INFO] sim.nodes.BaseStation - T 49 C 0 N 1 intervals 46-46,!47-47,48-48,49-49
+[INFO] sim.nodes.BaseStation - T 49 C 0 N 2 intervals 46-46,47-47,48-48,49-49
+[INFO] sim.nodes.BaseStation - T 49 C 0 N 3 intervals 46-46,!47-47,!48-48,49-49
+[INFO] sim.nodes.BaseStation - T 49 C 0 type 3 [ 3:73.7567 ]
+[INFO] sim.nodes.BaseStation - T 49 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49
+[INFO] sim.nodes.BaseStation - T 50 C 0 N 0 intervals !46-46,47-47,48-48,49-49
+[INFO] sim.nodes.BaseStation - T 50 C 0 N 1 intervals !47-47,48-48,49-49,50-50
+[INFO] sim.nodes.BaseStation - T 50 C 0 N 2 intervals 47-47,48-48,49-49,50-50
+[INFO] sim.nodes.BaseStation - T 50 C 0 N 3 intervals !47-47,!48-48,49-49,50-50
+[INFO] sim.nodes.BaseStation - T 50 C 0 type 1 [ 0:77.9082 1:71.4352 2:70.9267 ]
+[INFO] sim.nodes.BaseStation - T 50 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50
+[INFO] sim.nodes.BaseStation - T 51 C 0 N 0 intervals !46-46,47-47,48-48,49-49
+[INFO] sim.nodes.BaseStation - T 51 C 0 N 1 intervals !47-47,48-48,49-49,50-50
+[INFO] sim.nodes.BaseStation - T 51 C 0 N 2 intervals 47-47,48-48,49-49,50-50
+[INFO] sim.nodes.BaseStation - T 51 C 0 N 3 intervals !48-48,49-49,50-50,51-51
+[INFO] sim.nodes.BaseStation - T 51 C 0 type 1 [ 0:77.9082 1:71.4352 2:70.9267 3:74.5312 ]
+[INFO] sim.nodes.BaseStation - T 51 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51
+[INFO] sim.nodes.BaseStation - T 52 C 0 N 0 intervals !46-46,47-47,48-48,49-49
+[INFO] sim.nodes.BaseStation - T 52 C 0 N 1 intervals 49-49,50-50,!51-51,52-52
+[INFO] sim.nodes.BaseStation - T 52 C 0 N 2 intervals 49-49,50-50,!51-51,52-52
+[INFO] sim.nodes.BaseStation - T 52 C 0 N 3 intervals 49-49,50-50,51-51,52-52
+[INFO] sim.nodes.BaseStation - T 52 C 0 type 3 [ 1:74.0338 2:72.8104 ]
+[INFO] sim.nodes.BaseStation - T 52 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52
+[INFO] sim.nodes.BaseStation - T 53 C 0 N 0 intervals 48-48,49-49,!50-52,53-53
+[INFO] sim.nodes.BaseStation - T 53 C 0 N 1 intervals 50-50,!51-51,52-52,53-53
+[INFO] sim.nodes.BaseStation - T 53 C 0 N 2 intervals 50-50,!51-51,52-52,53-53
+[INFO] sim.nodes.BaseStation - T 53 C 0 N 3 intervals 50-50,51-51,52-52,53-53
+[INFO] sim.nodes.BaseStation - T 53 C 0 type 3 [ 1:74.5588 2:74.2551 ]
+[INFO] sim.nodes.BaseStation - T 53 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53
+[INFO] sim.nodes.BaseStation - T 54 C 0 N 0 intervals 48-48,49-49,!50-52,53-53
+[INFO] sim.nodes.BaseStation - T 54 C 0 N 1 intervals 50-50,!51-51,52-52,53-53
+[INFO] sim.nodes.BaseStation - T 54 C 0 N 2 intervals !51-51,52-52,53-53,54-54
+[INFO] sim.nodes.BaseStation - T 54 C 0 N 3 intervals 50-50,51-51,52-52,53-53
+[INFO] sim.nodes.BaseStation - T 54 C 0 type 1 [ 1:74.5588 ]
+[INFO] sim.nodes.BaseStation - T 54 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54
+[INFO] sim.nodes.BaseStation - T 55 C 0 N 0 intervals 49-49,!50-52,53-54,55-55
+[INFO] sim.nodes.BaseStation - T 55 C 0 N 1 intervals !51-51,52-52,53-54,55-55
+[INFO] sim.nodes.BaseStation - T 55 C 0 N 2 intervals !51-51,52-52,53-53,54-54
+[INFO] sim.nodes.BaseStation - T 55 C 0 N 3 intervals 51-51,52-52,53-54,55-55
+[INFO] sim.nodes.BaseStation - T 55 C 0 type 1 [ 0:79.697 1:75.5205 2:73.4513 3:76.9908 ]
+[INFO] sim.nodes.BaseStation - T 55 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55
+[INFO] sim.nodes.BaseStation - T 56 C 0 N 0 intervals !50-52,53-54,55-55,56-56
+[INFO] sim.nodes.BaseStation - T 56 C 0 N 1 intervals 52-52,53-54,55-55,56-56
+[INFO] sim.nodes.BaseStation - T 56 C 0 N 2 intervals 53-53,54-54,!55-55,56-56
+[INFO] sim.nodes.BaseStation - T 56 C 0 N 3 intervals 51-51,52-52,53-54,55-55
+[INFO] sim.nodes.BaseStation - T 56 C 0 type 3 [ 0:80.1997 1:76.9908 2:77.1802 3:76.9908 ]
+[INFO] sim.nodes.BaseStation - T 56 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56
+[INFO] sim.nodes.BaseStation - T 58 C 0 N 0 intervals 55-55,56-56,57-57,58-58
+[INFO] sim.nodes.BaseStation - T 58 C 0 N 1 intervals 53-54,55-55,56-57,58-58
+[INFO] sim.nodes.BaseStation - T 58 C 0 N 2 intervals !55-55,56-56,57-57,58-58
+[INFO] sim.nodes.BaseStation - T 58 C 0 N 3 intervals 52-52,53-54,55-57,58-58
+[WARN] sim.nodes.BaseStation - T 58 C 0 failure found @ T 57 type 1 [ 1:76.9908 3:76.9908 ]
+[INFO] sim.nodes.BaseStation - T 58 C 0 type 1 [ 0:77.3963 1:73.2009 2:63.1403 3:62.842 ]
+[INFO] sim.nodes.BaseStation - T 58 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58
+[INFO] sim.nodes.BaseStation - T 59 C 0 N 0 intervals 56-56,57-57,58-58,59-59
+[INFO] sim.nodes.BaseStation - T 59 C 0 N 1 intervals 55-55,56-57,58-58,59-59
+[INFO] sim.nodes.BaseStation - T 59 C 0 N 2 intervals 56-56,57-57,58-58,59-59
+[INFO] sim.nodes.BaseStation - T 59 C 0 N 3 intervals 52-52,53-54,55-57,58-58
+[INFO] sim.nodes.BaseStation - T 59 C 0 type 1 [ 0:78.5251 1:74.1998 2:71.0964 3:62.842 ]
+[INFO] sim.nodes.BaseStation - T 59 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59
+[INFO] sim.nodes.BaseStation - T 63 C 0 N 0 intervals 59-59,60-60,61-62,63-63
+[INFO] sim.nodes.BaseStation - T 63 C 0 N 1 intervals 59-59,60-60,61-61,62-62
+[INFO] sim.nodes.BaseStation - T 63 C 0 N 2 intervals 59-59,60-60,61-61,62-62
+[INFO] sim.nodes.BaseStation - T 63 C 0 N 3 intervals !59-59,60-60,61-61,62-62
+[WARN] sim.nodes.BaseStation - T 63 C 0 failure found @ T 61 type 1 [ 0:79.5113 1:77.5042 2:75.7667 3:75.794 ]
+[WARN] sim.nodes.BaseStation - T 63 C 0 failure found @ T 62 type 1 [ 0:79.5113 1:76.176 3:73.8954 ]
+[INFO] sim.nodes.BaseStation - T 63 C 0 type 1 [ 0:77.8006 1:76.176 2:73.8122 3:73.8954 ]
+[INFO] sim.nodes.BaseStation - T 63 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63
+[INFO] sim.nodes.BaseStation - T 64 C 0 N 0 intervals 59-59,60-60,61-62,63-63
+[INFO] sim.nodes.BaseStation - T 64 C 0 N 1 intervals 61-61,62-62,!63-63,64-64
+[INFO] sim.nodes.BaseStation - T 64 C 0 N 2 intervals 59-59,60-60,61-61,62-62
+[INFO] sim.nodes.BaseStation - T 64 C 0 N 3 intervals !59-59,60-60,61-61,62-62
+[INFO] sim.nodes.BaseStation - T 64 C 0 type 3 [ 0:77.8006 1:77.2072 3:73.8954 ]
+[INFO] sim.nodes.BaseStation - T 64 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64
+[INFO] sim.nodes.BaseStation - T 66 C 0 N 0 intervals 61-62,63-63,!64-64,65-65
+[INFO] sim.nodes.BaseStation - T 66 C 0 N 1 intervals 62-62,!63-63,64-65,66-66
+[INFO] sim.nodes.BaseStation - T 66 C 0 N 2 intervals 61-61,62-64,65-65,66-66
+[INFO] sim.nodes.BaseStation - T 66 C 0 N 3 intervals 62-63,!64-64,65-65,66-66
+[WARN] sim.nodes.BaseStation - T 66 C 0 failure found @ T 65 type 3 [ 0:81.3822 1:77.2072 ]
+[INFO] sim.nodes.BaseStation - T 66 C 0 type 1 [ 1:78.418 3:77.5582 ]
+[INFO] sim.nodes.BaseStation - T 66 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66
+[INFO] sim.nodes.BaseStation - T 68 C 0 N 0 intervals 63-63,!64-64,65-66,67-67
+[INFO] sim.nodes.BaseStation - T 68 C 0 N 1 intervals 62-62,!63-63,64-65,66-66
+[INFO] sim.nodes.BaseStation - T 68 C 0 N 2 intervals 65-65,66-66,!67-67,68-68
+[INFO] sim.nodes.BaseStation - T 68 C 0 N 3 intervals 65-65,66-66,67-67,68-68
+[WARN] sim.nodes.BaseStation - T 68 C 0 failure found @ T 67 type 1 [ 0:79.6174 1:78.418 2:77.072 3:68.702 ]
+[INFO] sim.nodes.BaseStation - T 68 C 0 type 3 [ 0:79.6174 1:78.418 2:67.2 3:69.5331 ]
+[INFO] sim.nodes.BaseStation - T 68 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68
+[INFO] sim.nodes.BaseStation - T 70 C 0 N 0 intervals 63-63,!64-64,65-66,67-67
+[INFO] sim.nodes.BaseStation - T 70 C 0 N 1 intervals !67-67,!68-68,!69-69,70-70
+[INFO] sim.nodes.BaseStation - T 70 C 0 N 2 intervals 66-66,!67-67,68-68,69-69
+[INFO] sim.nodes.BaseStation - T 70 C 0 N 3 intervals 67-67,68-68,69-69,70-70
+[WARN] sim.nodes.BaseStation - T 70 C 0 failure found @ T 69 type 1 [ 0:79.6174 1:78.418 2:64.6235 3:64.4167 ]
+[INFO] sim.nodes.BaseStation - T 70 C 0 type 3 [ 0:79.6174 1:68.3855 2:64.6235 3:67.0547 ]
+[INFO] sim.nodes.BaseStation - T 70 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70
+[INFO] sim.nodes.BaseStation - T 71 C 0 N 0 intervals 63-63,!64-64,65-66,67-67
+[INFO] sim.nodes.BaseStation - T 71 C 0 N 1 intervals !68-68,!69-69,70-70,71-71
+[INFO] sim.nodes.BaseStation - T 71 C 0 N 2 intervals 66-66,!67-67,68-68,69-69
+[INFO] sim.nodes.BaseStation - T 71 C 0 N 3 intervals 68-68,69-69,70-70,71-71
+[INFO] sim.nodes.BaseStation - T 71 C 0 type 1 [ 0:79.6174 1:75.6847 2:64.6235 3:75.9851 ]
+[INFO] sim.nodes.BaseStation - T 71 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71
+[INFO] sim.nodes.BaseStation - T 72 C 0 N 0 intervals !69-69,!70-70,!71-71,72-72
+[INFO] sim.nodes.BaseStation - T 72 C 0 N 1 intervals !68-68,!69-69,70-70,71-71
+[INFO] sim.nodes.BaseStation - T 72 C 0 N 2 intervals 66-66,!67-67,68-68,69-69
+[INFO] sim.nodes.BaseStation - T 72 C 0 N 3 intervals 69-69,70-70,71-71,72-72
+[INFO] sim.nodes.BaseStation - T 72 C 0 type 3 [ 0:77.1802 1:75.6847 2:64.6235 3:74.6966 ]
+[INFO] sim.nodes.BaseStation - T 72 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72
+[INFO] sim.nodes.BaseStation - T 73 C 0 N 0 intervals !70-70,!71-71,72-72,73-73
+[INFO] sim.nodes.BaseStation - T 73 C 0 N 1 intervals !68-68,!69-69,70-70,71-71
+[INFO] sim.nodes.BaseStation - T 73 C 0 N 2 intervals !70-70,!71-71,!72-72,73-73
+[INFO] sim.nodes.BaseStation - T 73 C 0 N 3 intervals 70-70,71-71,72-72,73-73
+[INFO] sim.nodes.BaseStation - T 73 C 0 type 3 [ 0:74.5312 1:75.6847 2:67.9529 ]
+[INFO] sim.nodes.BaseStation - T 73 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73
+[INFO] sim.nodes.BaseStation - T 74 C 0 N 0 intervals !70-70,!71-71,72-72,73-73
+[INFO] sim.nodes.BaseStation - T 74 C 0 N 1 intervals 70-70,71-72,!73-73,74-74
+[INFO] sim.nodes.BaseStation - T 74 C 0 N 2 intervals !71-71,!72-72,73-73,74-74
+[INFO] sim.nodes.BaseStation - T 74 C 0 N 3 intervals 70-70,71-71,72-72,73-73
+[INFO] sim.nodes.BaseStation - T 74 C 0 type 3 [ 0:74.5312 1:64.5645 2:64.5054 3:69.0465 ]
+[INFO] sim.nodes.BaseStation - T 74 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74
+[INFO] sim.nodes.BaseStation - T 75 C 0 N 0 intervals 72-72,73-73,!74-74,75-75
+[INFO] sim.nodes.BaseStation - T 75 C 0 N 1 intervals 70-70,71-72,!73-73,74-74
+[INFO] sim.nodes.BaseStation - T 75 C 0 N 2 intervals !71-71,!72-72,73-73,74-74
+[INFO] sim.nodes.BaseStation - T 75 C 0 N 3 intervals 72-72,73-73,!74-74,75-75
+[INFO] sim.nodes.BaseStation - T 75 C 0 type 3 [ 0:73.34 1:64.5645 2:64.5054 3:71.2094 ]
+[INFO] sim.nodes.BaseStation - T 75 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75
+[INFO] sim.nodes.BaseStation - T 77 C 0 N 0 intervals !74-74,75-75,!76-76,77-77
+[INFO] sim.nodes.BaseStation - T 77 C 0 N 1 intervals !73-73,74-74,!75-75,76-76
+[INFO] sim.nodes.BaseStation - T 77 C 0 N 2 intervals 73-73,74-74,!75-75,76-76
+[INFO] sim.nodes.BaseStation - T 77 C 0 N 3 intervals 73-73,!74-74,75-75,76-76
+[WARN] sim.nodes.BaseStation - T 77 C 0 failure found @ T 76 type 3 [ 0:73.34 3:74.7792 ]
+[INFO] sim.nodes.BaseStation - T 77 C 0 type 3 [ 0:69.5331 2:73.9231 3:74.7792 ]
+[INFO] sim.nodes.BaseStation - T 77 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77
+[INFO] sim.nodes.BaseStation - T 79 C 0 N 0 intervals !76-76,77-77,!78-78,79-79
+[INFO] sim.nodes.BaseStation - T 79 C 0 N 1 intervals 76-76,!77-77,78-78,79-79
+[INFO] sim.nodes.BaseStation - T 79 C 0 N 2 intervals !75-75,76-76,!77-77,78-78
+[INFO] sim.nodes.BaseStation - T 79 C 0 N 3 intervals 73-73,!74-74,75-75,76-76
+[WARN] sim.nodes.BaseStation - T 79 C 0 failure found @ T 78 type 3 [ 0:69.5331 2:69.3329 3:74.7792 ]
+[INFO] sim.nodes.BaseStation - T 79 C 0 type 3 [ 0:67.6058 1:66.7056 2:69.3329 3:74.7792 ]
+[INFO] sim.nodes.BaseStation - T 79 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79
+[INFO] sim.nodes.BaseStation - T 80 C 0 N 0 intervals 77-77,!78-78,79-79,80-80
+[INFO] sim.nodes.BaseStation - T 80 C 0 N 1 intervals !77-77,78-78,79-79,80-80
+[INFO] sim.nodes.BaseStation - T 80 C 0 N 2 intervals !77-77,78-78,!79-79,80-80
+[INFO] sim.nodes.BaseStation - T 80 C 0 N 3 intervals !77-77,!78-78,!79-79,80-80
+[INFO] sim.nodes.BaseStation - T 80 C 0 type 3 [ 0:74.4208 1:71.9982 3:71.8576 ]
+[INFO] sim.nodes.BaseStation - T 80 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80
+[INFO] sim.nodes.BaseStation - T 83 C 0 N 0 intervals 80-80,81-81,82-82,83-83
+[INFO] sim.nodes.BaseStation - T 83 C 0 N 1 intervals 80-80,81-81,82-82,83-83
+[INFO] sim.nodes.BaseStation - T 83 C 0 N 2 intervals 80-80,81-81,82-82,83-83
+[INFO] sim.nodes.BaseStation - T 83 C 0 N 3 intervals !78-78,!79-79,80-80,81-81
+[WARN] sim.nodes.BaseStation - T 83 C 0 failure found @ T 81 type 1 [ 0:75.1366 1:75.2738 2:74.1445 ]
+[WARN] sim.nodes.BaseStation - T 83 C 0 failure found @ T 82 type 1 [ 0:76.6655 1:77.2343 2:75.7667 3:75.0817 ]
+[INFO] sim.nodes.BaseStation - T 83 C 0 type 1 [ 0:76.0124 1:75.8486 2:75.1366 3:75.0817 ]
+[INFO] sim.nodes.BaseStation - T 83 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83
+[INFO] sim.nodes.BaseStation - T 84 C 0 N 0 intervals 81-81,82-82,83-83,84-84
+[INFO] sim.nodes.BaseStation - T 84 C 0 N 1 intervals 80-80,81-81,82-82,83-83
+[INFO] sim.nodes.BaseStation - T 84 C 0 N 2 intervals 81-81,82-82,83-83,84-84
+[INFO] sim.nodes.BaseStation - T 84 C 0 N 3 intervals 80-80,81-81,!82-83,84-84
+[INFO] sim.nodes.BaseStation - T 84 C 0 type 3 [ 0:79.5909 1:75.8486 2:77.7737 ]
+[INFO] sim.nodes.BaseStation - T 84 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84
+[INFO] sim.nodes.BaseStation - T 85 C 0 N 0 intervals 81-81,82-82,83-83,84-84
+[INFO] sim.nodes.BaseStation - T 85 C 0 N 1 intervals 82-82,83-83,!84-84,85-85
+[INFO] sim.nodes.BaseStation - T 85 C 0 N 2 intervals 82-82,83-83,84-84,85-85
+[INFO] sim.nodes.BaseStation - T 85 C 0 N 3 intervals 80-80,81-81,!82-83,84-84
+[INFO] sim.nodes.BaseStation - T 85 C 0 type 3 [ 0:79.5909 1:75.5479 2:75.4931 3:78.8191 ]
+[INFO] sim.nodes.BaseStation - T 85 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85
+[INFO] sim.nodes.BaseStation - T 86 C 0 N 0 intervals 81-81,82-82,83-83,84-84
+[INFO] sim.nodes.BaseStation - T 86 C 0 N 1 intervals 82-82,83-83,!84-84,85-85
+[INFO] sim.nodes.BaseStation - T 86 C 0 N 2 intervals 82-82,83-83,84-84,85-85
+[INFO] sim.nodes.BaseStation - T 86 C 0 N 3 intervals !82-83,84-84,!85-85,86-86
+[INFO] sim.nodes.BaseStation - T 86 C 0 type 3 [ 1:75.5479 2:75.4931 3:75.6847 ]
+[INFO] sim.nodes.BaseStation - T 86 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86
+[INFO] sim.nodes.BaseStation - T 87 C 0 N 0 intervals 81-81,82-82,83-83,84-84
+[INFO] sim.nodes.BaseStation - T 87 C 0 N 1 intervals 82-82,83-83,!84-84,85-85
+[INFO] sim.nodes.BaseStation - T 87 C 0 N 2 intervals 84-84,85-85,!86-86,87-87
+[INFO] sim.nodes.BaseStation - T 87 C 0 N 3 intervals !82-83,84-84,!85-85,86-86
+[INFO] sim.nodes.BaseStation - T 87 C 0 type 3 [ 0:79.5909 1:75.5479 2:76.0397 3:75.6847 ]
+[INFO] sim.nodes.BaseStation - T 87 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87
+[INFO] sim.nodes.BaseStation - T 89 C 0 N 0 intervals 83-83,84-84,!85-87,88-88
+[INFO] sim.nodes.BaseStation - T 89 C 0 N 1 intervals 85-86,!87-87,88-88,89-89
+[INFO] sim.nodes.BaseStation - T 89 C 0 N 2 intervals 84-84,85-85,!86-86,87-87
+[INFO] sim.nodes.BaseStation - T 89 C 0 N 3 intervals !85-85,86-86,!87-88,89-89
+[WARN] sim.nodes.BaseStation - T 89 C 0 failure found @ T 88 type 3 [ 0:74.9718 1:76.0397 2:76.0397 3:75.6847 ]
+[INFO] sim.nodes.BaseStation - T 89 C 0 type 3 [ 0:74.9718 1:70.0751 2:76.0397 3:68.8169 ]
+[INFO] sim.nodes.BaseStation - T 89 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89
+[INFO] sim.nodes.BaseStation - T 90 C 0 N 0 intervals !85-87,88-88,!89-89,90-90
+[INFO] sim.nodes.BaseStation - T 90 C 0 N 1 intervals 85-86,!87-87,88-88,89-89
+[INFO] sim.nodes.BaseStation - T 90 C 0 N 2 intervals !86-86,87-88,!89-89,90-90
+[INFO] sim.nodes.BaseStation - T 90 C 0 N 3 intervals 86-86,!87-88,89-89,90-90
+[INFO] sim.nodes.BaseStation - T 90 C 0 type 3 [ 0:70.7568 3:72.1105 ]
+[INFO] sim.nodes.BaseStation - T 90 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90
+[INFO] sim.nodes.BaseStation - T 92 C 0 N 0 intervals 88-88,!89-89,90-90,91-91
+[INFO] sim.nodes.BaseStation - T 92 C 0 N 1 intervals 89-89,!90-90,!91-91,92-92
+[INFO] sim.nodes.BaseStation - T 92 C 0 N 2 intervals 87-88,!89-89,90-90,91-91
+[INFO] sim.nodes.BaseStation - T 92 C 0 N 3 intervals 89-89,90-90,91-91,92-92
+[WARN] sim.nodes.BaseStation - T 92 C 0 failure found @ T 91 type 1 [ 0:64.18 1:70.0751 2:64.0023 ]
+[INFO] sim.nodes.BaseStation - T 92 C 0 type 3 [ 0:64.18 1:59.3406 2:64.0023 3:61.3119 ]
+[INFO] sim.nodes.BaseStation - T 92 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92
+[INFO] sim.nodes.BaseStation - T 93 C 0 N 0 intervals 88-88,!89-89,90-90,91-91
+[INFO] sim.nodes.BaseStation - T 93 C 0 N 1 intervals !90-90,!91-91,92-92,93-93
+[INFO] sim.nodes.BaseStation - T 93 C 0 N 2 intervals 87-88,!89-89,90-90,91-91
+[INFO] sim.nodes.BaseStation - T 93 C 0 N 3 intervals 90-90,91-91,92-92,93-93
+[INFO] sim.nodes.BaseStation - T 93 C 0 type 1 [ 0:64.18 1:46.3609 2:64.0023 3:49.1292 ]
+[INFO] sim.nodes.BaseStation - T 93 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93
+[INFO] sim.nodes.BaseStation - T 94 C 0 N 0 intervals 91-91,!92-92,!93-93,94-94
+[INFO] sim.nodes.BaseStation - T 94 C 0 N 1 intervals !91-91,92-92,93-93,94-94
+[INFO] sim.nodes.BaseStation - T 94 C 0 N 2 intervals 91-91,!92-92,!93-93,94-94
+[INFO] sim.nodes.BaseStation - T 94 C 0 N 3 intervals 91-91,92-92,93-93,94-94
+[INFO] sim.nodes.BaseStation - T 94 C 0 type 3 [ 0:52.3342 1:50.8348 2:52.2388 ]
+[INFO] sim.nodes.BaseStation - T 94 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94
+[INFO] sim.nodes.BaseStation - T 95 C 0 N 0 intervals !92-92,!93-93,94-94,95-95
+[INFO] sim.nodes.BaseStation - T 95 C 0 N 1 intervals 92-92,93-93,94-94,95-95
+[INFO] sim.nodes.BaseStation - T 95 C 0 N 2 intervals !92-92,!93-93,94-94,95-95
+[INFO] sim.nodes.BaseStation - T 95 C 0 N 3 intervals 91-91,92-92,93-93,94-94
+[INFO] sim.nodes.BaseStation - T 95 C 0 type 1 [ 0:51.0909 2:47.1467 3:53.5374 ]
+[INFO] sim.nodes.BaseStation - T 95 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95
+[INFO] sim.nodes.BaseStation - T 97 C 0 N 0 intervals 94-94,95-95,96-96,97-97
+[INFO] sim.nodes.BaseStation - T 97 C 0 N 1 intervals 93-93,94-94,95-96,97-97
+[INFO] sim.nodes.BaseStation - T 97 C 0 N 2 intervals 94-94,95-95,96-96,97-97
+[INFO] sim.nodes.BaseStation - T 97 C 0 N 3 intervals 93-93,94-94,!95-95,96-96
+[WARN] sim.nodes.BaseStation - T 97 C 0 failure found @ T 96 type 3 [ 0:52.9368 2:46.5905 3:46.4265 ]
+[INFO] sim.nodes.BaseStation - T 97 C 0 type 1 [ 0:45.4072 1:43.019 2:44.0508 3:46.4265 ]
+[INFO] sim.nodes.BaseStation - T 97 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97
+[INFO] sim.nodes.BaseStation - T 98 C 0 N 0 intervals 95-95,96-96,97-97,98-98
+[INFO] sim.nodes.BaseStation - T 98 C 0 N 1 intervals 93-93,94-94,95-96,97-97
+[INFO] sim.nodes.BaseStation - T 98 C 0 N 2 intervals 95-95,96-96,97-97,98-98
+[INFO] sim.nodes.BaseStation - T 98 C 0 N 3 intervals !95-95,96-96,!97-97,98-98
+[INFO] sim.nodes.BaseStation - T 98 C 0 type 3 [ 0:57.0675 1:43.019 2:48.6112 3:50.7707 ]
+[INFO] sim.nodes.BaseStation - T 98 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98
+[INFO] sim.nodes.BaseStation - T 99 C 0 N 0 intervals 95-95,96-96,97-97,98-98
+[INFO] sim.nodes.BaseStation - T 99 C 0 N 1 intervals 95-96,97-97,!98-98,99-99
+[INFO] sim.nodes.BaseStation - T 99 C 0 N 2 intervals 95-95,96-96,97-97,98-98
+[INFO] sim.nodes.BaseStation - T 99 C 0 N 3 intervals 96-96,!97-97,98-98,99-99
+[INFO] sim.nodes.BaseStation - T 99 C 0 type 3 [ 0:57.0675 1:44.9121 2:48.6112 3:45.572 ]
+[INFO] sim.nodes.BaseStation - T 99 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99
+[INFO] sim.nodes.BaseStation - T 100 C 0 N 0 intervals 97-97,98-98,!99-99,100-100
+[INFO] sim.nodes.BaseStation - T 100 C 0 N 1 intervals 97-97,!98-98,99-99,100-100
+[INFO] sim.nodes.BaseStation - T 100 C 0 N 2 intervals 97-97,98-98,!99-99,100-100
+[INFO] sim.nodes.BaseStation - T 100 C 0 N 3 intervals 96-96,!97-97,98-98,99-99
+[INFO] sim.nodes.BaseStation - T 100 C 0 type 3 [ 0:47.7338 1:46.9178 2:47.9942 3:45.572 ]
+[INFO] sim.nodes.BaseStation - T 100 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100
+[INFO] sim.nodes.BaseStation - T 101 C 0 N 0 intervals 98-98,!99-99,100-100,101-101
+[INFO] sim.nodes.BaseStation - T 101 C 0 N 1 intervals 97-97,!98-98,99-99,100-100
+[INFO] sim.nodes.BaseStation - T 101 C 0 N 2 intervals 97-97,98-98,!99-99,100-100
+[INFO] sim.nodes.BaseStation - T 101 C 0 N 3 intervals 96-96,!97-97,98-98,99-99
+[INFO] sim.nodes.BaseStation - T 101 C 0 type 1 [ 0:49.2262 1:46.9178 2:47.9942 3:45.572 ]
+[INFO] sim.nodes.BaseStation - T 101 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101
+[INFO] sim.nodes.BaseStation - T 102 C 0 N 0 intervals 98-98,!99-99,100-100,101-101
+[INFO] sim.nodes.BaseStation - T 102 C 0 N 1 intervals 99-99,100-100,!101-101,102-102
+[INFO] sim.nodes.BaseStation - T 102 C 0 N 2 intervals 98-98,!99-99,100-101,102-102
+[INFO] sim.nodes.BaseStation - T 102 C 0 N 3 intervals 96-96,!97-97,98-98,99-99
+[INFO] sim.nodes.BaseStation - T 102 C 0 type 2 [ ]
+[INFO] sim.nodes.BaseStation - T 102 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102
+[INFO] sim.nodes.BaseStation - T 103 C 0 N 0 intervals 98-98,!99-99,100-100,101-101
+[INFO] sim.nodes.BaseStation - T 103 C 0 N 1 intervals 99-99,100-100,!101-101,102-102
+[INFO] sim.nodes.BaseStation - T 103 C 0 N 2 intervals 98-98,!99-99,100-101,102-102
+[INFO] sim.nodes.BaseStation - T 103 C 0 N 3 intervals 96-96,!97-97,98-98,99-99
+[INFO] sim.nodes.BaseStation - T 103 C 0 type 1 [ 0:49.2262 1:45.9011 2:46.0655 3:45.572 ]
+[INFO] sim.nodes.BaseStation - T 103 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103
+[INFO] sim.nodes.BaseStation - T 104 C 0 N 0 intervals 100-100,101-101,!102-103,104-104
+[INFO] sim.nodes.BaseStation - T 104 C 0 N 1 intervals 100-100,!101-101,102-103,104-104
+[INFO] sim.nodes.BaseStation - T 104 C 0 N 2 intervals 98-98,!99-99,100-101,102-102
+[INFO] sim.nodes.BaseStation - T 104 C 0 N 3 intervals 96-96,!97-97,98-98,99-99
+[INFO] sim.nodes.BaseStation - T 104 C 0 type 3 [ 0:49.4522 1:46.8851 2:46.0655 3:45.572 ]
+[INFO] sim.nodes.BaseStation - T 104 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104
+[INFO] sim.nodes.BaseStation - T 105 C 0 N 0 intervals 101-101,!102-103,104-104,105-105
+[INFO] sim.nodes.BaseStation - T 105 C 0 N 1 intervals !101-101,102-103,104-104,105-105
+[INFO] sim.nodes.BaseStation - T 105 C 0 N 2 intervals 100-101,102-103,!104-104,105-105
+[INFO] sim.nodes.BaseStation - T 105 C 0 N 3 intervals 99-99,!100-101,!102-104,105-105
+[INFO] sim.nodes.BaseStation - T 105 C 0 type 3 [ 0:56.758 1:52.2388 2:51.8888 3:51.0269 ]
+[INFO] sim.nodes.BaseStation - T 105 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105
+[INFO] sim.nodes.BaseStation - T 106 C 0 N 0 intervals 101-101,!102-103,104-104,105-105
+[INFO] sim.nodes.BaseStation - T 106 C 0 N 1 intervals 102-103,104-104,105-105,106-106
+[INFO] sim.nodes.BaseStation - T 106 C 0 N 2 intervals 102-103,!104-104,105-105,106-106
+[INFO] sim.nodes.BaseStation - T 106 C 0 N 3 intervals !100-101,!102-104,105-105,106-106
+[INFO] sim.nodes.BaseStation - T 106 C 0 type 1 [ 0:56.758 1:53.9156 ]
+[INFO] sim.nodes.BaseStation - T 106 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106
+[INFO] sim.nodes.BaseStation - T 108 C 0 N 0 intervals !102-103,104-104,105-106,107-107
+[INFO] sim.nodes.BaseStation - T 108 C 0 N 1 intervals 105-105,106-106,!107-107,108-108
+[INFO] sim.nodes.BaseStation - T 108 C 0 N 2 intervals !104-104,105-105,106-106,107-107
+[INFO] sim.nodes.BaseStation - T 108 C 0 N 3 intervals 105-105,106-106,107-107,108-108
+[WARN] sim.nodes.BaseStation - T 108 C 0 failure found @ T 107 type 1 [ 0:58.9435 1:53.9156 2:55.2645 3:55.8572 ]
+[INFO] sim.nodes.BaseStation - T 108 C 0 type 3 [ 0:58.9435 1:57.4999 2:55.2645 3:54.7011 ]
+[INFO] sim.nodes.BaseStation - T 108 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108
+[INFO] sim.nodes.BaseStation - T 110 C 0 N 0 intervals 104-104,105-106,107-108,109-109
+[INFO] sim.nodes.BaseStation - T 110 C 0 N 1 intervals 106-106,!107-107,108-109,110-110
+[INFO] sim.nodes.BaseStation - T 110 C 0 N 2 intervals 105-105,106-106,107-108,109-109
+[INFO] sim.nodes.BaseStation - T 110 C 0 N 3 intervals 106-106,107-107,108-108,109-109
+[WARN] sim.nodes.BaseStation - T 110 C 0 failure found @ T 109 type 1 [ 0:60.5262 1:57.4999 3:56.665 ]
+[INFO] sim.nodes.BaseStation - T 110 C 0 type 1 [ 0:60.5262 1:60.6776 3:56.665 ]
+[INFO] sim.nodes.BaseStation - T 110 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110
+[INFO] sim.nodes.BaseStation - T 113 C 0 N 0 intervals 107-108,109-109,!110-111,112-112
+[INFO] sim.nodes.BaseStation - T 113 C 0 N 1 intervals 108-109,110-111,112-112,113-113
+[INFO] sim.nodes.BaseStation - T 113 C 0 N 2 intervals 109-109,!110-110,111-111,112-112
+[INFO] sim.nodes.BaseStation - T 113 C 0 N 3 intervals 109-109,!110-110,111-111,112-112
+[WARN] sim.nodes.BaseStation - T 113 C 0 failure found @ T 111 type 3 [ 0:60.5262 1:60.6776 2:58.4534 3:59.1269 ]
+[WARN] sim.nodes.BaseStation - T 113 C 0 failure found @ T 112 type 3 [ 0:67.2 1:63.943 2:60.9799 3:62.842 ]
+[INFO] sim.nodes.BaseStation - T 113 C 0 type 1 [ 0:67.2 1:64.7121 2:60.9799 3:62.842 ]
+[INFO] sim.nodes.BaseStation - T 113 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113
+[INFO] sim.nodes.BaseStation - T 114 C 0 N 0 intervals 107-108,109-109,!110-111,112-112
+[INFO] sim.nodes.BaseStation - T 114 C 0 N 1 intervals 110-111,112-112,113-113,114-114
+[INFO] sim.nodes.BaseStation - T 114 C 0 N 2 intervals 109-109,!110-110,111-111,112-112
+[INFO] sim.nodes.BaseStation - T 114 C 0 N 3 intervals 109-109,!110-110,111-111,112-112
+[INFO] sim.nodes.BaseStation - T 114 C 0 type 1 [ 0:67.2 1:64.0912 2:60.9799 3:62.842 ]
+[INFO] sim.nodes.BaseStation - T 114 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114
+[INFO] sim.nodes.BaseStation - T 115 C 0 N 0 intervals 109-109,!110-111,112-114,115-115
+[INFO] sim.nodes.BaseStation - T 115 C 0 N 1 intervals 112-112,113-113,114-114,115-115
+[INFO] sim.nodes.BaseStation - T 115 C 0 N 2 intervals !110-110,111-111,112-114,115-115
+[INFO] sim.nodes.BaseStation - T 115 C 0 N 3 intervals 111-111,112-112,!113-114,115-115
+[INFO] sim.nodes.BaseStation - T 115 C 0 type 3 [ 0:64.6235 1:61.8235 2:59.0963 3:61.7033 ]
+[INFO] sim.nodes.BaseStation - T 115 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115
+[INFO] sim.nodes.BaseStation - T 116 C 0 N 0 intervals !110-111,112-114,115-115,116-116
+[INFO] sim.nodes.BaseStation - T 116 C 0 N 1 intervals 113-113,114-114,115-115,116-116
+[INFO] sim.nodes.BaseStation - T 116 C 0 N 2 intervals 111-111,112-114,115-115,116-116
+[INFO] sim.nodes.BaseStation - T 116 C 0 N 3 intervals 112-112,!113-114,115-115,116-116
+[INFO] sim.nodes.BaseStation - T 116 C 0 type 1 [ 0:62.2437 1:59.7976 2:58.3307 3:59.8888 ]
+[INFO] sim.nodes.BaseStation - T 116 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116
+[INFO] sim.nodes.BaseStation - T 117 C 0 N 0 intervals 112-114,115-115,116-116,117-117
+[INFO] sim.nodes.BaseStation - T 117 C 0 N 1 intervals 113-113,114-114,115-115,116-116
+[INFO] sim.nodes.BaseStation - T 117 C 0 N 2 intervals 111-111,112-114,115-115,116-116
+[INFO] sim.nodes.BaseStation - T 117 C 0 N 3 intervals 112-112,!113-114,115-115,116-116
+[INFO] sim.nodes.BaseStation - T 117 C 0 type 1 [ 0:61.0705 1:59.7976 2:58.3307 3:59.8888 ]
+[INFO] sim.nodes.BaseStation - T 117 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117
+[INFO] sim.nodes.BaseStation - T 120 C 0 N 0 intervals 116-116,117-117,118-118,119-119
+[INFO] sim.nodes.BaseStation - T 120 C 0 N 1 intervals 116-117,118-118,119-119,120-120
+[INFO] sim.nodes.BaseStation - T 120 C 0 N 2 intervals 116-117,118-118,119-119,120-120
+[INFO] sim.nodes.BaseStation - T 120 C 0 N 3 intervals 115-115,116-117,118-118,119-119
+[WARN] sim.nodes.BaseStation - T 120 C 0 failure found @ T 118 type 1 [ 0:60.0712 2:55.7014 ]
+[WARN] sim.nodes.BaseStation - T 120 C 0 failure found @ T 119 type 1 [ 1:55.1395 3:55.0769 ]
+[INFO] sim.nodes.BaseStation - T 120 C 0 type 1 [ 0:59.3406 2:55.0143 3:55.0769 ]
+[INFO] sim.nodes.BaseStation - T 120 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120
+[INFO] sim.nodes.BaseStation - T 122 C 0 N 0 intervals 117-117,118-118,119-120,121-121
+[INFO] sim.nodes.BaseStation - T 122 C 0 N 1 intervals 119-119,120-120,!121-121,122-122
+[INFO] sim.nodes.BaseStation - T 122 C 0 N 2 intervals 119-119,120-120,121-121,122-122
+[INFO] sim.nodes.BaseStation - T 122 C 0 N 3 intervals 119-119,!120-120,121-121,122-122
+[WARN] sim.nodes.BaseStation - T 122 C 0 failure found @ T 121 type 3 [ 0:62.4833 1:55.9195 2:56.3237 ]
+[INFO] sim.nodes.BaseStation - T 122 C 0 type 3 [ 0:62.4833 1:60.3747 2:57.4691 ]
+[INFO] sim.nodes.BaseStation - T 122 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122
+[INFO] sim.nodes.BaseStation - T 123 C 0 N 0 intervals 118-118,119-120,121-122,123-123
+[INFO] sim.nodes.BaseStation - T 123 C 0 N 1 intervals 119-119,120-120,!121-121,122-122
+[INFO] sim.nodes.BaseStation - T 123 C 0 N 2 intervals 120-120,121-121,122-122,123-123
+[INFO] sim.nodes.BaseStation - T 123 C 0 N 3 intervals !120-120,121-121,122-122,123-123
+[INFO] sim.nodes.BaseStation - T 123 C 0 type 1 [ 1:60.3747 ]
+[INFO] sim.nodes.BaseStation - T 123 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123
+[INFO] sim.nodes.BaseStation - T 124 C 0 N 0 intervals 119-120,121-122,123-123,124-124
+[INFO] sim.nodes.BaseStation - T 124 C 0 N 1 intervals !121-121,122-122,!123-123,124-124
+[INFO] sim.nodes.BaseStation - T 124 C 0 N 2 intervals 120-120,121-121,122-122,123-123
+[INFO] sim.nodes.BaseStation - T 124 C 0 N 3 intervals 121-121,122-122,123-123,124-124
+[INFO] sim.nodes.BaseStation - T 124 C 0 type 3 [ 0:66.5016 1:65.6828 2:60.0408 3:62.9912 ]
+[INFO] sim.nodes.BaseStation - T 124 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124
+[INFO] sim.nodes.BaseStation - T 125 C 0 N 0 intervals 121-122,123-123,124-124,125-125
+[INFO] sim.nodes.BaseStation - T 125 C 0 N 1 intervals !121-121,122-122,!123-123,124-124
+[INFO] sim.nodes.BaseStation - T 125 C 0 N 2 intervals 122-122,123-123,!124-124,125-125
+[INFO] sim.nodes.BaseStation - T 125 C 0 N 3 intervals 122-122,123-123,124-124,125-125
+[INFO] sim.nodes.BaseStation - T 125 C 0 type 3 [ 0:68.9604 1:65.6828 2:66.3557 ]
+[INFO] sim.nodes.BaseStation - T 125 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125
+[INFO] sim.nodes.BaseStation - T 127 C 0 N 0 intervals 124-124,125-125,!126-126,127-127
+[INFO] sim.nodes.BaseStation - T 127 C 0 N 1 intervals 124-124,!125-125,!126-126,127-127
+[INFO] sim.nodes.BaseStation - T 127 C 0 N 2 intervals !124-124,125-125,!126-126,127-127
+[INFO] sim.nodes.BaseStation - T 127 C 0 N 3 intervals 124-124,125-125,126-126,127-127
+[WARN] sim.nodes.BaseStation - T 127 C 0 failure found @ T 126 type 1 [ 0:68.9604 1:65.6828 2:66.3557 3:69.8471 ]
+[INFO] sim.nodes.BaseStation - T 127 C 0 type 3 [ 0:73.8954 3:72.8942 ]
+[INFO] sim.nodes.BaseStation - T 127 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127
+[INFO] sim.nodes.BaseStation - T 129 C 0 N 0 intervals 124-124,125-125,!126-126,127-127
+[INFO] sim.nodes.BaseStation - T 129 C 0 N 1 intervals !126-126,127-127,128-128,129-129
+[INFO] sim.nodes.BaseStation - T 129 C 0 N 2 intervals !124-124,125-125,!126-126,127-127
+[INFO] sim.nodes.BaseStation - T 129 C 0 N 3 intervals 125-125,126-126,127-128,129-129
+[WARN] sim.nodes.BaseStation - T 129 C 0 failure found @ T 128 type 1 [ 0:73.8954 1:72.7825 2:71.2942 ]
+[INFO] sim.nodes.BaseStation - T 129 C 0 type 1 [ 0:73.8954 1:73.9508 2:71.2942 3:73.8122 ]
+[INFO] sim.nodes.BaseStation - T 129 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129
+[INFO] sim.nodes.BaseStation - T 131 C 0 N 0 intervals !126-126,127-127,!128-129,130-130
+[INFO] sim.nodes.BaseStation - T 131 C 0 N 1 intervals 128-128,129-129,130-130,131-131
+[INFO] sim.nodes.BaseStation - T 131 C 0 N 2 intervals !128-128,!129-129,130-130,131-131
+[INFO] sim.nodes.BaseStation - T 131 C 0 N 3 intervals 127-128,129-129,130-130,131-131
+[WARN] sim.nodes.BaseStation - T 131 C 0 failure found @ T 130 type 3 [ 0:76.3121 2:71.3788 ]
+[INFO] sim.nodes.BaseStation - T 131 C 0 type 1 [ 0:76.3121 2:64.2984 3:65.8586 ]
+[INFO] sim.nodes.BaseStation - T 131 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131
+[INFO] sim.nodes.BaseStation - T 132 C 0 N 0 intervals !126-126,127-127,!128-129,130-130
+[INFO] sim.nodes.BaseStation - T 132 C 0 N 1 intervals 128-128,129-129,130-130,131-131
+[INFO] sim.nodes.BaseStation - T 132 C 0 N 2 intervals !129-129,130-130,131-131,132-132
+[INFO] sim.nodes.BaseStation - T 132 C 0 N 3 intervals 127-128,129-129,130-130,131-131
+[INFO] sim.nodes.BaseStation - T 132 C 0 type 1 [ 0:76.3121 1:66.0927 2:60.8893 3:65.8586 ]
+[INFO] sim.nodes.BaseStation - T 132 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132
+[INFO] sim.nodes.BaseStation - T 134 C 0 N 0 intervals !131-131,!132-132,133-133,134-134
+[INFO] sim.nodes.BaseStation - T 134 C 0 N 1 intervals 131-131,!132-132,!133-133,134-134
+[INFO] sim.nodes.BaseStation - T 134 C 0 N 2 intervals 131-131,132-132,133-133,134-134
+[INFO] sim.nodes.BaseStation - T 134 C 0 N 3 intervals 130-130,131-131,!132-132,133-133
+[WARN] sim.nodes.BaseStation - T 134 C 0 failure found @ T 133 type 3 [ 0:63.0211 1:66.0927 2:58.7905 ]
+[INFO] sim.nodes.BaseStation - T 134 C 0 type 3 [ 0:61.5829 1:58.1772 2:56.9747 3:60.1926 ]
+[INFO] sim.nodes.BaseStation - T 134 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134
+[INFO] sim.nodes.BaseStation - T 135 C 0 N 0 intervals !131-131,!132-132,133-133,134-134
+[INFO] sim.nodes.BaseStation - T 135 C 0 N 1 intervals 131-131,!132-132,!133-133,134-134
+[INFO] sim.nodes.BaseStation - T 135 C 0 N 2 intervals 131-131,132-132,133-133,134-134
+[INFO] sim.nodes.BaseStation - T 135 C 0 N 3 intervals 130-130,131-131,!132-132,133-133
+[INFO] sim.nodes.BaseStation - T 135 C 0 type 1 [ 0:61.5829 1:58.1772 2:56.9747 3:60.1926 ]
+[INFO] sim.nodes.BaseStation - T 135 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135
+[INFO] sim.nodes.BaseStation - T 136 C 0 N 0 intervals !131-131,!132-132,133-133,134-134
+[INFO] sim.nodes.BaseStation - T 136 C 0 N 1 intervals 131-131,!132-132,!133-133,134-134
+[INFO] sim.nodes.BaseStation - T 136 C 0 N 2 intervals 131-131,132-132,133-133,134-134
+[INFO] sim.nodes.BaseStation - T 136 C 0 N 3 intervals 130-130,131-131,!132-132,133-133
+[INFO] sim.nodes.BaseStation - T 136 C 0 type 1 [ 0:61.5829 1:58.1772 2:56.9747 3:60.1926 ]
+[INFO] sim.nodes.BaseStation - T 136 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136
+[INFO] sim.nodes.BaseStation - T 137 C 0 N 0 intervals !131-131,!132-132,133-133,134-134
+[INFO] sim.nodes.BaseStation - T 137 C 0 N 1 intervals 131-131,!132-132,!133-133,134-134
+[INFO] sim.nodes.BaseStation - T 137 C 0 N 2 intervals 131-131,132-132,133-133,134-134
+[INFO] sim.nodes.BaseStation - T 137 C 0 N 3 intervals !132-132,133-133,!134-136,137-137
+[INFO] sim.nodes.BaseStation - T 137 C 0 type 3 [ 1:58.1772 2:56.9747 3:59.3711 ]
+[INFO] sim.nodes.BaseStation - T 137 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137
+[INFO] sim.nodes.BaseStation - T 139 C 0 N 0 intervals 133-133,134-137,138-138,139-139
+[INFO] sim.nodes.BaseStation - T 139 C 0 N 1 intervals 134-136,!137-137,138-138,139-139
+[INFO] sim.nodes.BaseStation - T 139 C 0 N 2 intervals 131-131,132-132,133-133,134-134
+[INFO] sim.nodes.BaseStation - T 139 C 0 N 3 intervals !132-132,133-133,!134-136,137-137
+[WARN] sim.nodes.BaseStation - T 139 C 0 failure found @ T 138 type 3 [ 0:64.0912 1:60.9195 2:56.9747 3:59.3711 ]
+[INFO] sim.nodes.BaseStation - T 139 C 0 type 1 [ 0:65.3011 1:60.3747 2:56.9747 3:59.3711 ]
+[INFO] sim.nodes.BaseStation - T 139 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139
+[INFO] sim.nodes.BaseStation - T 140 C 0 N 0 intervals 134-137,138-138,139-139,140-140
+[INFO] sim.nodes.BaseStation - T 140 C 0 N 1 intervals !137-137,138-138,139-139,140-140
+[INFO] sim.nodes.BaseStation - T 140 C 0 N 2 intervals 134-134,!135-137,!138-139,140-140
+[INFO] sim.nodes.BaseStation - T 140 C 0 N 3 intervals 137-137,!138-138,!139-139,140-140
+[INFO] sim.nodes.BaseStation - T 140 C 0 type 3 [ 0:60.5868 1:55.9506 3:58.1157 ]
+[INFO] sim.nodes.BaseStation - T 140 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140
+[INFO] sim.nodes.BaseStation - T 144 C 0 N 0 intervals 134-137,138-138,139-139,140-140
+[INFO] sim.nodes.BaseStation - T 144 C 0 N 1 intervals 140-140,141-141,!142-142,143-143
+[INFO] sim.nodes.BaseStation - T 144 C 0 N 2 intervals 140-141,!142-142,143-143,144-144
+[INFO] sim.nodes.BaseStation - T 144 C 0 N 3 intervals 140-141,142-142,143-143,144-144
+[WARN] sim.nodes.BaseStation - T 144 C 0 failure found @ T 142 type 1 [ 0:60.5868 1:56.727 2:56.51 3:55.327 ]
+[WARN] sim.nodes.BaseStation - T 144 C 0 failure found @ T 143 type 3 [ 0:60.5868 1:52.1752 2:50.1287 3:52.6516 ]
+[INFO] sim.nodes.BaseStation - T 144 C 0 type 1 [ 0:60.5868 1:52.1752 2:53.6005 ]
+[INFO] sim.nodes.BaseStation - T 144 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144
+[INFO] sim.nodes.BaseStation - T 145 C 0 N 0 intervals 134-137,138-138,139-139,140-140
+[INFO] sim.nodes.BaseStation - T 145 C 0 N 1 intervals !142-142,143-143,!144-144,145-145
+[INFO] sim.nodes.BaseStation - T 145 C 0 N 2 intervals !142-142,143-143,144-144,145-145
+[INFO] sim.nodes.BaseStation - T 145 C 0 N 3 intervals 142-142,143-143,144-144,145-145
+[INFO] sim.nodes.BaseStation - T 145 C 0 type 3 [ 0:60.5868 2:48.5464 ]
+[INFO] sim.nodes.BaseStation - T 145 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145
+[INFO] sim.nodes.BaseStation - T 146 C 0 N 0 intervals 134-137,138-138,139-139,140-140
+[INFO] sim.nodes.BaseStation - T 146 C 0 N 1 intervals !142-142,143-143,!144-144,145-145
+[INFO] sim.nodes.BaseStation - T 146 C 0 N 2 intervals !142-142,143-143,144-144,145-145
+[INFO] sim.nodes.BaseStation - T 146 C 0 N 3 intervals 142-142,143-143,144-144,145-145
+[INFO] sim.nodes.BaseStation - T 146 C 0 type 1 [ 1:50.2573 3:49.4522 ]
+[INFO] sim.nodes.BaseStation - T 146 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146
+[INFO] sim.nodes.BaseStation - T 148 C 0 N 0 intervals 140-142,!143-144,!145-146,147-147
+[INFO] sim.nodes.BaseStation - T 148 C 0 N 1 intervals 145-145,!146-146,147-147,148-148
+[INFO] sim.nodes.BaseStation - T 148 C 0 N 2 intervals 143-143,144-144,145-146,147-147
+[INFO] sim.nodes.BaseStation - T 148 C 0 N 3 intervals 142-142,143-143,144-144,145-145
+[WARN] sim.nodes.BaseStation - T 148 C 0 failure found @ T 147 type 3 [ 0:48.7084 1:45.2423 2:45.1433 3:49.4522 ]
+[INFO] sim.nodes.BaseStation - T 148 C 0 type 1 [ 0:48.7084 1:42.384 2:45.1433 3:49.4522 ]
+[INFO] sim.nodes.BaseStation - T 148 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148
+[INFO] sim.nodes.BaseStation - T 149 C 0 N 0 intervals !145-146,147-147,!148-148,149-149
+[INFO] sim.nodes.BaseStation - T 149 C 0 N 1 intervals 145-145,!146-146,147-147,148-148
+[INFO] sim.nodes.BaseStation - T 149 C 0 N 2 intervals 145-146,147-147,!148-148,149-149
+[INFO] sim.nodes.BaseStation - T 149 C 0 N 3 intervals 145-146,!147-147,!148-148,149-149
+[INFO] sim.nodes.BaseStation - T 149 C 0 type 3 [ 0:47.3426 1:42.384 2:44.6475 3:45.5061 ]
+[INFO] sim.nodes.BaseStation - T 149 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149
+[INFO] sim.nodes.BaseStation - T 150 C 0 N 0 intervals 147-147,!148-148,149-149,150-150
+[INFO] sim.nodes.BaseStation - T 150 C 0 N 1 intervals 147-147,148-148,!149-149,150-150
+[INFO] sim.nodes.BaseStation - T 150 C 0 N 2 intervals 145-146,147-147,!148-148,149-149
+[INFO] sim.nodes.BaseStation - T 150 C 0 N 3 intervals 145-146,!147-147,!148-148,149-149
+[INFO] sim.nodes.BaseStation - T 150 C 0 type 3 [ 0:44.9782 1:42.2165 2:44.6475 ]
+[INFO] sim.nodes.BaseStation - T 150 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150
+[INFO] sim.nodes.BaseStation - T 153 C 0 N 0 intervals 149-149,150-150,151-152,153-153
+[INFO] sim.nodes.BaseStation - T 153 C 0 N 1 intervals 150-150,151-151,152-152,153-153
+[INFO] sim.nodes.BaseStation - T 153 C 0 N 2 intervals !150-150,151-151,!152-152,153-153
+[INFO] sim.nodes.BaseStation - T 153 C 0 N 3 intervals !150-150,151-151,152-152,153-153
+[WARN] sim.nodes.BaseStation - T 153 C 0 failure found @ T 151 type 3 [ 0:48.6112 1:44.7798 2:45.9011 ]
+[WARN] sim.nodes.BaseStation - T 153 C 0 failure found @ T 152 type 1 [ 0:48.6112 1:44.1836 2:45.9011 3:44.9121 ]
+[INFO] sim.nodes.BaseStation - T 153 C 0 type 3 [ 0:52.9368 1:50.5142 3:50.3858 ]
+[INFO] sim.nodes.BaseStation - T 153 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153
+[INFO] sim.nodes.BaseStation - T 154 C 0 N 0 intervals 149-149,150-150,151-152,153-153
+[INFO] sim.nodes.BaseStation - T 154 C 0 N 1 intervals 150-150,151-151,152-152,153-153
+[INFO] sim.nodes.BaseStation - T 154 C 0 N 2 intervals 151-151,!152-152,153-153,154-154
+[INFO] sim.nodes.BaseStation - T 154 C 0 N 3 intervals !150-150,151-151,152-152,153-153
+[INFO] sim.nodes.BaseStation - T 154 C 0 type 1 [ 0:52.9368 1:50.5142 2:49.0969 ]
+[INFO] sim.nodes.BaseStation - T 154 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-154
+[INFO] sim.nodes.BaseStation - T 156 C 0 N 0 intervals 151-152,153-154,!155-155,156-156
+[INFO] sim.nodes.BaseStation - T 156 C 0 N 1 intervals 150-150,151-151,152-152,153-153
+[INFO] sim.nodes.BaseStation - T 156 C 0 N 2 intervals 151-151,!152-152,153-153,154-154
+[INFO] sim.nodes.BaseStation - T 156 C 0 N 3 intervals !150-150,151-151,152-152,153-153
+[INFO] sim.nodes.BaseStation - T 156 C 0 type 3 [ 0:54.3873 1:50.5142 2:49.0969 ]
+[INFO] sim.nodes.BaseStation - T 156 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156
+[INFO] sim.nodes.BaseStation - T 157 C 0 N 0 intervals 151-152,153-154,!155-155,156-156
+[INFO] sim.nodes.BaseStation - T 157 C 0 N 1 intervals 152-152,153-154,!155-156,157-157
+[INFO] sim.nodes.BaseStation - T 157 C 0 N 2 intervals 153-153,154-154,!155-156,157-157
+[INFO] sim.nodes.BaseStation - T 157 C 0 N 3 intervals 151-151,152-152,153-156,157-157
+[INFO] sim.nodes.BaseStation - T 157 C 0 type 3 [ 0:54.3873 1:45.0773 2:47.5383 3:47.9292 ]
+[INFO] sim.nodes.BaseStation - T 157 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157
+[INFO] sim.nodes.BaseStation - T 158 C 0 N 0 intervals !155-155,156-156,!157-157,158-158
+[INFO] sim.nodes.BaseStation - T 158 C 0 N 1 intervals 153-154,!155-156,157-157,158-158
+[INFO] sim.nodes.BaseStation - T 158 C 0 N 2 intervals 154-154,!155-156,157-157,158-158
+[INFO] sim.nodes.BaseStation - T 158 C 0 N 3 intervals 151-151,152-152,153-156,157-157
+[INFO] sim.nodes.BaseStation - T 158 C 0 type 3 [ 0:47.0159 1:42.4844 2:42.317 3:47.9292 ]
+[INFO] sim.nodes.BaseStation - T 158 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158
+[INFO] sim.nodes.BaseStation - T 159 C 0 N 0 intervals !155-155,156-156,!157-157,158-158
+[INFO] sim.nodes.BaseStation - T 159 C 0 N 1 intervals 153-154,!155-156,157-157,158-158
+[INFO] sim.nodes.BaseStation - T 159 C 0 N 2 intervals !155-156,157-157,158-158,159-159
+[INFO] sim.nodes.BaseStation - T 159 C 0 N 3 intervals 153-156,157-157,!158-158,159-159
+[INFO] sim.nodes.BaseStation - T 159 C 0 type 3 [ 0:47.0159 1:42.4844 3:44.3494 ]
+[INFO] sim.nodes.BaseStation - T 159 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159
+[INFO] sim.nodes.BaseStation - T 162 C 0 N 0 intervals 158-159,!160-160,161-161,162-162
+[INFO] sim.nodes.BaseStation - T 162 C 0 N 1 intervals 153-154,!155-156,157-157,158-158
+[INFO] sim.nodes.BaseStation - T 162 C 0 N 2 intervals 159-159,160-160,!161-161,162-162
+[INFO] sim.nodes.BaseStation - T 162 C 0 N 3 intervals !158-158,159-159,!160-160,161-161
+[WARN] sim.nodes.BaseStation - T 162 C 0 failure found @ T 160 type 1 [ 0:47.0159 1:42.4844 2:35.7148 3:44.3494 ]
+[WARN] sim.nodes.BaseStation - T 162 C 0 failure found @ T 161 type 3 [ 0:41.8476 1:42.4844 2:35.7148 3:42.1495 ]
+[INFO] sim.nodes.BaseStation - T 162 C 0 type 3 [ 0:38.0529 1:42.4844 2:35.7839 3:42.1495 ]
+[INFO] sim.nodes.BaseStation - T 162 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162
+[INFO] sim.nodes.BaseStation - T 163 C 0 N 0 intervals 158-159,!160-160,161-161,162-162
+[INFO] sim.nodes.BaseStation - T 163 C 0 N 1 intervals !160-160,!161-161,!162-162,163-163
+[INFO] sim.nodes.BaseStation - T 163 C 0 N 2 intervals 160-160,!161-161,162-162,163-163
+[INFO] sim.nodes.BaseStation - T 163 C 0 N 3 intervals !160-160,161-161,!162-162,163-163
+[INFO] sim.nodes.BaseStation - T 163 C 0 type 3 [ 0:38.0529 1:32.5102 2:34.3969 ]
+[INFO] sim.nodes.BaseStation - T 163 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163
+[INFO] sim.nodes.BaseStation - T 165 C 0 N 0 intervals 162-162,!163-163,164-164,165-165
+[INFO] sim.nodes.BaseStation - T 165 C 0 N 1 intervals !161-161,!162-162,163-163,164-164
+[INFO] sim.nodes.BaseStation - T 165 C 0 N 2 intervals 160-160,!161-161,162-162,163-163
+[INFO] sim.nodes.BaseStation - T 165 C 0 N 3 intervals 161-161,!162-162,163-163,164-164
+[WARN] sim.nodes.BaseStation - T 165 C 0 failure found @ T 164 type 3 [ 0:36.4052 1:34.0487 2:34.3969 3:36.8871 ]
+[INFO] sim.nodes.BaseStation - T 165 C 0 type 1 [ 0:37.265 1:34.0487 ]
+[INFO] sim.nodes.BaseStation - T 165 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165
+[INFO] sim.nodes.BaseStation - T 168 C 0 N 0 intervals 164-164,165-165,166-166,167-167
+[INFO] sim.nodes.BaseStation - T 168 C 0 N 1 intervals 164-165,166-166,!167-167,168-168
+[INFO] sim.nodes.BaseStation - T 168 C 0 N 2 intervals !164-164,!165-165,!166-167,168-168
+[INFO] sim.nodes.BaseStation - T 168 C 0 N 3 intervals 163-163,164-164,!165-167,168-168
+[WARN] sim.nodes.BaseStation - T 168 C 0 failure found @ T 166 type 1 [ 0:35.5764 1:32.3346 2:34.3969 3:36.8871 ]
+[WARN] sim.nodes.BaseStation - T 168 C 0 failure found @ T 167 type 1 [ 0:36.2328 1:32.3346 2:34.3969 3:36.8871 ]
+[INFO] sim.nodes.BaseStation - T 168 C 0 type 3 [ 1:34.536 2:35.3687 ]
+[INFO] sim.nodes.BaseStation - T 168 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168
+[INFO] sim.nodes.BaseStation - T 169 C 0 N 0 intervals 166-166,167-167,!168-168,169-169
+[INFO] sim.nodes.BaseStation - T 169 C 0 N 1 intervals 164-165,166-166,!167-167,168-168
+[INFO] sim.nodes.BaseStation - T 169 C 0 N 2 intervals !165-165,!166-167,168-168,169-169
+[INFO] sim.nodes.BaseStation - T 169 C 0 N 3 intervals 164-164,!165-167,168-168,169-169
+[INFO] sim.nodes.BaseStation - T 169 C 0 type 3 [ 0:37.5051 3:35.9912 ]
+[INFO] sim.nodes.BaseStation - T 169 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169
+[INFO] sim.nodes.BaseStation - T 173 C 0 N 0 intervals 167-167,!168-168,169-169,170-170
+[INFO] sim.nodes.BaseStation - T 173 C 0 N 1 intervals !167-167,168-169,170-170,171-171
+[INFO] sim.nodes.BaseStation - T 173 C 0 N 2 intervals 170-170,!171-171,172-172,173-173
+[INFO] sim.nodes.BaseStation - T 173 C 0 N 3 intervals 168-168,169-169,170-171,172-172
+[WARN] sim.nodes.BaseStation - T 173 C 0 failure found @ T 171 type 1 [ 1:28.4735 2:28.5449 3:28.6163 ]
+[WARN] sim.nodes.BaseStation - T 173 C 0 failure found @ T 172 type 3 [ 0:32.2995 1:28.4735 2:23.5626 ]
+[INFO] sim.nodes.BaseStation - T 173 C 0 type 1 [ 0:32.2995 1:28.4735 2:24.2913 3:24.5094 ]
+[INFO] sim.nodes.BaseStation - T 173 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173
+[INFO] sim.nodes.BaseStation - T 174 C 0 N 0 intervals 167-167,!168-168,169-169,170-170
+[INFO] sim.nodes.BaseStation - T 174 C 0 N 1 intervals 171-171,!172-172,!173-173,174-174
+[INFO] sim.nodes.BaseStation - T 174 C 0 N 2 intervals 170-170,!171-171,172-172,173-173
+[INFO] sim.nodes.BaseStation - T 174 C 0 N 3 intervals 168-168,169-169,170-171,172-172
+[INFO] sim.nodes.BaseStation - T 174 C 0 type 3 [ 0:32.2995 1:24.6548 3:24.5094 ]
+[INFO] sim.nodes.BaseStation - T 174 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174
+[INFO] sim.nodes.BaseStation - T 175 C 0 N 0 intervals 167-167,!168-168,169-169,170-170
+[INFO] sim.nodes.BaseStation - T 175 C 0 N 1 intervals !172-172,!173-173,174-174,175-175
+[INFO] sim.nodes.BaseStation - T 175 C 0 N 2 intervals !171-171,172-172,173-174,175-175
+[INFO] sim.nodes.BaseStation - T 175 C 0 N 3 intervals 168-168,169-169,170-171,172-172
+[INFO] sim.nodes.BaseStation - T 175 C 0 type 1 [ 0:32.2995 1:29.1869 3:24.5094 ]
+[INFO] sim.nodes.BaseStation - T 175 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175
+[INFO] sim.nodes.BaseStation - T 176 C 0 N 0 intervals !171-171,!172-174,!175-175,176-176
+[INFO] sim.nodes.BaseStation - T 176 C 0 N 1 intervals !173-173,174-174,175-175,176-176
+[INFO] sim.nodes.BaseStation - T 176 C 0 N 2 intervals !171-171,172-172,173-174,175-175
+[INFO] sim.nodes.BaseStation - T 176 C 0 N 3 intervals 170-171,172-174,!175-175,176-176
+[INFO] sim.nodes.BaseStation - T 176 C 0 type 3 [ 0:34.536 1:32.0887 2:25.3801 3:33.4206 ]
+[INFO] sim.nodes.BaseStation - T 176 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176
+[INFO] sim.nodes.BaseStation - T 178 C 0 N 0 intervals !175-175,176-176,177-177,178-178
+[INFO] sim.nodes.BaseStation - T 178 C 0 N 1 intervals 175-175,176-176,177-177,178-178
+[INFO] sim.nodes.BaseStation - T 178 C 0 N 2 intervals 175-175,!176-176,!177-177,178-178
+[INFO] sim.nodes.BaseStation - T 178 C 0 N 3 intervals 172-174,!175-175,176-176,177-177
+[WARN] sim.nodes.BaseStation - T 178 C 0 failure found @ T 177 type 1 [ 0:32.8608 1:29.8271 2:25.3801 3:30.8194 ]
+[INFO] sim.nodes.BaseStation - T 178 C 0 type 3 [ 0:33.979 2:28.0443 3:30.8194 ]
+[INFO] sim.nodes.BaseStation - T 178 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178
+[INFO] sim.nodes.BaseStation - T 179 C 0 N 0 intervals !175-175,176-176,177-177,178-178
+[INFO] sim.nodes.BaseStation - T 179 C 0 N 1 intervals 176-176,177-177,178-178,179-179
+[INFO] sim.nodes.BaseStation - T 179 C 0 N 2 intervals !176-176,!177-177,178-178,179-179
+[INFO] sim.nodes.BaseStation - T 179 C 0 N 3 intervals 172-174,!175-175,176-176,177-177
+[INFO] sim.nodes.BaseStation - T 179 C 0 type 1 [ 0:33.979 1:32.3346 2:32.6505 3:30.8194 ]
+[INFO] sim.nodes.BaseStation - T 179 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179
+[INFO] sim.nodes.BaseStation - T 180 C 0 N 0 intervals !175-175,176-176,177-177,178-178
+[INFO] sim.nodes.BaseStation - T 180 C 0 N 1 intervals 176-176,177-177,178-178,179-179
+[INFO] sim.nodes.BaseStation - T 180 C 0 N 2 intervals !177-177,178-178,179-179,180-180
+[INFO] sim.nodes.BaseStation - T 180 C 0 N 3 intervals 172-174,!175-175,176-176,177-177
+[INFO] sim.nodes.BaseStation - T 180 C 0 type 1 [ 0:33.979 1:32.3346 2:30.8194 3:30.8194 ]
+[INFO] sim.nodes.BaseStation - T 180 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180
+[INFO] sim.nodes.BaseStation - T 181 C 0 N 0 intervals !175-175,176-176,177-177,178-178
+[INFO] sim.nodes.BaseStation - T 181 C 0 N 1 intervals 176-176,177-177,178-178,179-179
+[INFO] sim.nodes.BaseStation - T 181 C 0 N 2 intervals 178-178,179-179,180-180,181-181
+[INFO] sim.nodes.BaseStation - T 181 C 0 N 3 intervals !178-178,!179-179,!180-180,181-181
+[INFO] sim.nodes.BaseStation - T 181 C 0 type 3 [ 0:33.979 1:32.3346 ]
+[INFO] sim.nodes.BaseStation - T 181 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181
+[INFO] sim.nodes.BaseStation - T 182 C 0 N 0 intervals 177-177,178-178,!179-181,182-182
+[INFO] sim.nodes.BaseStation - T 182 C 0 N 1 intervals 179-179,!180-180,!181-181,182-182
+[INFO] sim.nodes.BaseStation - T 182 C 0 N 2 intervals 179-179,180-180,181-181,182-182
+[INFO] sim.nodes.BaseStation - T 182 C 0 N 3 intervals !179-179,!180-180,181-181,182-182
+[INFO] sim.nodes.BaseStation - T 182 C 0 type 3 [ 0:32.2644 2:27.9011 3:28.1875 ]
+[INFO] sim.nodes.BaseStation - T 182 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181,182-182
+[INFO] sim.nodes.BaseStation - T 183 C 0 N 0 intervals 178-178,!179-181,182-182,183-183
+[INFO] sim.nodes.BaseStation - T 183 C 0 N 1 intervals !180-180,!181-181,182-182,183-183
+[INFO] sim.nodes.BaseStation - T 183 C 0 N 2 intervals 180-180,181-181,182-182,183-183
+[INFO] sim.nodes.BaseStation - T 183 C 0 N 3 intervals !180-180,181-181,182-182,183-183
+[INFO] sim.nodes.BaseStation - T 183 C 0 type 1 [ 0:34.675 1:31.2433 ]
+[INFO] sim.nodes.BaseStation - T 183 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181,182-182,183-183
+[INFO] sim.nodes.BaseStation - T 184 C 0 N 0 intervals !179-181,182-182,183-183,184-184
+[INFO] sim.nodes.BaseStation - T 184 C 0 N 1 intervals !180-180,!181-181,182-182,183-183
+[INFO] sim.nodes.BaseStation - T 184 C 0 N 2 intervals 180-180,181-181,182-182,183-183
+[INFO] sim.nodes.BaseStation - T 184 C 0 N 3 intervals !180-180,181-181,182-182,183-183
+[INFO] sim.nodes.BaseStation - T 184 C 0 type 1 [ 1:31.2433 ]
+[INFO] sim.nodes.BaseStation - T 184 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181,182-182,183-183,184-184
+[INFO] sim.nodes.BaseStation - T 185 C 0 N 0 intervals !179-181,182-182,183-183,184-184
+[INFO] sim.nodes.BaseStation - T 185 C 0 N 1 intervals 182-182,183-183,!184-184,185-185
+[INFO] sim.nodes.BaseStation - T 185 C 0 N 2 intervals 180-180,181-181,182-182,183-183
+[INFO] sim.nodes.BaseStation - T 185 C 0 N 3 intervals 182-182,183-183,!184-184,185-185
+[INFO] sim.nodes.BaseStation - T 185 C 0 type 3 [ 0:35.4034 1:29.2581 2:31.7368 3:29.7916 ]
+[INFO] sim.nodes.BaseStation - T 185 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181,182-182,183-183,184-184,185-185
+[INFO] sim.nodes.BaseStation - T 186 C 0 N 0 intervals !179-181,182-182,183-183,184-184
+[INFO] sim.nodes.BaseStation - T 186 C 0 N 1 intervals 182-182,183-183,!184-184,185-185
+[INFO] sim.nodes.BaseStation - T 186 C 0 N 2 intervals 180-180,181-181,182-182,183-183
+[INFO] sim.nodes.BaseStation - T 186 C 0 N 3 intervals 182-182,183-183,!184-184,185-185
+[INFO] sim.nodes.BaseStation - T 186 C 0 type 1 [ 0:35.4034 1:29.2581 2:31.7368 3:29.7916 ]
+[INFO] sim.nodes.BaseStation - T 186 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181,182-182,183-183,184-184,185-185,186-186
+[INFO] sim.nodes.BaseStation - T 188 C 0 N 0 intervals 184-185,!186-186,!187-187,188-188
+[INFO] sim.nodes.BaseStation - T 188 C 0 N 1 intervals 182-182,183-183,!184-184,185-185
+[INFO] sim.nodes.BaseStation - T 188 C 0 N 2 intervals 183-183,!184-184,!185-187,188-188
+[INFO] sim.nodes.BaseStation - T 188 C 0 N 3 intervals 183-183,!184-184,185-187,188-188
+[WARN] sim.nodes.BaseStation - T 188 C 0 failure found @ T 187 type 1 [ 0:35.4034 1:29.2581 2:31.7368 3:29.7916 ]
+[INFO] sim.nodes.BaseStation - T 188 C 0 type 3 [ 0:30.3592 1:29.2581 2:25.4525 ]
+[INFO] sim.nodes.BaseStation - T 188 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181,182-182,183-183,184-184,185-185,186-186,!187-187,188-188
+[INFO] sim.nodes.BaseStation - T 189 C 0 N 0 intervals !186-186,!187-187,188-188,189-189
+[INFO] sim.nodes.BaseStation - T 189 C 0 N 1 intervals 182-182,183-183,!184-184,185-185
+[INFO] sim.nodes.BaseStation - T 189 C 0 N 2 intervals 183-183,!184-184,!185-187,188-188
+[INFO] sim.nodes.BaseStation - T 189 C 0 N 3 intervals 183-183,!184-184,185-187,188-188
+[INFO] sim.nodes.BaseStation - T 189 C 0 type 1 [ 0:28.6163 1:29.2581 2:25.4525 ]
+[INFO] sim.nodes.BaseStation - T 189 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181,182-182,183-183,184-184,185-185,186-186,!187-187,188-188,189-189
+[INFO] sim.nodes.BaseStation - T 190 C 0 N 0 intervals !187-187,188-188,189-189,190-190
+[INFO] sim.nodes.BaseStation - T 190 C 0 N 1 intervals 185-186,!187-187,!188-189,190-190
+[INFO] sim.nodes.BaseStation - T 190 C 0 N 2 intervals !184-184,!185-187,188-189,190-190
+[INFO] sim.nodes.BaseStation - T 190 C 0 N 3 intervals !184-184,185-187,188-189,190-190
+[INFO] sim.nodes.BaseStation - T 190 C 0 type 3 [ 1:24.0729 2:24.7274 ]
+[INFO] sim.nodes.BaseStation - T 190 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181,182-182,183-183,184-184,185-185,186-186,!187-187,188-188,189-189,190-190
+[INFO] sim.nodes.BaseStation - T 191 C 0 N 0 intervals 188-188,189-189,190-190,191-191
+[INFO] sim.nodes.BaseStation - T 191 C 0 N 1 intervals !187-187,!188-189,190-190,191-191
+[INFO] sim.nodes.BaseStation - T 191 C 0 N 2 intervals !184-184,!185-187,188-189,190-190
+[INFO] sim.nodes.BaseStation - T 191 C 0 N 3 intervals !184-184,185-187,188-189,190-190
+[INFO] sim.nodes.BaseStation - T 191 C 0 type 1 [ 2:24.7274 ]
+[INFO] sim.nodes.BaseStation - T 191 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181,182-182,183-183,184-184,185-185,186-186,!187-187,188-188,189-189,190-190,191-191
+[INFO] sim.nodes.BaseStation - T 192 C 0 N 0 intervals 189-189,190-190,191-191,192-192
+[INFO] sim.nodes.BaseStation - T 192 C 0 N 1 intervals !187-187,!188-189,190-190,191-191
+[INFO] sim.nodes.BaseStation - T 192 C 0 N 2 intervals 188-189,190-190,!191-191,192-192
+[INFO] sim.nodes.BaseStation - T 192 C 0 N 3 intervals !184-184,185-187,188-189,190-190
+[INFO] sim.nodes.BaseStation - T 192 C 0 type 3 [ 0:25.5249 1:23.1243 2:23.0877 3:25.7419 ]
+[INFO] sim.nodes.BaseStation - T 192 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181,182-182,183-183,184-184,185-185,186-186,!187-187,188-188,189-189,190-190,191-191,192-192
+[INFO] sim.nodes.BaseStation - T 193 C 0 N 0 intervals 190-190,191-191,192-192,193-193
+[INFO] sim.nodes.BaseStation - T 193 C 0 N 1 intervals !187-187,!188-189,190-190,191-191
+[INFO] sim.nodes.BaseStation - T 193 C 0 N 2 intervals 188-189,190-190,!191-191,192-192
+[INFO] sim.nodes.BaseStation - T 193 C 0 N 3 intervals !184-184,185-187,188-189,190-190
+[INFO] sim.nodes.BaseStation - T 193 C 0 type 1 [ 0:24.2913 1:23.1243 2:23.0877 3:25.7419 ]
+[INFO] sim.nodes.BaseStation - T 193 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181,182-182,183-183,184-184,185-185,186-186,!187-187,188-188,189-189,190-190,191-191,192-192,193-193
+[INFO] sim.nodes.BaseStation - T 194 C 0 N 0 intervals 190-190,191-191,192-192,193-193
+[INFO] sim.nodes.BaseStation - T 194 C 0 N 1 intervals !187-187,!188-189,190-190,191-191
+[INFO] sim.nodes.BaseStation - T 194 C 0 N 2 intervals 188-189,190-190,!191-191,192-192
+[INFO] sim.nodes.BaseStation - T 194 C 0 N 3 intervals 190-190,!191-191,!192-193,194-194
+[INFO] sim.nodes.BaseStation - T 194 C 0 type 3 [ 0:24.2913 1:23.1243 2:23.0877 3:24.6911 ]
+[INFO] sim.nodes.BaseStation - T 194 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181,182-182,183-183,184-184,185-185,186-186,!187-187,188-188,189-189,190-190,191-191,192-192,193-193,194-194
+[INFO] sim.nodes.BaseStation - T 195 C 0 N 0 intervals 190-190,191-191,192-192,193-193
+[INFO] sim.nodes.BaseStation - T 195 C 0 N 1 intervals !187-187,!188-189,190-190,191-191
+[INFO] sim.nodes.BaseStation - T 195 C 0 N 2 intervals 188-189,190-190,!191-191,192-192
+[INFO] sim.nodes.BaseStation - T 195 C 0 N 3 intervals !191-191,!192-193,194-194,195-195
+[INFO] sim.nodes.BaseStation - T 195 C 0 type 1 [ 0:24.2913 1:23.1243 2:23.0877 3:25.3439 ]
+[INFO] sim.nodes.BaseStation - T 195 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181,182-182,183-183,184-184,185-185,186-186,!187-187,188-188,189-189,190-190,191-191,192-192,193-193,194-194,195-195
+[INFO] sim.nodes.BaseStation - T 196 C 0 N 0 intervals 190-190,191-191,192-192,193-193
+[INFO] sim.nodes.BaseStation - T 196 C 0 N 1 intervals !192-192,!193-193,!194-195,196-196
+[INFO] sim.nodes.BaseStation - T 196 C 0 N 2 intervals 192-193,!194-194,!195-195,196-196
+[INFO] sim.nodes.BaseStation - T 196 C 0 N 3 intervals !192-193,194-194,195-195,196-196
+[INFO] sim.nodes.BaseStation - T 196 C 0 type 3 [ 0:24.2913 1:26.3918 ]
+[INFO] sim.nodes.BaseStation - T 196 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181,182-182,183-183,184-184,185-185,186-186,!187-187,188-188,189-189,190-190,191-191,192-192,193-193,194-194,195-195,196-196
+[INFO] sim.nodes.BaseStation - T 199 C 0 N 0 intervals !195-195,!196-196,197-198,199-199
+[INFO] sim.nodes.BaseStation - T 199 C 0 N 1 intervals !193-193,!194-195,196-198,199-199
+[INFO] sim.nodes.BaseStation - T 199 C 0 N 2 intervals !194-194,!195-195,196-198,199-199
+[INFO] sim.nodes.BaseStation - T 199 C 0 N 3 intervals 194-194,195-195,196-198,199-199
+[WARN] sim.nodes.BaseStation - T 199 C 0 failure found @ T 197 type 3 [ 1:26.3918 2:27.5785 ]
+[INFO] sim.nodes.BaseStation - T 199 C 0 type 1 [ 0:29.4005 2:29.1157 ]
+[INFO] sim.nodes.BaseStation - T 199 C 0 intervals 0-0,1-1,2-2,!3-3,4-5,6-6,7-7,!8-8,9-9,10-11,12-12,!13-13,14-14,15-15,16-16,17-17,18-18,!19-19,20-20,!21-21,22-22,23-23,!24-24,25-25,!26-26,27-27,28-28,!29-29,30-30,31-31,!32-32,33-33,!34-34,!35-35,36-36,37-37,38-38,39-39,40-40,41-41,42-42,!43-43,44-44,45-45,46-46,!47-47,48-48,49-49,50-50,51-51,52-52,53-53,54-54,55-55,56-56,!57-57,58-58,59-59,!61-61,!62-62,63-63,64-64,!65-65,66-66,!67-67,68-68,!69-69,70-70,71-71,72-72,73-73,74-74,75-75,!76-76,77-77,!78-78,79-79,80-80,!81-81,!82-82,83-83,84-84,85-85,86-86,87-87,!88-88,89-89,90-90,!91-91,92-92,93-93,94-94,95-95,!96-96,97-97,98-98,99-99,100-100,101-101,102-102,103-103,104-104,105-105,106-106,!107-107,108-108,!109-109,110-110,!111-111,!112-112,113-113,114-114,115-115,116-116,117-117,!118-118,!119-119,120-120,!121-121,122-122,123-123,124-124,125-125,!126-126,127-127,!128-128,129-129,!130-130,131-131,132-132,!133-133,134-134,135-135,136-136,137-137,!138-138,139-139,140-140,!142-142,!143-143,144-144,145-145,146-146,!147-147,148-148,149-149,150-150,!151-151,!152-152,153-153,154-155,156-156,157-157,158-158,159-159,!160-160,!161-161,162-162,163-163,!164-164,165-165,!166-166,!167-167,168-168,169-169,!171-171,!172-172,173-173,174-174,175-175,176-176,!177-177,178-178,179-179,180-180,181-181,182-182,183-183,184-184,185-185,186-186,!187-187,188-188,189-189,190-190,191-191,192-192,193-193,194-194,195-195,196-196,!197-198,199-199

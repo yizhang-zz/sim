@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<properties>
+    <category name="general">
+        <property name="dataFile" value="/home/home5/yizhang/sensor/sonoma/20-55.txt"/>
+        <property name="timeSteps" value="1001"/>
+        <property name="clusterCount" value="1"/>
+        <property name="nodeCount" value="2"/>        
+    </category>
+    
+    <category name="clusters">
+        <property name="0" value="0,1"/>
+    </category>
+    
+    <category name="params">
+        <property name="c" value="0.7589437,0.3626702"/>
+        <property name="a" value="0.883309561503538,0.0494979161729547,0.105980232240810,0.939401710597375"/>
+        <property name="sigma" value="4.31621944157804,2.90120266042201,2.90120266042201,3.76779850514832"/>
+    </category>
+</properties>
+
