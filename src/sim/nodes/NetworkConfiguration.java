@@ -59,9 +59,11 @@ public class NetworkConfiguration {
 		net.nodeCount = config.getInt("nodeCount", 0);
 		net.epsilon1 = config.getDouble("epsilon1", .5);
 		net.epsilon2 = config.getDouble("epsilon2", .5);
-		net.nodeRedundancy = config.getInt("nodeRedundancy",4);
-		net.nodeRedundancyFromHeadToBase = config.getInt("nodeRedundancyFromHeadToBase",4);
-		net.headRedundancy = config.getInt("headRedundancy", 4);
+		net.failureRate1 = config.getDouble("failureRate1");
+		net.failureRate2 = config.getDouble("failureRate2");
+		net.nodeRedundancy = config.getInt("nodeRedundancy");
+		net.nodeRedundancyFromHeadToBase = config.getInt("nodeRedundancyFromHeadToBase");
+		net.headRedundancy = config.getInt("headRedundancy");
 		//net.headHistorySize = config.getInt("headHistorySize",4);
 		
 		// read clusters

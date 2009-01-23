@@ -3,6 +3,8 @@ package sim.constraints;
 import java.io.*;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.*;
 import org.apache.commons.configuration.*;
 
@@ -110,8 +112,25 @@ public class HistoryReconstructor {
 		//				+ sim.nodes.Helper.toString(net.baseStation.clusterHistory[0]));
 		//System.out.println("cluster tx "+sim.nodes.Helper.toString(net.baseStation.clusters[0].transmissionList));
 	}
+        
+        public void writeNodeHistory(String file) {
+        try {
+            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file)));
+                for (Cluster cluster : net.baseStation.clusters) {
+                    IntervalList[] nhis = net.baseStation.clusters[cluster.id].intervalLists;
+                    for (int i=0; i<nhis.length; i++) {
+                        out.write(i+":"+nhis[i].toString()+"\n");
+                    }
+                }        
+                out.close();
+        } catch (IOException ex) {
+            //Logger.getLogger(HistoryReconstructor.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
 
 	public void generateConstraints() {
+            Interval unknownInterval = new Interval(0,0,0);
+            unknownInterval.type = Interval.UNKNOWN;
 		for (Cluster cluster : net.baseStation.clusters) {
 			MVNModel model = (MVNModel)(cluster.getModel());
 			model.epsilon1 = net.epsilon1;
@@ -129,7 +148,7 @@ public class HistoryReconstructor {
 			IntervalList chis = net.baseStation.clusterHistory[cluster.id];
 			IntervalList[] nhis = net.baseStation.clusters[cluster.id].intervalLists;
 			int ctype; // cluster interval type
-			int[] ntype = new int[cluster.getNodeCount()];
+			Interval[] ntype = new Interval[cluster.getNodeCount()];
 			while (i < net.timeSteps) {
 				if (phis == chis.size()-1 && i > chis.get(phis).end)
 					break;
@@ -153,14 +172,14 @@ public class HistoryReconstructor {
 					}
 					if (pint[j] < nhis[j].size()) {
 						if (nhis[j].get(pint[j]).begin <= i)
-							ntype[j] = nhis[j].get(pint[j]).type;
+							ntype[j] = nhis[j].get(pint[j]);
 						//else if (nhis[j].get(pint[j]).begin < i)
 						//	ntype[j] = Interval.GOOD; //suppression
 						else
-							ntype[j] = Interval.UNKNOWN;
+							ntype[j] = unknownInterval;
 					}
 					else
-						ntype[j] = Interval.UNKNOWN;
+						ntype[j] = unknownInterval;
 					//System.out.println(i+" "+ntype[j]);
 				}
 				

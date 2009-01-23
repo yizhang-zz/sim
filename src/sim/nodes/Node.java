@@ -15,7 +15,7 @@ public class Node {
 	private int epoch = 0;
 	private List<Integer> history;
 	
-	private FailureGenerator failureGenerator = new SimpleFailureGenerator(0.3, id);
+	private FailureGenerator failureGenerator;
 
 	// private boolean bufferFull;
 
@@ -26,6 +26,7 @@ public class Node {
 		this.parent = c;
 		this.epsilon = epsilon;
 		redundancyLevel = NetworkConfiguration.getGlobalNetwork().nodeRedundancy;
+		failureGenerator = new SimpleFailureGenerator(NetworkConfiguration.getGlobalNetwork().failureRate1, id);
 		//historySize = NetworkConfiguration.getGlobalNetwork().nodeHistorySize;
 		history = new LinkedList<Integer>();
 	}

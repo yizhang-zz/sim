@@ -18,6 +18,8 @@ public class Network {
 	public Cluster[] clusters;
 	public int[] inverseClusterTable;
 	
+	public double failureRate1;
+	public double failureRate2;
 	public DataProvider dataProvider;
 
 	public Network() {

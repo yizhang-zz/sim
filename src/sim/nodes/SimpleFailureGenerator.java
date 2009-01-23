@@ -17,7 +17,7 @@ public class SimpleFailureGenerator implements FailureGenerator {
 		rand.setSeed(seed*23+345219);
 	}
 
-	@Override
+	//@Override
 	public boolean isFailure() {
 		
 		if (rand.nextDouble() < probability)

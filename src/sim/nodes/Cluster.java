@@ -29,7 +29,7 @@ public class Cluster {
 	private int nodeCount;
 	private int time;
 
-	private FailureGenerator failureGenerator = new SimpleFailureGenerator(0.3, id);
+	private FailureGenerator failureGenerator;
 	private static Logger logger = Logger.getLogger(Cluster.class);
 	
 	public IntervalList[] intervalLists;
@@ -60,6 +60,8 @@ public class Cluster {
 		this.nodeCount = nodeCount;
 		this.epsilon1  = epsilon1;
 		this.epsilon2 = epsilon2;
+		
+		failureGenerator = new SimpleFailureGenerator(NetworkConfiguration.getGlobalNetwork().failureRate2, id);
 
 		createNodes();
 		params = new Hashtable<String, Object>();
@@ -195,9 +197,10 @@ public class Cluster {
 			logger.info(String.format("T %d C %d success, transmitting %s", time, id, Helper.toString(msg.content)));
 		}
 		else {
+
+			logger.info(String.format("T %d C %d failure, transmitting %s", time, id, Helper.toString(msg.content)));
 			msg = null;
-			logger.info(String.format("T %d C %d failure", time, id));
-		}
+                }
 		return msg;
 	}
 
@@ -216,6 +219,8 @@ public class Cluster {
 				if (msg.protocol == NodeMessage.Protocol.TS) {
 					lastReceived[msg.from] = msg.value;
 					updateNodeHistory(msg.from, msg.history);
+                                        logger.info(String.format("T %d N %d value %f",time,msg.from,msg.value));
+                                        logger.info(String.format("T %d N %d intervals %s", time, msg.from, childHistory[msg.from]));
 					/*logger.info(String.format(
 							"T %d N %d redundancy %s recovered history %s known interval %d to %d", time,
 							msg.from, Helper.list2string(msg.history), Helper

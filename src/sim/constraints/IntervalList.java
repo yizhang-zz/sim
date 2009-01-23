@@ -20,7 +20,7 @@ public class IntervalList implements Iterable<Interval>{
 		
 	}
 	
-	@Override
+	//@Override
 	public Iterator<Interval> iterator() {
 		return list.iterator();
 	}	

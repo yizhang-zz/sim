@@ -20,6 +20,7 @@ public class ConstraintsMain {
 		try {
 			HistoryReconstructor reconstructor = new HistoryReconstructor(configFile, traceFile);
 			reconstructor.reconstruct();
+			reconstructor.writeNodeHistory("hist2");
 			reconstructor.generateConstraints();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
