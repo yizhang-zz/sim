@@ -1,139 +1,139 @@
-package sim.nodes;
-
-import java.util.*;
-//import Jama.Matrix;
-
-public class LinearModel /*implements Model*/ {
-	public int timeSteps;
-	public int clusterCount;
-	public int nodeCount;
-	
-	public void setNetworkConfiguration(NetworkConfiguration nc){
-		timeSteps = nc.timeSteps;
-		clusterCount = nc.clusterCount;
-		nodeCount = nc.nodeCount;
-	}
-
-	//@Override
-	public void startSimulation(Cluster cluster, double e) {
-		int sentCount = 0;
-		int m = cluster.nodeCount;
-		int[] sentTimestamps = new int[m]; // when values for each node were
-											// sent recently
-		double[] sentValues = new double[m]; // last sent value for each node
-		double[] currentValues = new double[m];
-		
-		// always send values at time 0
-		for (int i = 0; i < m; i++)
-			sentValues[i] = cluster.data[i][sentTimestamps[i]];
-
-		int dim = m; // dimension of the MVN distribution: sent + current
-
-		int END = 2 * m - 1;
-		
-		// mean initialized to 0 automatically
-		// now initialize cov
-		
-		for (int i = 1; i < timeSteps; i++) {
-			// get current values
-			for (int j = 0; j < m; j++)
-				currentValues[j] = cluster.data[j][i];		
-
-			/*
-			 * prediction and bound check
-			 */
-			double[] prediction = predict(sentValues);
-
-			
-			if (isBounded(prediction, currentValues, e)) {
-				System.out.println("suppressed");
-				continue;
-			}
-
-			/*
-			 * subset selection
-			 */
-			int[] newSentIndex = GreedySelectSubset(sentValues, currentValues, e);
-			sentCount += newSentIndex.length;
-			
-		}
-		System.out.println("Transmission Rate: "+((double)sentCount)/(m*timeSteps));
-		// TODO Auto-generated method stub
-
-	}
-	
-	private double[] predict(double[] sentValues) {
-		double sum = 0;
-		for (double d:sentValues)
-			sum += d;
-		sum /= sentValues.length;
-		double[] avg = new double[sentValues.length];
-		java.util.Arrays.fill(avg, sum);
-		return avg;
-	}
-	
-	private boolean isBounded(double[] prediction, double[] currentValues, double e) {
-		for (int i=0; i<prediction.length; i++){
-			if (Math.abs(prediction[i]-currentValues[i])>e)
-				return false;
-		}
-		return true;
-	}
-
-	/**
-	 * Greedily selects a minimal subset of node values to send out, so that the rest can be predicted and suppressed.
-	 * @param sentValues
-	 * @param currentValues
-	 * @param e
-	 * @return Indices of nodes whose values are chosen to be sent
-	 */
-	private int[] GreedySelectSubset(double[] sentValues, double[] currentValues, double e){
-		boolean allBounded = false;
-		// node pool to choose subset to send
-		LinkedList<Integer> availableNodes = new LinkedList<Integer>();
-		LinkedList<Integer> sentNodes = new LinkedList<Integer>();
-		for (int i=0; i< currentValues.length; i++)
-			availableNodes.add(i);
-		
-		while (!allBounded){
-			int minIndex = -1;
-			double min  = Integer.MAX_VALUE;
-			double sum = 0;
-			for (double k : sentValues)
-				sum += k;
-			for (int i : availableNodes){
-				double temp = sum - sentValues[i] + currentValues[i];
-				double avg =  temp/sentValues.length;
-				double totalError = 0;
-				for (int j : availableNodes){
-					if (j!= i && Math.abs(avg-currentValues[j])> e){
-						totalError += Math.abs(avg-currentValues[j]);
-					}
-				}
-				
-				// update min if necessary
-				if (totalError < min){
-					minIndex = i;
-					min = totalError;
-				}
-			}
-			// min found in this round
-			availableNodes.remove(Integer.valueOf(minIndex));
-			sentNodes.add(minIndex);
-			sentValues[minIndex] = currentValues[minIndex];
-			
-			if (min == 0)
-				allBounded = true;
-			
-		}
-		System.out.print("Sending nodes:");
-		
-		int[] result = new int[sentNodes.size()];
-		for (int i=0; i< result.length; i++) {
-			result[i] = sentNodes.get(i);
-			System.out.print(" "+result[i]);
-		}
-		System.out.println();
-		return result;		
-	}
-}
+package sim.nodes;
+
+import java.util.*;
+//import Jama.Matrix;
+
+public class LinearModel /*implements Model*/ {
+	public int timeSteps;
+	public int clusterCount;
+	public int nodeCount;
+	
+	public void setNetworkConfiguration(NetworkConfiguration nc){
+		timeSteps = nc.timeSteps;
+		clusterCount = nc.clusterCount;
+		nodeCount = nc.nodeCount;
+	}
+
+	//@Override
+	public void startSimulation(Cluster cluster, double e) {
+		int sentCount = 0;
+		int m = cluster.nodeCount;
+		int[] sentTimestamps = new int[m]; // when values for each node were
+											// sent recently
+		double[] sentValues = new double[m]; // last sent value for each node
+		double[] currentValues = new double[m];
+		
+		// always send values at time 0
+		for (int i = 0; i < m; i++)
+			sentValues[i] = cluster.data[i][sentTimestamps[i]];
+
+		int dim = m; // dimension of the MVN distribution: sent + current
+
+		int END = 2 * m - 1;
+		
+		// mean initialized to 0 automatically
+		// now initialize cov
+		
+		for (int i = 1; i < timeSteps; i++) {
+			// get current values
+			for (int j = 0; j < m; j++)
+				currentValues[j] = cluster.data[j][i];		
+
+			/*
+			 * prediction and bound check
+			 */
+			double[] prediction = predict(sentValues);
+
+			
+			if (isBounded(prediction, currentValues, e)) {
+				System.out.println("suppressed");
+				continue;
+			}
+
+			/*
+			 * subset selection
+			 */
+			int[] newSentIndex = GreedySelectSubset(sentValues, currentValues, e);
+			sentCount += newSentIndex.length;
+			
+		}
+		System.out.println("Transmission Rate: "+((double)sentCount)/(m*timeSteps));
+		// TODO Auto-generated method stub
+
+	}
+	
+	private double[] predict(double[] sentValues) {
+		double sum = 0;
+		for (double d:sentValues)
+			sum += d;
+		sum /= sentValues.length;
+		double[] avg = new double[sentValues.length];
+		java.util.Arrays.fill(avg, sum);
+		return avg;
+	}
+	
+	private boolean isBounded(double[] prediction, double[] currentValues, double e) {
+		for (int i=0; i<prediction.length; i++){
+			if (Math.abs(prediction[i]-currentValues[i])>e)
+				return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Greedily selects a minimal subset of node values to send out, so that the rest can be predicted and suppressed.
+	 * @param sentValues
+	 * @param currentValues
+	 * @param e
+	 * @return Indices of nodes whose values are chosen to be sent
+	 */
+	private int[] GreedySelectSubset(double[] sentValues, double[] currentValues, double e){
+		boolean allBounded = false;
+		// node pool to choose subset to send
+		LinkedList<Integer> availableNodes = new LinkedList<Integer>();
+		LinkedList<Integer> sentNodes = new LinkedList<Integer>();
+		for (int i=0; i< currentValues.length; i++)
+			availableNodes.add(i);
+		
+		while (!allBounded){
+			int minIndex = -1;
+			double min  = Integer.MAX_VALUE;
+			double sum = 0;
+			for (double k : sentValues)
+				sum += k;
+			for (int i : availableNodes){
+				double temp = sum - sentValues[i] + currentValues[i];
+				double avg =  temp/sentValues.length;
+				double totalError = 0;
+				for (int j : availableNodes){
+					if (j!= i && Math.abs(avg-currentValues[j])> e){
+						totalError += Math.abs(avg-currentValues[j]);
+					}
+				}
+				
+				// update min if necessary
+				if (totalError < min){
+					minIndex = i;
+					min = totalError;
+				}
+			}
+			// min found in this round
+			availableNodes.remove(Integer.valueOf(minIndex));
+			sentNodes.add(minIndex);
+			sentValues[minIndex] = currentValues[minIndex];
+			
+			if (min == 0)
+				allBounded = true;
+			
+		}
+		System.out.print("Sending nodes:");
+		
+		int[] result = new int[sentNodes.size()];
+		for (int i=0; i< result.length; i++) {
+			result[i] = sentNodes.get(i);
+			System.out.print(" "+result[i]);
+		}
+		System.out.println();
+		return result;		
+	}
+}

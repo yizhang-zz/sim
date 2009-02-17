@@ -10,6 +10,8 @@ import sim.constraints.*;
 import org.apache.log4j.Logger;
 
 import sim.constraints.*;
+import coding.*;
+
 
 public class Cluster {
 
@@ -55,7 +57,7 @@ public class Cluster {
 	// failures)
 	// int MAX_CHILD_HISTORY_SIZE = 8;
 
-	
+	Encoder encoder = new Encoder();
 	public Cluster(int nodeCount, double epsilon1, double epsilon2) {
 		this.nodeCount = nodeCount;
 		this.epsilon1  = epsilon1;
@@ -127,7 +129,9 @@ public class Cluster {
 			return null;
 		}
 		
+		
 		ClusterMessage msg = new ClusterMessage();
+
 		msg.time = time;	
 		msg.from = id;
 		if (sentIndex != null && !hasNewFailure) {
@@ -151,6 +155,7 @@ public class Cluster {
 
 		// add readings content to the message
 		if (sentIndex != null) {
+			msg.codedMsg = encoder.encode(sentIndex);
 			msg.content = new ArrayList<IndexValuePair>(sentIndex.length);
 			for (int i = 0; i < sentIndex.length; i++) {
 				msg.content.add(i, new IndexValuePair(sentIndex[i],
@@ -195,11 +200,12 @@ public class Cluster {
 
 		if (!failureGenerator.isFailure()){
 			logger.info(String.format("T %d C %d success, transmitting %s", time, id, Helper.toString(msg.content)));
+			msg.success = true;
 		}
 		else {
-
 			logger.info(String.format("T %d C %d failure, transmitting %s", time, id, Helper.toString(msg.content)));
-			msg = null;
+			msg.success = false;
+			//return null;
                 }
 		return msg;
 	}
@@ -212,10 +218,14 @@ public class Cluster {
 	 */
 	public void receive(NodeMessage[] msgs) {
 		hasNewFailure = false;
-		for (NodeMessage msg : msgs) {
+		//int[] indicators = new int[nodeCount];
+		for (int i=0; i<nodeCount; i++) {
+			NodeMessage msg = msgs[i];
 			if (msg == null) {
 				// message suppressed
+				//indicators[i] = 0;
 			} else {
+				//indicators[i] = 1;
 				if (msg.protocol == NodeMessage.Protocol.TS) {
 					lastReceived[msg.from] = msg.value;
 					updateNodeHistory(msg.from, msg.history);

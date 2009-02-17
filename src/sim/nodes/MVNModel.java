@@ -206,7 +206,7 @@ public class MVNModel implements Model {
 
 
         /* which components need be predicted? */
-        int[] predictIndex = java.util.Arrays.copyOf(lastIndex, lastIndex.length);
+        int[] predictIndex = lastIndex.clone();
         int subsetSize = 0;
         for (int i = 0; i < m; i++) {
             if (status[i] != 0) {

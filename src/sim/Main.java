@@ -11,7 +11,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-    	String configFile = "sonoma4a.xml";
+	String configFile = "4_config.xml";
     	if (args.length > 0)
     		configFile = args[0];
     	Network net = NetworkConfiguration.createNetwork(configFile);

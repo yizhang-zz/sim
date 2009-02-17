@@ -5,6 +5,7 @@ import java.util.*;
 import org.apache.log4j.Logger;
 
 import sim.constraints.*;
+import coding.*;
 
 public class BaseStation {
 	private static final int FAIL_BUF_SIZE_PER_CLUSTER = 4;
@@ -20,6 +21,7 @@ public class BaseStation {
 	List<FailureList<Integer>> recentFailures;
 	
 	private Network net;
+	private Decoder decoder;
 
 	public Cluster createCluster(int id, int nodeCount) {
 		clusters[id] = new Cluster(nodeCount, net.epsilon1, net.epsilon2);
@@ -37,6 +39,7 @@ public class BaseStation {
 		recentFailures = new ArrayList<FailureList<Integer>>(clusterCount);
 		//clusterHistory = new ClusterHistory[clusterCount];
 		clusterHistory = new IntervalList[clusterCount];
+		decoder = new Decoder(4,3);
 	}
 	
 	/*@SuppressWarnings("unchecked")
@@ -53,11 +56,11 @@ public class BaseStation {
 */
 	public void receive() {
 		for(Cluster c: clusters)
-			receive(c.send());
+			receive1(c.send());
 	}
 	
 	public void receive(ClusterMessage msg) {
-		if (msg != null) {
+		if (msg != null && msg.success) {
 			int id = msg.from;
 			//models[id].update(time, msg.content);
 
@@ -75,7 +78,63 @@ public class BaseStation {
 		}
 		time++;
 	}
+	public void receive1(ClusterMessage msg) {
+		if (msg == null) {			
+		}
+		else if (msg.success) {
+			int id = msg.from;
+			//models[id].update(time, msg.content);
 
+			/*
+			 * Add current message to history buffer. The redundancy in msg includes
+			 * itself -- the current message, so we should first add this to our history
+			 * buffer to make comparison easy when looking for failures
+			 */
+			// clusterHistory[id].add(time, ClusterHistory.Record.SUCCESS, msg);
+			processRedundancy1(msg);
+			
+			// add current msg to history
+			clusterHistory[msg.from].add(time, time, Interval.GOOD);
+			logger.info(String.format("T %d C %d type %d %s", time, id, msg.type, Helper.toString(msg.content)));
+			logger.info(String.format("T %d C %d intervals %s", time, id, clusterHistory[msg.from]));
+		}
+		else {
+			processRedundancy1(msg);
+		}
+		time++;
+	}
+
+	/*
+	 * Currently assume if a cluster message is of type ONLYFAILURE, then no coded content is sent so no need to encode or decode
+	 */
+	private void processRedundancy1(ClusterMessage msg) {
+		if (msg.success) {
+			// child-to-head historical intervals
+			for (int i = 0; i < msg.childHistory.length; i++) {
+				logger.info(String.format("T %d C %d N %d intervals %s", time,
+						msg.from, i, msg.childHistory[i]));
+			}
+			//List<ClusterMessage> lp = msg.clusterHistory;
+			IntervalList lq = clusterHistory[msg.from];
+			if (msg.type!=ClusterMessage.ONLYFAILURE) { // sentIndex is not empty
+			ArrayList<DecodeResult> res = decoder.decode(msg.codedMsg, time);
+			if (res != null)
+			for (int i=res.size()-1; i>=0; i--) {
+				int t = res.get(i).time;
+				if (!res.get(i).success) {
+					lq.add(t, res.get(i-1).time-1, Interval.BAD);
+					logger.warn(String.format("T %d C %d failure found @ T %d type %d %s", time, msg.from, t, 3, Helper.toString(res.get(i).list)));
+				}
+			}
+			}
+			
+		}
+		else {
+			if (msg.type!=ClusterMessage.ONLYFAILURE)
+				decoder.decode(null, time);
+		}
+	}
+	
 	private void processRedundancy(ClusterMessage msg) {
 		// child-to-head historical intervals
 		for (int i = 0; i < msg.childHistory.length; i++) {

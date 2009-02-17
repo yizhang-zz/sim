@@ -3,7 +3,7 @@ package sim.nodes;
 import java.util.List;
 
 import sim.constraints.IntervalList;
-
+import coding.*;
 /**
  * Class of messages to be sent from cluster heads to the base station.
  * @author Yi Zhang
@@ -36,20 +36,10 @@ public class ClusterMessage {
 	public IntervalList[] childHistory;
 	public List<ClusterMessage> clusterHistory;
 	
+	public Symbol[] codedMsg;
+	public boolean success;
 	//public int[] beginKnowns;
 	//public int[] endKnowns;
 	//public static final ClusterMessage NONE = new ClusterMessage();
 }
 
-class IndexValuePair {
-	int index;
-	double value;
-	public IndexValuePair(int i, double v) {
-		index = i;
-		value = v;
-	}
-	@Override
-	public String toString() {
-		return String.valueOf(index)+":"+value;
-	}
-}
