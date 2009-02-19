@@ -20,5 +20,6 @@ class NodeMessage {
 	public int epoch;
 	public double value;
 	public List<Integer> history;
+	public int tryCount;
 	//public static final NodeMessage NONE = new NodeMessage();
 }

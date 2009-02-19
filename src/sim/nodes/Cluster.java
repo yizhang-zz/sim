@@ -218,19 +218,20 @@ public class Cluster {
 	 */
 	public void receive(NodeMessage[] msgs) {
 		hasNewFailure = false;
-		//int[] indicators = new int[nodeCount];
+		int[] bcast = new int[nodeCount];
 		for (int i=0; i<nodeCount; i++) {
 			NodeMessage msg = msgs[i];
 			if (msg == null) {
-				// message suppressed
-				//indicators[i] = 0;
-			} else {
-				//indicators[i] = 1;
+			} 
+			else {
+				// If a child tried n times and succeeded on the last time, then head should ack on that try
+				// currently we assume acks are reliable
+				bcast[msg.tryCount-1] ++;
 				if (msg.protocol == NodeMessage.Protocol.TS) {
 					lastReceived[msg.from] = msg.value;
 					updateNodeHistory(msg.from, msg.history);
-                                        logger.info(String.format("T %d N %d value %f",time,msg.from,msg.value));
-                                        logger.info(String.format("T %d N %d intervals %s", time, msg.from, childHistory[msg.from]));
+					logger.info(String.format("T %d N %d value %f",time,msg.from,msg.value));
+					logger.info(String.format("T %d N %d intervals %s", time, msg.from, childHistory[msg.from]));
 					/*logger.info(String.format(
 							"T %d N %d redundancy %s recovered history %s known interval %d to %d", time,
 							msg.from, Helper.list2string(msg.history), Helper
@@ -238,6 +239,11 @@ public class Cluster {
 				*/}
 			}
 		}
+		String s = "";
+		for (int i=0; i<nodeCount; i++)
+			if (bcast[i]>0)
+				s += " "+bcast[i];
+		logger.info(String.format("T %d C %d ACK"+s, time, id));
 	}
 
 	private void updateNodeHistory(int n, List<Integer> q) {

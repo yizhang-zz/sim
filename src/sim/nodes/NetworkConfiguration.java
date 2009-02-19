@@ -59,6 +59,7 @@ public class NetworkConfiguration {
 		net.nodeCount = config.getInt("nodeCount", 0);
 		net.epsilon1 = config.getDouble("epsilon1", .5);
 		net.epsilon2 = config.getDouble("epsilon2", .5);
+		net.maxTry = config.getInt("maxTry", 3);
 		net.failureRate1 = config.getDouble("failureRate1");
 		net.failureRate2 = config.getDouble("failureRate2");
 		net.nodeRedundancy = config.getInt("nodeRedundancy");

@@ -8,7 +8,7 @@ public class Network {
 	public int nodeCount;
 	public double epsilon1;
 	public double epsilon2;
-	
+	public int maxTry;
 	public int nodeRedundancy;
 	public int nodeRedundancyFromHeadToBase;
 	public int headRedundancy;

@@ -20,6 +20,7 @@ public class Node {
 	// private boolean bufferFull;
 
 	private Cluster parent;
+	private static int maxTry = NetworkConfiguration.getGlobalNetwork().maxTry;
 	
 	public Node(Cluster c, int id, double epsilon) {
 		this.id = id;
@@ -67,6 +68,7 @@ public class Node {
 			msg.value = getData(0);
 			msg.epoch = 0;
 			msg.history = null;
+			msg.tryCount = 1;
 			log.info(String.format("T %d N %d success, transmitting %f", (epoch-1), id, msg.value));
 			return msg;
 		}
@@ -87,18 +89,35 @@ public class Node {
 			}
 			history.add(epoch);
 		}
-		//System.out.println(""+epoch+": node "+id+(msg.equals(NodeMessage.NONE)?" suppressed":(" sending")));
 		epoch++;
 		
 		// manually inject failure
-		if (msg!= null && failureGenerator.isFailure()) {
-			log.info(String.format("T %d N %d failure", (epoch-1), id));
-			return null;
-		}
+		boolean failed = true;
+		int count = 0;
+		
 		if (msg == null)
 			log.info(String.format("T %d N %d suppression", (epoch-1), id));
-		else
-			log.info(String.format("T %d N %d success, transmitting %f", (epoch-1), id, msg.value));
+		else {
+			if (maxTry <= 0) {
+				failed = failureGenerator.isFailure();
+				count = 1;
+			}
+			else {
+				while (count < maxTry && failed) {
+					failed = failureGenerator.isFailure();
+					count++;
+				}
+			}
+			
+			if (failed) {
+				log.info(String.format("T %d N %d failure, tried %d times", (epoch-1), id, count));
+				msg = null;
+			}
+			else {
+				msg.tryCount = count;
+				log.info(String.format("T %d N %d success, transmitting %f, tried %d times", (epoch-1), id, msg.value, count));
+			}
+		}
 		return msg;
 	}
 
