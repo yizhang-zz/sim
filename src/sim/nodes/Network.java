@@ -1,4 +1,5 @@
 package sim.nodes;
+import coding.*;
 
 public class Network {
 	private boolean allocate;
@@ -22,6 +23,9 @@ public class Network {
 	public double failureRate2;
 	public DataProvider dataProvider;
 
+	public EncoderConfiguration encoderConfiguration;
+	public boolean coding = false;
+	
 	public Network() {
 //		for (Cluster c : clusters) {
 //			c.init(epsilon1, epsilon2, allocate);

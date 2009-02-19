@@ -13,7 +13,9 @@ import java.util.*;
 
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.HierarchicalConfiguration;
+import org.apache.commons.configuration.SubnodeConfiguration;
 import org.apache.commons.configuration.XMLConfiguration;
+import org.apache.commons.configuration.tree.xpath.XPathExpressionEngine;
 
 import Jama.*;
 
@@ -26,11 +28,11 @@ public class NetworkConfiguration {
 	private static DataProvider globalDataProvider = null;
 	private static Network globalNetwork = null;
 	
-	public int timeSteps;
-	public int clusterCount;
-	public int nodeCount;
-	public double epsilon1;
-	public double epsilon2;
+	//public int timeSteps;
+	//public int clusterCount;
+	//public int nodeCount;
+	//public double epsilon1;
+	//public double epsilon2;
 
 	//public BaseStation baseStation;
 	//public Cluster[] clusters;
@@ -49,6 +51,7 @@ public class NetworkConfiguration {
 		HierarchicalConfiguration config = null;
 		try {
 			config = new XMLConfiguration(filename);
+			// config.setExpressionEngine(new XPathExpressionEngine());
 		} catch (ConfigurationException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -66,6 +69,17 @@ public class NetworkConfiguration {
 		net.nodeRedundancyFromHeadToBase = config.getInt("nodeRedundancyFromHeadToBase");
 		net.headRedundancy = config.getInt("headRedundancy");
 		//net.headHistorySize = config.getInt("headHistorySize",4);
+		
+		// read encoder configuration
+		net.coding = config.getBoolean("coding", false);
+		if (net.coding) {
+		    SubnodeConfiguration subconfig = config.configurationAt("encoder");
+		    int[] denom = convertInt(config.getList("encoder.denominator"));
+		    //List outputs =  config.configurationsAt("encoder.output");
+		    List a = subconfig.getList("output");
+		    List b = a;
+		    
+		}
 		
 		// read clusters
 		List clusters = config.configurationsAt("clusters.cluster");
@@ -142,11 +156,18 @@ public class NetworkConfiguration {
 			d[i] = Double.parseDouble(list.get(i).toString());
 		}
 		return d;
-		// return t;
 	}
 
-//		try {
-//			Class modelClass = Class.forName(model);
+    private static int[] convertInt(List list) {
+        int[] d = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            d[i] = Integer.parseInt(list.get(i).toString());
+        }
+        return d;
+    }
+
+// try {
+// Class modelClass = Class.forName(model);
 //			Model m = (Model) modelClass.newInstance();
 //			//m.setNetworkConfiguration(this);
 //			//m.startSimulation(cluster, e);

@@ -8,6 +8,14 @@
 	<epsilon1>0</epsilon1>
 	<epsilon2>.6</epsilon2>
 	<maxTry>3</maxTry>
+	<coding>true</coding>
+	
+	<encoder>
+	<denominator>1,0,0</denominator>
+	<output>1,0,0</output>
+	<output>1,1,1</output>
+	</encoder>
+	
 	<failureRate1>0.3</failureRate1>
 	<failureRate2>0.3</failureRate2>
 	<nodeRedundancy>2</nodeRedundancy>
