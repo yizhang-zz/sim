@@ -139,10 +139,13 @@ public class Cluster {
 		msg.from = id;
 		if (sentIndex != null && !hasNewFailure) {
 			msg.type = ClusterMessage.ONLYDATA;
+			msg.seq = seq++;
 		} else if (sentIndex != null && hasNewFailure) {
 			msg.type = ClusterMessage.DATAFAILURE;
+			msg.seq = seq++;
 		} else {
 			msg.type = ClusterMessage.ONLYFAILURE;
+			msg.seq = -1;
 		}
 		
 		// add known intervals to the message
@@ -233,7 +236,7 @@ public class Cluster {
 				bcast[msg.tryCount-1] ++;
 				if (msg.protocol == NodeMessage.Protocol.TS) {
 					lastReceived[msg.from] = msg.value;
-					updateNodeHistory(msg.from, msg.history);
+					updateNodeHistory(msg);
 					logger.info(String.format("T %d N %d value %f",time,msg.from,msg.value));
 					logger.info(String.format("T %d N %d intervals %s", time, msg.from, childHistory[msg.from]));
 					/*logger.info(String.format(
@@ -253,38 +256,42 @@ public class Cluster {
 		logger.info(String.format("T %d C %d ACK"+s, time, id));
 	}
 
-	private void updateNodeHistory(int n, List<Integer> q) {
-		IntervalList h = childHistory[n];
-		if (q != null && q.size() > 0) {
-			if (h.size() == 0) { // empty, so add all as failures
-				//for (Integer i : q) {
-				//	h.add(i, NodeHistory.Record.NEW_FAILURE);
-				q.add(time);
-				for (int i=0; i<q.size()-1; i++) {
-					h.add(q.get(i), q.get(i+1)-1, sim.constraints.Interval.BAD);
-					hasNewFailure = true;
-				}
-			} else {
-				// transmission at lastTime is always a SUCCESS
-				// what can be recovered has already been recovered at lastTime
-				// so we start processing from lastTime
-				int lastTime = h.get(h.size() - 1).begin;
-				q.add(time);
-				for (int i=0; i<q.size()-1; i++) {
-					if (q.get(i) == lastTime) {
-						// extend and complete the last one
-						h.get(h.size() - 1).end = q.get(i+1) - 1;
-					}
-					if (q.get(i) > lastTime) {
-						h.add(q.get(i), q.get(i+1)-1, sim.constraints.Interval.BAD);
-						hasNewFailure = true;
-					}
-				}
-			}
-		}
-		// the last entry in h must be a point interval with current time -- [x,x] with GOOD type
-		h.add(time, time, sim.constraints.Interval.GOOD);
-	}
+	private void updateNodeHistory(NodeMessage msg) {
+        IntervalList h = childHistory[msg.from];
+        List<NodeMessage> q = msg.history;
+        if (q != null && q.size() > 0) {
+            if (h.size() == 0) {
+                 /* Cluster has received nothing, so all timestamps in node
+                 redundancy are failures
+                 Note: this actually won't happen because the first message
+                 is always assumed to succeed. */
+                 for (int i = 0; i < q.size() - 1; i++) {
+                    h.add(q.get(i).epoch, q.get(i + 1).epoch - 1,
+                            sim.constraints.Interval.BAD, q.get(i).seq);
+                    hasNewFailure = true;
+                }
+            } else {
+                int lastTime = h.get(h.size() - 1).begin;
+                // transmission at lastTime is always a SUCCESS
+                // what can be recovered has already been recovered at lastTime
+                // so we start processing from lastTime
+                for (int i = 0; i < q.size() - 1; i++) {
+                    if (q.get(i).epoch == lastTime) {
+                        // extend and complete the last one
+                        h.get(h.size() - 1).end = q.get(i + 1).epoch - 1;
+                    }
+                    if (q.get(i).epoch > lastTime) {
+                        h.add(q.get(i).epoch, q.get(i + 1).epoch - 1,
+                                sim.constraints.Interval.BAD, q.get(i).seq);
+                        hasNewFailure = true;
+                    }
+                }
+            }
+        }
+        // the last entry in h must be a point interval with current time --
+        // [x,x] with GOOD type
+        h.add(msg.epoch, msg.epoch, sim.constraints.Interval.GOOD, msg.seq);
+    }
 
 	public int getNodeCount() {
 		return nodeCount;
@@ -319,7 +326,6 @@ public class Cluster {
 	public void setModel(Model model) {
 		this.model = model;
 	}
-
 }
 
 

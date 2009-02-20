@@ -1,6 +1,9 @@
 package sim.constraints;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -25,7 +28,7 @@ public class IntervalList implements Iterable<Interval>{
 		return list.iterator();
 	}	
 	
-	public void add(int begin, int end, int type) {
+	public void add(int begin, int end, int type, int seq) {
 		if (capacity > 0 && list.size() == capacity) {
 			list.remove(0);
 		}
@@ -34,7 +37,7 @@ public class IntervalList implements Iterable<Interval>{
 			list.get(list.size()-1).end = end;
 		}
 		else {
-			list.add(new Interval(begin,end,type));
+			list.add(new Interval(begin, end, type, seq));
 		}
 	}
 	
@@ -71,4 +74,26 @@ public class IntervalList implements Iterable<Interval>{
 		}
 		return -1;
 	}
+	
+	public void sort() {
+	    Collections.sort(list, new IntervalComparator());
+	    int size = list.size();
+	    for (int i=0; i<size-1; i++) {
+	        if (list.get(i).seq == list.get(i+1).seq - 1) {
+	            list.get(i).end = list.get(i+1).begin - 1;
+	        }
+	    }
+	}
+}
+
+class IntervalComparator implements Comparator<Interval> {
+    @Override
+    public int compare(Interval i1, Interval i2) {
+        if (i1.begin < i2.begin)
+            return -1;
+        else if (i1.begin == i2.begin)
+            return 0;
+        else
+            return 1;
+    }    
 }

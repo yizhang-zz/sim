@@ -76,7 +76,7 @@ public class BaseStation {
 			// clusterHistory[id].add(time, ClusterHistory.Record.SUCCESS, msg);
 			processRedundancy(msg);
 			// add current msg to history
-			clusterHistory[msg.from].add(time, time, Interval.GOOD);
+			clusterHistory[msg.from].add(time, time, Interval.GOOD, msg.seq);
 			logger.info(String.format("T %d C %d type %d %s", time, id, msg.type, Helper.toString(msg.content)));
 			logger.info(String.format("T %d C %d intervals %s", time, id, clusterHistory[msg.from]));
 		}
@@ -99,9 +99,9 @@ public class BaseStation {
 			processRedundancy1(msg);
 			
 			// add current msg to history
-			clusterHistory[msg.from].add(time, time, Interval.GOOD);
+			clusterHistory[msg.from].add(time, time, Interval.GOOD, msg.seq);
 			logger.info(String.format("T %d C %d type %d %s", time, id, msg.type, Helper.toString(msg.content)));
-			logger.info(String.format("T %d C %d intervals %s", time, id, clusterHistory[msg.from]));
+			logger.info(String.format("T %d C %d intervals %s", time, id, clusterHistory[id]));
 		}
 		else {
 			processRedundancy1(msg);
@@ -123,20 +123,20 @@ public class BaseStation {
 			//List<ClusterMessage> lp = msg.clusterHistory;
 			IntervalList lq = clusterHistory[msg.from];
 			if (msg.type!=ClusterMessage.ONLYFAILURE) { // sentIndex is not empty
-			ArrayList<DecodeResult> res = decoder.decode(msg.codedMsg, time);
+			ArrayList<DecodeResult> res = decoder.decode(msg.codedMsg, time, msg.seq);
 			if (res != null)
 			for (int i=res.size()-1; i>=0; i--) {
-				int t = res.get(i).time;
-				if (!res.get(i).success) {
-					lq.add(t, res.get(i-1).time-1, Interval.BAD);
-					logger.warn(String.format("T %d C %d failure found @ T %d type %d %s", time, msg.from, t, 3, Helper.toString(res.get(i).list)));
+				DecodeResult t = res.get(i);
+				if (!t.success) {
+					lq.add(t.time, res.get(i-1).time-1, Interval.BAD, t.seq);
+					logger.warn(String.format("T %d C %d failure found @ T %d type %d %s", time, msg.from, t.time, 3, Helper.toString(t.list)));
 				}
 			}
 			}			
 		}
 		else {
 			if (msg.type!=ClusterMessage.ONLYFAILURE)
-				decoder.decode(null, time);
+				decoder.decode(null, time, msg.seq);
 		}
 	}
 	
@@ -154,25 +154,24 @@ public class BaseStation {
 		}*/
 		
 		// discover head-to-base failures and derive intervals
-		List<ClusterMessage> lp = msg.clusterHistory;
-		IntervalList lq = clusterHistory[msg.from];
-		// int p = lp.size() - 1;
-		// int q = lq.size() - 1;
-		if (lp != null && lp.size() > 1) {
+		List<ClusterMessage> q = msg.clusterHistory;
+		IntervalList h = clusterHistory[msg.from];
+		/* q always contains msg as its last element, so q.size() >=1 */
+		if (q != null && q.size() > 1) {
 			// size of lp must be > 1 because the last element is current msg
 			int lastTime = -1;
-			if (lq.size() > 0) {
-				lastTime = lq.get(lq.size()-1).begin;
+			if (h.size() > 0) {
+				lastTime = h.get(h.size()-1).begin;
 			}
 			ClusterMessage m;
-			for (int i = 0; i < lp.size() - 1; i++) {
-				m = lp.get(i);
+			for (int i = 0; i < q.size() - 1; i++) {
+				m = q.get(i);
 				if (m.time == lastTime) {
-					// extend last one to current time
-					lq.get(lq.size()-1).end =  lp.get(i+1).time -1;
+					// extend and complete the last one in previous history
+					h.get(h.size()-1).end =  q.get(i+1).time - 1;
 				}
 				if (m.time > lastTime) {
-					lq.add(m.time, lp.get(i+1).time-1, Interval.BAD);
+					h.add(m.time, q.get(i+1).time-1, Interval.BAD, m.seq);
 					logger.warn(String.format("T %d C %d failure found @ T %d type %d %s", time, msg.from, m.time, m.type, Helper.toString(m.content)));
 				}
 			}			
@@ -197,4 +196,17 @@ public class BaseStation {
 		//logger.info(String.format("T %d C %d known interval %d to %d", time, msg.from, lp
 		//		.get(0).time, lp.get(lp.size() - 1).time));
 	}
+
+	/**
+	 * Let each cluster clean its Interval history by sorting according to the seq no.
+	 */
+    public void cleanup() {
+        if (!net.coding)
+            return;
+        for (Cluster c : clusters) {
+            int id = c.id;
+            clusterHistory[id].sort();
+            logger.info(String.format("T %d C %d INTERVALS %s", time, id, clusterHistory[id]));
+        }
+    }
 }

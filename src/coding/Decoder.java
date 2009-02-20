@@ -10,9 +10,11 @@ class StateTrace {
 	public State cur;
 	public Vector<Symbol> inputs;
 	public int time;
+    // whether the transmission succeeded or not
 	public boolean success;
+	public int seq;
 	
-	public StateTrace(State current, StateTrace parent, Symbol input, int time, boolean success) {
+	public StateTrace(State current, StateTrace parent, Symbol input, int time, boolean success, int seq) {
 		this.cur = current;
 		this.parents = new Vector<StateTrace>();
 		parents.add(parent);
@@ -20,6 +22,7 @@ class StateTrace {
 		inputs.add(input);
 		this.time = time;
 		this.success = success;
+		this.seq = seq;
 	}
 }
 
@@ -30,19 +33,20 @@ public class Decoder {
 	int lastGood = -1;
 	boolean bad = false;
 	int fieldSize;
+	
 	public Decoder(EncoderConfiguration conf) {
 		diag = StateDiagram.construct(conf);
 		this.fieldSize = conf.fieldsize;
 		// set initial memory state
 		curStates = new LinkedList<StateTrace>();
-		curStates.add(new StateTrace(diag.states[0], null, null, -1, true));
+		curStates.add(new StateTrace(diag.states[0], null, null, -1, true, -1));
 	}
 
 	private void insertNewState(LinkedList<StateTrace> list, State to,
-			StateTrace parent, Symbol input, int time, boolean success) {
+			StateTrace parent, Symbol input, int time, boolean success, int seq) {
 		int len = list.size();
 		if (len ==0) {
-			list.add(new StateTrace(to, parent, input, time, success));
+			list.add(new StateTrace(to, parent, input, time, success, seq));
 			return;
 		}
 		// change sequential search to binary search
@@ -63,7 +67,7 @@ public class Decoder {
 			}
 		}
 		if (p>q) { // not found
-			list.add(p, new StateTrace(to, parent, input, time, success));
+			list.add(p, new StateTrace(to, parent, input, time, success, seq));
 		}/*
 		int i=0;
 		while (i<len)
@@ -88,7 +92,7 @@ public class Decoder {
 			*/
 	}
 
-	public ArrayList<DecodeResult> decode(Symbol[] output,int time) {
+	public ArrayList<DecodeResult> decode(Symbol[] output, int time, int seq) {
 		if (output == null) {
 			// for a failed transmission, nothing is received, so enumerate all
 			// possible successive states as the next state
@@ -96,7 +100,7 @@ public class Decoder {
 			for (StateTrace s : curStates) {
 				for (Edge e : s.cur.edges.values()) {
 					// insert into sorted newStates
-					insertNewState(newStates, e.to, s, e.input, time, false);
+					insertNewState(newStates, e.to, s, e.input, time, false, seq);
 				}
 			}
 			curStates = newStates;
@@ -111,7 +115,7 @@ public class Decoder {
 		for (StateTrace s : curStates) {
 			Edge e;
 			if ((e = s.cur.edges.get(outid)) != null) {
-				insertNewState(newStates, e.to, s, e.input, time, true);
+				insertNewState(newStates, e.to, s, e.input, time, true, seq);
 			}
 		}
 		curStates = newStates;
@@ -134,7 +138,7 @@ public class Decoder {
 								if ((sent & (1<<i))!=0)
 									list.add(new sim.nodes.IndexValuePair(i,-1));
 							}
-							res.add(new DecodeResult(t.time, list, t.success));
+							res.add(new DecodeResult(t.time, list, t.success, t.seq));
 							t = t.parents.get(0);
 						}
 						else {
@@ -178,7 +182,7 @@ public class Decoder {
 										if ((sent & (1<<i))!=0)
 											list.add(new sim.nodes.IndexValuePair(i,-1));
 									}
-									res.add(new DecodeResult(cur.time, list, cur.success));
+									res.add(new DecodeResult(cur.time, list, cur.success, cur.seq));
 								}
 							}
 							break;
@@ -195,7 +199,7 @@ public class Decoder {
 						if ((sent & (1<<i))!=0)
 							list.add(new sim.nodes.IndexValuePair(i,-1));
 					}
-					res.add(new DecodeResult(time, list, true));
+					res.add(new DecodeResult(time, list, true, seq));
 					lastGood = time;
 					return res;
 				}			

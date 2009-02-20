@@ -13,9 +13,10 @@ public class Node {
 	private int redundancyLevel;
 	//private int historySize;
 	private int epoch = 0;
-	private List<Integer> history;
+	private List<NodeMessage> history;
 	
 	private FailureGenerator failureGenerator;
+	private int seq = 0;
 
 	// private boolean bufferFull;
 
@@ -29,7 +30,7 @@ public class Node {
 		redundancyLevel = NetworkConfiguration.getGlobalNetwork().nodeRedundancy;
 		failureGenerator = new SimpleFailureGenerator(NetworkConfiguration.getGlobalNetwork().failureRate1, id);
 		//historySize = NetworkConfiguration.getGlobalNetwork().nodeHistorySize;
-		history = new LinkedList<Integer>();
+		history = new LinkedList<NodeMessage>();
 	}
 	
 	public double getData(int time) {
@@ -60,15 +61,16 @@ public class Node {
 		// first time: always send 
 		if (history.size() == 0) {
 			state = getData(0);
-			history.add(0);
 			epoch = 1;
 			NodeMessage msg = new NodeMessage();
 			msg.protocol = NodeMessage.Protocol.TS;
 			msg.from = id;
 			msg.value = getData(0);
 			msg.epoch = 0;
-			msg.history = null;
 			msg.tryCount = 1;
+			msg.seq = seq++;
+			history.add(msg);
+            msg.history = history;
 			log.info(String.format("T %d N %d success, transmitting %f, tried 1 times", (epoch-1), id, msg.value));
 			return msg;
 		}
@@ -83,11 +85,12 @@ public class Node {
 			msg.from = id;
 			msg.epoch = epoch;
 			msg.value = curData;
-			msg.history = new ArrayList<Integer>(history);
-			if (history.size() == redundancyLevel) {
+			msg.seq = seq++;
+			if (history.size() > redundancyLevel) {
 				history.remove(0); // evict earliest one
 			}
-			history.add(epoch);
+			history.add(msg);
+			msg.history = history;
 		}
 		epoch++;
 		

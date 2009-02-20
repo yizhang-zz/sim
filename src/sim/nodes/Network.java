@@ -38,11 +38,10 @@ public class Network {
 	
 	public void startSimulation() {
 		for (int i=0; i<timeSteps; i++) {
-			//System.out.println("********* "+i+" **********");
-			//for (int j=0;j<clusters.length; j++) {
-				baseStation.receive(/*clusters[j].send()*/);
-			//}
+				baseStation.receive();
 		}
+		// cleanup: sort the cluster intervals if coding is used
+		baseStation.cleanup();
 	}
 
 }
