@@ -3,6 +3,7 @@ package coding;
 import java.util.*;
 
 import sim.nodes.IndexValuePair;
+import sim.nodes.NetworkConfiguration;
 
 class StateTrace {
 	public Vector<StateTrace> parents;
@@ -29,9 +30,9 @@ public class Decoder {
 	int lastGood = -1;
 	boolean bad = false;
 	int fieldSize;
-	public Decoder(int fieldSize, int memSize) {
-		diag = StateDiagram.construct(fieldSize, memSize, new Encoder());
-		this.fieldSize = fieldSize;
+	public Decoder(EncoderConfiguration conf) {
+		diag = StateDiagram.construct(conf);
+		this.fieldSize = conf.fieldsize;
 		// set initial memory state
 		curStates = new LinkedList<StateTrace>();
 		curStates.add(new StateTrace(diag.states[0], null, null, -1, true));

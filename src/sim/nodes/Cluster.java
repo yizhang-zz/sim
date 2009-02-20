@@ -26,7 +26,6 @@ public class Cluster {
 	// suppression parameters
 	public double epsilon1;
 	public double epsilon2;
-	public int redundancyLevel = 4;
 
 	private int nodeCount;
 	private int time;
@@ -37,8 +36,6 @@ public class Cluster {
 	public IntervalList[] intervalLists;
 	//public List<Integer>[] failureLists;
 	public TransmissionList transmissionList = new TransmissionList();
-	
-	private BaseStation parent;
 	
 	double[] lastReceived;
 	// double[] lastSent;
@@ -57,7 +54,8 @@ public class Cluster {
 	// failures)
 	// int MAX_CHILD_HISTORY_SIZE = 8;
 
-	Encoder encoder = new Encoder();
+	Encoder encoder;
+	private int seq = 0;
 	public Cluster(int nodeCount, double epsilon1, double epsilon2) {
 		this.nodeCount = nodeCount;
 		this.epsilon1  = epsilon1;
@@ -76,6 +74,11 @@ public class Cluster {
 		lastReceived = new double[nodeCount];
 		for (int i = 0; i < nodeCount; i++) {
 			childHistory[i] = new IntervalList(NetworkConfiguration.getGlobalNetwork().nodeRedundancyFromHeadToBase);
+		}
+		
+		Network net = NetworkConfiguration.getGlobalNetwork();
+		if (net.coding) {
+		    encoder = new Encoder(net.encoderConfiguration);
 		}
 	}
 
@@ -155,7 +158,8 @@ public class Cluster {
 
 		// add readings content to the message
 		if (sentIndex != null) {
-			msg.codedMsg = encoder.encode(sentIndex);
+		    if (encoder != null)
+		        msg.codedMsg = encoder.encode(new Symbol(sentIndex));
 			msg.content = new ArrayList<IndexValuePair>(sentIndex.length);
 			for (int i = 0; i < sentIndex.length; i++) {
 				msg.content.add(i, new IndexValuePair(sentIndex[i],
@@ -197,7 +201,7 @@ public class Cluster {
 		// add redundancy info
 		msg.clusterHistory = history;
 		
-
+		// msg.success will tell if msg is transmitted successfully
 		if (!failureGenerator.isFailure()){
 			logger.info(String.format("T %d C %d success, transmitting %s", time, id, Helper.toString(msg.content)));
 			msg.success = true;
@@ -239,6 +243,9 @@ public class Cluster {
 				*/}
 			}
 		}
+		/* Log ACK activity
+		 * ACK x1 x2 ... xn means n broadcast ACK messages, each ACKing xi child nodes 
+		 */
 		String s = "";
 		for (int i=0; i<nodeCount; i++)
 			if (bcast[i]>0)
@@ -277,7 +284,6 @@ public class Cluster {
 		}
 		// the last entry in h must be a point interval with current time -- [x,x] with GOOD type
 		h.add(time, time, sim.constraints.Interval.GOOD);
-		System.out.println("***** "+h.toString());
 	}
 
 	public int getNodeCount() {

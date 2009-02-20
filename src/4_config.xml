@@ -1,36 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- maxTry=0 means try once and no ack, redundancy is used instead
+encoder/fieldsize : # bits in a symbol
+ -->
 <network>
-	<dataFile>multi4.txt</dataFile>
-	<timeSteps>100</timeSteps>
-	<clusterCount>1</clusterCount>
-	<nodeCount>4</nodeCount>
-	<epsilon1>0</epsilon1>
-	<epsilon2>.6</epsilon2>
-	<maxTry>3</maxTry>
-	<coding>true</coding>
-	
-	<encoder>
-	<denominator>1,0,0</denominator>
-	<output>1,0,0</output>
-	<output>1,1,1</output>
-	</encoder>
-	
-	<failureRate1>0.3</failureRate1>
-	<failureRate2>0.3</failureRate2>
-	<nodeRedundancy>2</nodeRedundancy>
-	<nodeRedundancyFromHeadToBase>2</nodeRedundancyFromHeadToBase>
-	<headRedundancy>2</headRedundancy>
+    <dataFile>multi4.txt</dataFile>
+    <timeSteps>100</timeSteps>
+    <clusterCount>1</clusterCount>
+    <nodeCount>4</nodeCount>
+    <epsilon1>0</epsilon1>
+    <epsilon2>1</epsilon2>
+    <failureRate1>0</failureRate1>
+    <failureRate2>0</failureRate2>
+    <nodeRedundancy>2</nodeRedundancy>
+    <nodeRedundancyFromHeadToBase>2</nodeRedundancyFromHeadToBase>
+    <headRedundancy>2</headRedundancy>
 
-	<clusters>
-		<cluster>
-			<nodes>0,1,2,3</nodes>
-			<params>
-			<c>2,1,1.2,1.3</c>
-				<a>0.6,0.2,0.1,0.2,0.1,0.5,0.15,0.03,0.05,0.1,0.6,0.1,0.1,0.08,0.12,0.5</a>
-				<sigma>1,0.778800783071405,0.70218850132656,0.778800783071405,0.778800783071405,1,0.778800783071405,0.70218850132656,0.70218850132656,0.778800783071405,1,0.778800783071405,0.778800783071405,0.70218850132656,0.778800783071405,1</sigma>
-			</params>
-		</cluster>
-	</clusters>
+    <maxTry>0</maxTry>
+
+    <coding>false</coding>
+
+    <encoder>
+        <fieldsize>4</fieldsize>
+        <memsize>2</memsize>
+        <inputsize>1</inputsize>
+        <outputsize>2</outputsize>
+        <denominator>1,0,0</denominator>
+        <output>
+            <spec>1,0,0</spec>
+        </output>
+        <output>
+            <spec>1,1,1</spec>
+        </output>
+    </encoder>
+
+    <clusters>
+        <cluster>
+            <nodes>0,1,2,3</nodes>
+            <params>
+                <c>2,1,1.2,1.3</c>
+                <a>
+                    0.6,0.2,0.1,0.2,0.1,0.5,0.15,0.03,0.05,0.1,0.6,0.1,0.1,0.08,0.12,0.5
+                </a>
+                <sigma>
+                    1,0.778800783071405,0.70218850132656,0.778800783071405,0.778800783071405,1,0.778800783071405,0.70218850132656,0.70218850132656,0.778800783071405,1,0.778800783071405,0.778800783071405,0.70218850132656,0.778800783071405,1
+                </sigma>
+            </params>
+        </cluster>
+    </clusters>
 </network>
 

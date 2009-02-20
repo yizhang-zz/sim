@@ -1,13 +1,16 @@
 package coding;
 
 public class Symbol {
+    public static Symbol ZERO = new Symbol(0);
 	int data = 0;
 
 	public Symbol(Symbol s) {
 		data = s.data;
 	}
 	
-	public Symbol() {}
+	public Symbol() {
+	    data = 0;
+	}
 	
 	public boolean equals(Object o) {
 		return (o!=null) && (o instanceof Symbol) && (((Symbol)o).data==this.data);
@@ -38,11 +41,9 @@ public class Symbol {
 		return str;
 	}
 	
-	public static Symbol add(Symbol ...symbols) {
-		Symbol res = new Symbol(symbols[0]);
-		for (int i=1; i<symbols.length; i++) {
-			res.data = res.data ^ symbols[i].data;
-		}
+	public Symbol add(Symbol s) {
+		Symbol res = new Symbol(this);
+		res.data = res.data ^ s.data;
 		return res;
 	}
 }

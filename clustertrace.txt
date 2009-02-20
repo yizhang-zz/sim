@@ -1,0 +1,70 @@
+[INFO] sim.nodes.Cluster - T 0 N 0 value 1.200592
+[INFO] sim.nodes.Cluster - T 0 N 0 intervals 0-0
+[INFO] sim.nodes.Cluster - T 0 N 1 value 1.660288
+[INFO] sim.nodes.Cluster - T 0 N 1 intervals 0-0
+[INFO] sim.nodes.Cluster - T 0 N 2 value 1.812741
+[INFO] sim.nodes.Cluster - T 0 N 2 intervals 0-0
+[INFO] sim.nodes.Cluster - T 0 N 3 value 0.400091
+[INFO] sim.nodes.Cluster - T 0 N 3 intervals 0-0
+[INFO] sim.nodes.Cluster - T 0 C 0 ACK 4
+[INFO] sim.nodes.Cluster - T 0 C 0 success, transmitting [ 0:1.20059217554244 1:1.66028767600665 2:1.81274086971186 3:0.400091317614034 ]
+[INFO] sim.nodes.Cluster - T 1 N 0 value 3.495652
+[INFO] sim.nodes.Cluster - T 1 N 0 intervals 0-0,1-1
+[INFO] sim.nodes.Cluster - T 1 N 1 value 1.588497
+[INFO] sim.nodes.Cluster - T 1 N 1 intervals 0-0,1-1
+[INFO] sim.nodes.Cluster - T 1 N 2 value 1.363066
+[INFO] sim.nodes.Cluster - T 1 N 2 intervals 0-0,1-1
+[INFO] sim.nodes.Cluster - T 1 N 3 value 1.116035
+[INFO] sim.nodes.Cluster - T 1 N 3 intervals 0-0,1-1
+[INFO] sim.nodes.Cluster - T 1 C 0 ACK 4
+[INFO] sim.nodes.Cluster - T 1 C 0 success, transmitting [ 1:1.58849674969476 ]
+[INFO] sim.nodes.Cluster - T 2 N 0 value 4.190804
+[INFO] sim.nodes.Cluster - T 2 N 0 intervals 1-1,2-2
+[INFO] sim.nodes.Cluster - T 2 N 1 value 4.060050
+[INFO] sim.nodes.Cluster - T 2 N 1 intervals 1-1,2-2
+[INFO] sim.nodes.Cluster - T 2 N 2 value 3.140368
+[INFO] sim.nodes.Cluster - T 2 N 2 intervals 1-1,2-2
+[INFO] sim.nodes.Cluster - T 2 N 3 value 2.389408
+[INFO] sim.nodes.Cluster - T 2 N 3 intervals 1-1,2-2
+[INFO] sim.nodes.Cluster - T 2 C 0 ACK 4
+[INFO] sim.nodes.Cluster - T 2 C 0 success, transmitting [ 0:4.19080419401944 1:4.06005045753449 2:3.14036815684099 ]
+[INFO] sim.nodes.Cluster - T 3 N 0 value 4.704429
+[INFO] sim.nodes.Cluster - T 3 N 0 intervals 2-2,3-3
+[INFO] sim.nodes.Cluster - T 3 N 1 value 3.220333
+[INFO] sim.nodes.Cluster - T 3 N 1 intervals 2-2,3-3
+[INFO] sim.nodes.Cluster - T 3 N 2 value 2.674425
+[INFO] sim.nodes.Cluster - T 3 N 2 intervals 2-2,3-3
+[INFO] sim.nodes.Cluster - T 3 N 3 value 1.766624
+[INFO] sim.nodes.Cluster - T 3 N 3 intervals 2-2,3-3
+[INFO] sim.nodes.Cluster - T 3 C 0 ACK 4
+[INFO] sim.nodes.Cluster - T 3 C 0 success, transmitting [ 2:2.67442459090538 ]
+[INFO] sim.nodes.Cluster - T 4 N 0 value 6.035161
+[INFO] sim.nodes.Cluster - T 4 N 0 intervals 3-3,4-4
+[INFO] sim.nodes.Cluster - T 4 N 1 value 4.228277
+[INFO] sim.nodes.Cluster - T 4 N 1 intervals 3-3,4-4
+[INFO] sim.nodes.Cluster - T 4 N 2 value 4.456838
+[INFO] sim.nodes.Cluster - T 4 N 2 intervals 3-3,4-4
+[INFO] sim.nodes.Cluster - T 4 N 3 value 4.518167
+[INFO] sim.nodes.Cluster - T 4 N 3 intervals 3-3,4-4
+[INFO] sim.nodes.Cluster - T 4 C 0 ACK 4
+[INFO] sim.nodes.Cluster - T 4 C 0 suppression
+[INFO] sim.nodes.Cluster - T 5 N 0 value 6.283329
+[INFO] sim.nodes.Cluster - T 5 N 0 intervals 4-4,5-5
+[INFO] sim.nodes.Cluster - T 5 N 1 value 4.111560
+[INFO] sim.nodes.Cluster - T 5 N 1 intervals 4-4,5-5
+[INFO] sim.nodes.Cluster - T 5 N 2 value 4.515656
+[INFO] sim.nodes.Cluster - T 5 N 2 intervals 4-4,5-5
+[INFO] sim.nodes.Cluster - T 5 N 3 value 4.781564
+[INFO] sim.nodes.Cluster - T 5 N 3 intervals 4-4,5-5
+[INFO] sim.nodes.Cluster - T 5 C 0 ACK 4
+[INFO] sim.nodes.Cluster - T 5 C 0 suppression
+[INFO] sim.nodes.Cluster - T 6 N 0 value 7.793027
+[INFO] sim.nodes.Cluster - T 6 N 0 intervals 5-5,6-6
+[INFO] sim.nodes.Cluster - T 6 N 1 value 6.317296
+[INFO] sim.nodes.Cluster - T 6 N 1 intervals 5-5,6-6
+[INFO] sim.nodes.Cluster - T 6 N 2 value 5.884698
+[INFO] sim.nodes.Cluster - T 6 N 2 intervals 5-5,6-6
+[INFO] sim.nodes.Cluster - T 6 N 3 value 6.695366
+[INFO] sim.nodes.Cluster - T 6 N 3 intervals 5-5,6-6
+[INFO] sim.nodes.Cluster - T 6 C 0 ACK 4
+[INFO] sim.nodes.Cluster - T 6 C 0 success, transmitting [ 0:7.7930268430402 1:6.3172962054354 2:5.88469839916287 ]

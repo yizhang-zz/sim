@@ -39,7 +39,8 @@ public class BaseStation {
 		recentFailures = new ArrayList<FailureList<Integer>>(clusterCount);
 		//clusterHistory = new ClusterHistory[clusterCount];
 		clusterHistory = new IntervalList[clusterCount];
-		decoder = new Decoder(4,3);
+		if (net.coding)
+		    decoder = new Decoder(net.encoderConfiguration);
 	}
 	
 	/*@SuppressWarnings("unchecked")
@@ -56,7 +57,10 @@ public class BaseStation {
 */
 	public void receive() {
 		for(Cluster c: clusters)
-			receive1(c.send());
+		    if (net.coding)
+		        receive1(c.send());
+		    else
+		        receive(c.send());
 	}
 	
 	public void receive(ClusterMessage msg) {
@@ -78,6 +82,7 @@ public class BaseStation {
 		}
 		time++;
 	}
+	
 	public void receive1(ClusterMessage msg) {
 		if (msg == null) {			
 		}
@@ -105,7 +110,8 @@ public class BaseStation {
 	}
 
 	/*
-	 * Currently assume if a cluster message is of type ONLYFAILURE, then no coded content is sent so no need to encode or decode
+	 * Currently assume if a cluster message is of type ONLYFAILURE,
+	 * then no coded content is sent so no need to encode or decode.
 	 */
 	private void processRedundancy1(ClusterMessage msg) {
 		if (msg.success) {
@@ -126,8 +132,7 @@ public class BaseStation {
 					logger.warn(String.format("T %d C %d failure found @ T %d type %d %s", time, msg.from, t, 3, Helper.toString(res.get(i).list)));
 				}
 			}
-			}
-			
+			}			
 		}
 		else {
 			if (msg.type!=ClusterMessage.ONLYFAILURE)

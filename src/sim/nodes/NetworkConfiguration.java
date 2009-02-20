@@ -17,6 +17,8 @@ import org.apache.commons.configuration.SubnodeConfiguration;
 import org.apache.commons.configuration.XMLConfiguration;
 import org.apache.commons.configuration.tree.xpath.XPathExpressionEngine;
 
+import coding.EncoderConfiguration;
+
 import Jama.*;
 
 /**
@@ -27,16 +29,6 @@ public class NetworkConfiguration {
 	
 	private static DataProvider globalDataProvider = null;
 	private static Network globalNetwork = null;
-	
-	//public int timeSteps;
-	//public int clusterCount;
-	//public int nodeCount;
-	//public double epsilon1;
-	//public double epsilon2;
-
-	//public BaseStation baseStation;
-	//public Cluster[] clusters;
-	//public int[] inverseClusterTable;
 	
 	public static Network createNetwork(String filename) {
 		return createNetwork(filename, true);
@@ -62,7 +54,7 @@ public class NetworkConfiguration {
 		net.nodeCount = config.getInt("nodeCount", 0);
 		net.epsilon1 = config.getDouble("epsilon1", .5);
 		net.epsilon2 = config.getDouble("epsilon2", .5);
-		net.maxTry = config.getInt("maxTry", 3);
+		net.maxTry = config.getInt("maxTry", 0);
 		net.failureRate1 = config.getDouble("failureRate1");
 		net.failureRate2 = config.getDouble("failureRate2");
 		net.nodeRedundancy = config.getInt("nodeRedundancy");
@@ -73,12 +65,19 @@ public class NetworkConfiguration {
 		// read encoder configuration
 		net.coding = config.getBoolean("coding", false);
 		if (net.coding) {
-		    SubnodeConfiguration subconfig = config.configurationAt("encoder");
+		    int memsize = config.getInt("encoder.memsize");
+		    int inputsize = config.getInt("encoder.inputsize");
+		    int outputsize = config.getInt("encoder.outputsize");
 		    int[] denom = convertInt(config.getList("encoder.denominator"));
 		    //List outputs =  config.configurationsAt("encoder.output");
-		    List a = subconfig.getList("output");
-		    List b = a;
-		    
+		    List a = config.configurationsAt("encoder.output");
+	        int[][] outputs = new int[a.size()][];
+	        int i = 0;
+		    for (Object obj : a) {
+		        HierarchicalConfiguration sub = (HierarchicalConfiguration) obj;
+		        outputs[i++] = convertInt(sub.getList("spec"));
+		    }
+		    net.encoderConfiguration = new EncoderConfiguration(memsize, inputsize, outputsize, denom, outputs);		    
 		}
 		
 		// read clusters

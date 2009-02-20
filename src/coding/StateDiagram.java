@@ -1,8 +1,5 @@
 package coding;
 
-import java.util.*;
-import java.math.*;
-
 class Edge {
 	State from;
 	State to;
@@ -18,34 +15,29 @@ class Edge {
 
 public class StateDiagram {
 	int size;
-	int fieldSize, memSize;
-	State[] states;
+	public State[] states;
+	EncoderConfiguration conf;
 
-	private StateDiagram(int fieldSize, int memSize) {
-		this.fieldSize = fieldSize;
-		this.memSize = memSize;
-		this.size = (int) Math.pow(2, fieldSize * memSize);
+	private StateDiagram(EncoderConfiguration conf) {
+	    this.conf = conf;
+		this.size = (int) Math.pow(2, conf.fieldsize * conf.memsize);
 		states = new State[size];
 		for (int i = 0; i < size; i++)
 			states[i] = new State(i);
 	}
 
-	public static StateDiagram construct(int fieldSize, int memsize,
-			Encoder encoder) {
-		StateDiagram diag = new StateDiagram(fieldSize, memsize);
-
+	public static StateDiagram construct(EncoderConfiguration conf) {
+		StateDiagram diag = new StateDiagram(conf);
+		Encoder encoder = new Encoder(conf);
 		for (int i = 0; i < diag.size; i++) {
 			State state = diag.states[i];
-			int inputSize = (int) Math.pow(2, fieldSize);
+			int inputSize = (int) Math.pow(2, conf.fieldsize);
 			// for each state, there're 2^fieldsize possible inputs; generate all these edges
 			for (int j = 0; j < inputSize; j++) {
 				Symbol in = new Symbol(j);
-				Symbol[] all = new Symbol[memsize];
-				all[0] = in;
-				for (int k=1; k<memsize; k++)
-					all[k] = state.symbols[k-1];
-				Symbol[] out = Encoder.encode(all);
-				State to = diag.states[State.outputToId(all)];
+				encoder.setMem(state.symbols);
+				Symbol[] out = encoder.encode(in);
+				State to = diag.states[State.outputToId(encoder.mem)];
 				state.edges.put(State.outputToId(out), new Edge(to,in,out));
 			}
 		}

@@ -69,7 +69,7 @@ public class Node {
 			msg.epoch = 0;
 			msg.history = null;
 			msg.tryCount = 1;
-			log.info(String.format("T %d N %d success, transmitting %f", (epoch-1), id, msg.value));
+			log.info(String.format("T %d N %d success, transmitting %f, tried 1 times", (epoch-1), id, msg.value));
 			return msg;
 		}
 		
