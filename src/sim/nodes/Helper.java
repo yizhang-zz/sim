@@ -1,12 +1,12 @@
 package sim.nodes;
 
-import java.util.*;
+import java.util.AbstractList;
 
 public class Helper {
-	public static String toString(Iterable l) {
+	public static <T> String toString(Iterable<T> l) {
 		StringBuffer buf = new StringBuffer("[ ");
 		if (l != null)
-			for (Object i : l)
+			for (T i : l)
 				buf.append(i.toString() + " ");
 		buf.append("]");
 		return buf.toString();
@@ -14,6 +14,7 @@ public class Helper {
 
 }
 
+/*
 class CircularList<E> extends AbstractList<E> {
 
 	private Object[] array;
@@ -56,3 +57,4 @@ class CircularList<E> extends AbstractList<E> {
 //		int count = capacity
 //	}
 }
+*/

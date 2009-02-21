@@ -1,13 +1,10 @@
 package sim.constraints;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-
-import sim.nodes.TransmissionRecord;
 
 
 public class IntervalList implements Iterable<Interval>{
@@ -29,6 +26,7 @@ public class IntervalList implements Iterable<Interval>{
 	}	
 	
 	public void add(int begin, int end, int type, int seq) {
+	    /* need sort? */
 		if (capacity > 0 && list.size() == capacity) {
 			list.remove(0);
 		}

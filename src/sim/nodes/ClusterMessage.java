@@ -3,7 +3,7 @@ package sim.nodes;
 import java.util.List;
 
 import sim.constraints.IntervalList;
-import coding.*;
+import coding.Symbol;
 /**
  * Class of messages to be sent from cluster heads to the base station.
  * @author Yi Zhang

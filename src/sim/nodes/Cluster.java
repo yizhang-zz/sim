@@ -2,15 +2,13 @@ package sim.nodes;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Vector;
-import sim.constraints.*;
 
 import org.apache.log4j.Logger;
 
-import sim.constraints.*;
-import coding.*;
+import sim.constraints.IntervalList;
+import coding.Encoder;
+import coding.Symbol;
 
 
 public class Cluster {

@@ -1,8 +1,8 @@
 package sim.nodes;
-import coding.*;
+import coding.EncoderConfiguration;
 
 public class Network {
-	private boolean allocate;
+	//private boolean allocate;
 
 	public int timeSteps;
 	public int clusterCount;

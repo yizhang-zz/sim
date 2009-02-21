@@ -1,7 +1,5 @@
 package sim.nodes;
 
-import Jama.Matrix;
-import java.util.*;
 public interface Model {
 	//public void setNetworkConfiguration(NetworkConfiguration nc);
 	//public void startSimulation(Cluster c, double e);

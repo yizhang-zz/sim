@@ -1,20 +1,18 @@
 package sim.constraints;
 
-import java.io.*;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.regex.*;
-import org.apache.commons.configuration.*;
-
-import Jama.Matrix;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import sim.nodes.Cluster;
 import sim.nodes.MVNModel;
-import sim.nodes.Model;
 import sim.nodes.Network;
-import sim.nodes.NetworkConfiguration;
 import sim.nodes.NetworkConfiguration;
 import sim.nodes.TransmissionRecord;
 
@@ -40,8 +38,9 @@ public class HistoryReconstructor {
 		}
 
 		Pattern pattern1 = Pattern.compile("T (\\d+) C (\\d+) N (\\d+) intervals (.+)");
+		// with capital letters INTERVALS, all intervals are sorted and cleaned after simulation
 		Pattern pattern2 = Pattern
-				.compile("T (\\d+) C (\\d+) intervals (.+)");
+				.compile("T (\\d+) C (\\d+) INTERVALS (.+)");
 		Pattern pattern3 = Pattern
 				.compile("T (\\d+) C (\\d+) type (\\d+) \\[ ((.+ )+)\\]");
 		Pattern pattern4 = Pattern
@@ -129,7 +128,7 @@ public class HistoryReconstructor {
         }
 
 	public void generateConstraints() {
-            Interval unknownInterval = new Interval(0,0,0);
+            Interval unknownInterval = new Interval(0,0,0,-1);
             unknownInterval.type = Interval.UNKNOWN;
 		for (Cluster cluster : net.baseStation.clusters) {
 			MVNModel model = (MVNModel)(cluster.getModel());
@@ -202,14 +201,14 @@ public class HistoryReconstructor {
 			System.out.println(String.format("0:x[%d,%d] = %f",  0+1,i+1, rec.values[i]));
 	}
 
-	private int[] convert2Int(String[] str) {
+/*	private int[] convert2Int(String[] str) {
 		int[] d = new int[str.length];
 		for (int i = 0; i < str.length; i++) {
 			d[i] = Integer.parseInt(str[i]);
 		}
 		return d;
 	}
-
+*/
 	private void extractValues(String str, double[] values, int[] status, boolean success) {
 		//Hashtable<Integer, Double> ht = new Hashtable<Integer, Double>();
 		String[] ss = str.split(" ");
@@ -230,7 +229,7 @@ public class HistoryReconstructor {
 	private IntervalList parseIntervals(IntervalList list, String s) {
 		Interval lastInterval;
 		if (list.size() == 0) {
-			lastInterval = new Interval(-1,-1,Interval.GOOD);
+			lastInterval = new Interval(-1,-1,Interval.GOOD, -1);
 		}
 		else {
 		lastInterval = list.get(list.size() - 1);
@@ -254,7 +253,8 @@ public class HistoryReconstructor {
 					lastInterval.end = end;
 				}
 			}
-			list.add(begin, end, type);
+			// the sequence number here doesn't really matter, so set to -1
+			list.add(begin, end, type, -1);
 		}
 		return list;
 	}

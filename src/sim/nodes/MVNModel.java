@@ -1,11 +1,11 @@
 package sim.nodes;
 
-import java.util.Hashtable;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Vector;
-import org.apache.log4j.Logger;
+
+import sim.constraints.Interval;
 import Jama.Matrix;
-import sim.constraints.*;
 
 public class MVNModel implements Model {
     //private static Logger logger = Logger.getLogger(Model.class);

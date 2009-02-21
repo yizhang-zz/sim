@@ -1,7 +1,9 @@
 package sim.nodes;
 
-import java.util.*;
-import org.apache.log4j.*;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.apache.log4j.Logger;
 
 public class Node {
 	private static Logger log = Logger.getLogger(Node.class);

@@ -3,10 +3,10 @@ package sim.nodes;
 import java.util.ArrayList;
 
 public class TransmissionList extends ArrayList<TransmissionRecord> {
-	private int cur = 0; // current position in the list
+	//private int cur = 0; // current position in the list
 	
 	/**
-	 * The list is sorted according to time so adds rec to proper position. 
+	 * The list is sorted according to time so add record to proper position. 
 	 */
 	@Override
 	public boolean add(TransmissionRecord rec) {

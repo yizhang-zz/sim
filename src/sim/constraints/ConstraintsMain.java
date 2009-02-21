@@ -1,7 +1,6 @@
 package sim.constraints;
 
 import java.io.FileNotFoundException;
-import org.apache.log4j.*;
 public class ConstraintsMain {
 
 	/**

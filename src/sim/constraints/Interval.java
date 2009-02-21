@@ -1,7 +1,6 @@
 package sim.constraints;
 
-import java.util.*;
-import sim.nodes.*;
+import sim.nodes.TransmissionRecord;
 public class Interval {
 	public int begin;
 	public int end;

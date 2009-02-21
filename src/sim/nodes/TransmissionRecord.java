@@ -1,9 +1,5 @@
 package sim.nodes;
 
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.LinkedList;
 
 //public class TransmissionList extends LinkedList<TransmissionRecord> {
 	

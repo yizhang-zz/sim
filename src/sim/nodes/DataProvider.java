@@ -8,14 +8,14 @@ import java.io.IOException;
 public class DataProvider {
 
 	private double[][] data;
-	private int nodeCount;
+	//private int nodeCount;
 	private int timeSteps;
 	
 	public DataProvider(int nodeCount, int timeSteps) {
 		if (nodeCount <=0 || timeSteps <= 0) {
 			throw new IllegalArgumentException("arguments should be positive integers");
 		}
-		this.nodeCount = nodeCount;
+		//this.nodeCount = nodeCount;
 		this.timeSteps = timeSteps;
 		
 		data = new double[nodeCount][];

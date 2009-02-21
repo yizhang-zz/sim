@@ -1,9 +1,6 @@
 package sim.nodes;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-import Jama.*;
+import Jama.Matrix;
 public class NetworkConfigurationTest {
 
 	//@Test

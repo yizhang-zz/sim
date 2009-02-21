@@ -1,15 +1,18 @@
 package sim.nodes;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import sim.constraints.*;
-import coding.*;
+import sim.constraints.Interval;
+import sim.constraints.IntervalList;
+import coding.DecodeResult;
+import coding.Decoder;
 
 public class BaseStation {
-	private static final int FAIL_BUF_SIZE_PER_CLUSTER = 4;
-	private static final int HIST_BUF_SIZE_PER_CLUSTER = 4;
+	//private static final int FAIL_BUF_SIZE_PER_CLUSTER = 4;
+	//private static final int HIST_BUF_SIZE_PER_CLUSTER = 4;
 	private static Logger logger = Logger.getLogger(BaseStation.class);
 	private int time = 0;
 	
@@ -18,7 +21,7 @@ public class BaseStation {
 	//private ClusterHistory[] clusterHistory;
 	public IntervalList[] clusterHistory;
 
-	List<FailureList<Integer>> recentFailures;
+	//List<FailureList<Integer>> recentFailures;
 	
 	private Network net;
 	private Decoder decoder;
@@ -26,7 +29,7 @@ public class BaseStation {
 	public Cluster createCluster(int id, int nodeCount) {
 		clusters[id] = new Cluster(nodeCount, net.epsilon1, net.epsilon2);
 		//models[id] = new MVNModel(clusters[id]);
-		recentFailures.add(new FailureList<Integer>(id, FAIL_BUF_SIZE_PER_CLUSTER));
+		//recentFailures.add(new FailureList<Integer>(id, FAIL_BUF_SIZE_PER_CLUSTER));
 		//clusterHistory[id] = new ClusterHistory();
 		clusterHistory[id] = new IntervalList();
 		return clusters[id];
@@ -36,7 +39,7 @@ public class BaseStation {
 		this.net = net;
 		clusters = new Cluster[clusterCount];
 		//models = new MVNModel[clusterCount];
-		recentFailures = new ArrayList<FailureList<Integer>>(clusterCount);
+		//recentFailures = new ArrayList<FailureList<Integer>>(clusterCount);
 		//clusterHistory = new ClusterHistory[clusterCount];
 		clusterHistory = new IntervalList[clusterCount];
 		if (net.coding)
@@ -201,8 +204,6 @@ public class BaseStation {
 	 * Let each cluster clean its Interval history by sorting according to the seq no.
 	 */
     public void cleanup() {
-        if (!net.coding)
-            return;
         for (Cluster c : clusters) {
             int id = c.id;
             clusterHistory[id].sort();

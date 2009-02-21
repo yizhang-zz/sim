@@ -1,8 +1,8 @@
 package sim;
 
 import java.io.FileNotFoundException;
-import org.apache.log4j.*;
-import sim.constraints.*;
+
+import sim.constraints.HistoryReconstructor;
 public class NodeHistory {
 
 	/**

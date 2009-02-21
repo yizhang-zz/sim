@@ -3,7 +3,9 @@
  * and open the template in the editor.
  */
 package sim;
-import sim.nodes.*;
+import sim.nodes.MVNModel;
+import sim.nodes.Network;
+import sim.nodes.NetworkConfiguration;
 
 public class Main {
 
