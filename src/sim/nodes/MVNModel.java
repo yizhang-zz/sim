@@ -176,7 +176,7 @@ public class MVNModel implements Model {
         }
 
         /* copy sent values */
-        for (int i = 0; i < status.length; i++) {
+        for (int i = 0; i < m; i++) {
             if (status[i] == 1) {// newly sent values
 
                 sentValues.set(i, 0, val[i]);
@@ -187,6 +187,8 @@ public class MVNModel implements Model {
             } else {
                 continue;
             }
+        }
+        for (int i=0; i<m; i++) {
             lastTs[i] = ts;
             lastTypes[i] = ntype[i].type;
         }
