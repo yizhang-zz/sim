@@ -265,7 +265,7 @@ public class Cluster {
                  is always assumed to succeed. */
                  for (int i = 0; i < q.size() - 1; i++) {
                     h.add(q.get(i).epoch, q.get(i + 1).epoch - 1,
-                            sim.constraints.Interval.BAD, q.get(i).seq);
+                            sim.constraints.Interval.Type.BAD, q.get(i).seq);
                     hasNewFailure = true;
                 }
             } else {
@@ -280,7 +280,7 @@ public class Cluster {
                     }
                     if (q.get(i).epoch > lastTime) {
                         h.add(q.get(i).epoch, q.get(i + 1).epoch - 1,
-                                sim.constraints.Interval.BAD, q.get(i).seq);
+                                sim.constraints.Interval.Type.BAD, q.get(i).seq);
                         hasNewFailure = true;
                     }
                 }
@@ -288,7 +288,7 @@ public class Cluster {
         }
         // the last entry in h must be a point interval with current time --
         // [x,x] with GOOD type
-        h.add(msg.epoch, msg.epoch, sim.constraints.Interval.GOOD, msg.seq);
+        h.add(msg.epoch, msg.epoch, sim.constraints.Interval.Type.GOOD, msg.seq);
     }
 
 	public int getNodeCount() {

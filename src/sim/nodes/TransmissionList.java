@@ -23,7 +23,7 @@ public class TransmissionList extends ArrayList<TransmissionRecord> {
 		return true;
 	}
 	
-	public void append(TransmissionRecord rec) {
-		super.add(size(), rec);
-	}
+//	public void append(TransmissionRecord rec) {
+//		super.add(size(), rec);
+//	}
 }

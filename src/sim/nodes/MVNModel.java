@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Vector;
 
 import sim.constraints.Interval;
+import sim.constraints.Interval.Type;
 import Jama.Matrix;
 
 public class MVNModel implements Model {
@@ -25,7 +26,7 @@ public class MVNModel implements Model {
     public double epsilon1;
     Matrix sentValues;
     /** if each (child) component of head-to-base transmission is known*/
-    boolean[] known;
+    int[] known;
     int dim; // total dimension of the distribution; last m dimensions are always for
     // latest epoch
 
@@ -34,10 +35,9 @@ public class MVNModel implements Model {
     int[] lastIndex;
     int ts = 0;
     /** time of last transmission from child to head */
-    int[] lastTs;
+    int[] lastFailureTime;
     /** type of transmission from child to head last time */
-    int[] lastTypes;
-    boolean stateSynced = true;
+    Type[] lastTypes;
 
     // boolean hasUnknown = false;
     public MVNModel(double epsilon, Matrix c, Matrix a, Matrix sigma) {
@@ -101,21 +101,11 @@ public class MVNModel implements Model {
     }
 
     private boolean allKnown() {
-        for (boolean b : known) {
-            if (!b) {
-                return false;
-            }
+    	boolean res = true;
+        for (int b : known) {
+            res = res && (b==1);
         }
-        return true;
-    }
-
-    private boolean allGood() {
-        for (int i = 0; i < m; i++) /* if a component is unkown, it must appear in symbolic constraint so it's lastType is required to be good */ {
-            if (!known[i] && lastTypes[i] != Interval.GOOD) {
-                return false;
-            }
-        }
-        return true;
+        return res;
     }
 
     /**
@@ -130,7 +120,7 @@ public class MVNModel implements Model {
      *            for each component in val, 1 means value known, -1 means value unknown and 0
      *            means not included in the transmitted subset.
      */
-    public void makePrediction(int type, Interval[] ntype, double[] val, int[] status) {
+    public void makePrediction(Interval.Type type, Interval[] ntype, double[] val, int[] status) {
         if (sentValues == null) {
             ts = 0;
             dim = m;
@@ -152,13 +142,12 @@ public class MVNModel implements Model {
             reset(sentIndex, 0);
             reset(lastIndex, 0);
 
-            known = new boolean[m];
-            lastTs = new int[m];
-            lastTypes = new int[m];
-            Arrays.fill(known, true);
-            Arrays.fill(lastTs, 0);
-            Arrays.fill(lastTypes, Interval.GOOD);
-            stateSynced = true;
+            known = new int[m];
+            lastFailureTime = new int[m];
+            lastTypes = new Type[m];
+            Arrays.fill(known, 1);
+            Arrays.fill(lastFailureTime, 0);
+            Arrays.fill(lastTypes, Type.GOOD);
             return;
         }
 
@@ -167,45 +156,36 @@ public class MVNModel implements Model {
         marginalize(status);
 
         /* If head-to-bs is unknown, no constraint can be generated */
-        if (type == Interval.UNKNOWN) {
-            System.out.println("# t " + ts + " no constraints");
-            // don't know if any subset is transmitted or not
-            Arrays.fill(known, false);
-            stateSynced = false;
+        if (type == Type.UNKNOWN) {
+            System.out.println("# t " + (ts+1) + " no constraints");
+            // don't know if any subset/component is transmitted or not
+            Arrays.fill(known, 0);
             return;
         }
 
         /* copy sent values */
         for (int i = 0; i < m; i++) {
+            lastTypes[i] = ntype[i].type;
             if (status[i] == 1) {// newly sent values
-
                 sentValues.set(i, 0, val[i]);
-                known[i] = true;
+                known[i] = 1;
             } else if (status[i] == -1) {// unknown values
-
-                known[i] = false;
+                known[i] = -1;
+                // Value is unknown so save ts for use in symbolic computation
+                lastFailureTime[i] = ts;
             } else {
                 continue;
             }
         }
-        for (int i=0; i<m; i++) {
-            lastTs[i] = ts;
-            lastTypes[i] = ntype[i].type;
-        }
 
-        /* if previously not in sync, check if all components are known again */
-        if (!stateSynced) {
-            stateSynced = true;
-            for (boolean b : known) {
-                stateSynced &= b;
-            // still not in sync; wait
-            }
-            if (!stateSynced) {
-                System.out.println("# t " + ts + " no constraints: prediction state not in sync");
-                return;
-            }
+        /* check if all components are known again */
+        boolean allCertain = true;
+        for (int b : known)
+        	allCertain = allCertain && (b!=0);
+        if (!allCertain) {
+            System.out.println("# t " + (ts+1) + " no constraints: prediction state not in sync");
+            return;        	
         }
-
 
         /* which components need be predicted? */
         int[] predictIndex = lastIndex.clone();
@@ -213,13 +193,13 @@ public class MVNModel implements Model {
         for (int i = 0; i < m; i++) {
             if (status[i] != 0) {
                 predictIndex[i] = -1; // no need to predict
-
                 subsetSize++;
             }
         }
 
         /* last transmission for any components is known, so numeric computation */
         if (allKnown()) {
+        	// Only happens when current time is in a Good interval
             Matrix prediction = predict(mean, cov, sentIndex, predictIndex, sentValues);
             // now constraints?
             // if (type == Interval.GOOD)
@@ -231,36 +211,43 @@ public class MVNModel implements Model {
                 if (predictIndex[j] == -1) {
                     x++;
                 }
-                if (ntype[j].type == Interval.GOOD) {
+                if (ntype[j].type == Type.GOOD) {
                     if (predictIndex[j] == -1) {
-                        /* type 0: x[i,j] = a */
-                        if (ntype[j].begin == ts) // both tiers transmit, equality constraint
+                        if (ntype[j].begin == ts)
                         {
+                        	// both tiers transmit, equality constraint
+                        	// type 0: x[i,j] = a
                             System.out.println(String.format("0:x[%d,%d] = %f", ts + 1, j + 1, sentValues.get(j, 0)));
                         } else {
                             System.out.println(String.format("1:%d,%d,%f,%f", ts + 1, j + 1, sentValues.get(j, 0) - (epsilon1), sentValues.get(j, 0) + (epsilon1)));
                         }
                     } else {
-                        /* type 1: a <= x[i,j] <= b*/
-                        if (ntype[j].begin != ts)
-                        System.out.println(String.format("1:%d,%d,%f,%f", ts + 1, j + 1, prediction.get(j - x, 0) - (epsilon1 + epsilon), prediction.get(j - x, 0) + (epsilon1 + epsilon)));
+                        // type 1: a <= x[i,j] <= b
+                        if (ntype[j].begin == ts)
+                        	System.out.println(String.format("1:%d,%d,%f,%f", ts + 1, j + 1, prediction.get(j - x, 0) - epsilon, prediction.get(j - x, 0) +  epsilon));
                         else
-                            System.out.println(String.format("1:%d,%d,%f,%f", ts + 1, j + 1, prediction.get(j - x, 0) - epsilon, prediction.get(j - x, 0) +  epsilon));
+                        	System.out.println(String.format("1:%d,%d,%f,%f", ts + 1, j + 1, prediction.get(j - x, 0) - (epsilon1 + epsilon), prediction.get(j - x, 0) + (epsilon1 + epsilon)));
                     }
-                } else if (ntype[j].type == Interval.BAD) {
+                } else if (ntype[j].type == Type.BAD) {
                     if (predictIndex[j] == -1) {
-                        /* type 2: x[i,j] <a or x[i,j] >b */
-                        System.out.println(String.format("2:%d,%d,%f,%f", ts + 1, j + 1, sentValues.get(j, 0) - epsilon1, sentValues.get(j, 0) + epsilon1));
+                        // type 2: x[i,j] <a or x[i,j] >b
+                    	// Seems we can't derive this, can we?
+                        // System.out.println(String.format("2:%d,%d,%f,%f", ts + 1, j + 1, sentValues.get(j, 0) - epsilon1, sentValues.get(j, 0) + epsilon1));
                     } else {
                         // loose bound
                     }
                 }
             }
         } else { // symbolic computation
-
             /* NOTE: Symbolic variable here is NOT real reading, but view of the head.
-             * So unless these variables are all GOOD, we have no constraints. */
-            if (!allGood()) {
+             * So unless the lower-level intervals are all GOOD, we have no constraints. */
+        	boolean lowerAllGood = true;
+            for (int i = 0; i < m; i++) /* if a component is unkown, it must appear in symbolic constraint so it's lastType is required to be good */ {
+                if (known[i]==-1 && lastTypes[i] != Type.GOOD) {
+                	lowerAllGood = false;
+                }
+            }
+            if (!lowerAllGood) {
                 return;
             }
             int[] compactPredictIndex = pack(predictIndex); // remove -1 elements
@@ -275,15 +262,15 @@ public class MVNModel implements Model {
              * output format: 3:left;right;coef,time,node;coef,time,node;...
              */
 
-            int x = 0; // how many -1s encountered
+            int x = 0; // how many -1's encountered
 
             for (int j = 0; j < m; j++) {
                 if (predictIndex[j] != -1) { // to be predicted
-                    if (ntype[j].type == Interval.GOOD) {
+                    if (ntype[j].type == Type.GOOD) {
                         double left = C.get(j - x, 0);
                         double right = C.get(j - x, 0);
                         if (ntype[j].begin == ts) { // begin of a suppression interval
-                            left -= (epsilon);
+                            left -= epsilon;
                             right += epsilon;
                         }
                         else {
@@ -293,12 +280,12 @@ public class MVNModel implements Model {
                         double temp = 0, relax = 0;
                         String sVar = "";
                         for (int k = 0; k < m; k++) {
-                            if (known[k]) {
+                            if (known[k]==1) {
                                 temp += coef.get(j - x, k) * sentValues.get(k, 0);
                             } else {
                                 // NOTE: Symbolic variable here is NOT real reading, but view of the head.
                                 // So additional relaxation of the bounds should be considered. 
-                                sVar += String.format(";%f,%d,%d", -coef.get(j - x, k), lastTs[k] + 1, k + 1);
+                                sVar += String.format(";%f,%d,%d", -coef.get(j - x, k), lastFailureTime[k] + 1, k + 1);
                                 relax += Math.abs(coef.get(j - x, k)) * epsilon1;
                             // relax could be more tight when view of the head *is* actually the real reading
                             }
@@ -312,20 +299,20 @@ public class MVNModel implements Model {
                         //output.append("<= "+right);
                         System.out.println(output);
                     }
-                    else if (ntype[j].type == Interval.BAD) {
+                    else if (ntype[j].type == Type.BAD) {
                     }
                 } else {// sent values
                     x++;
-                    if (known[j] && ntype[j].type == Interval.GOOD) {
+                    if (known[j]==1 && ntype[j].type == Type.GOOD) {
                         if (ntype[j].begin == ts)
-                        System.out.println(String.format("0:x[%d,%d] = %f", ts + 1, j + 1, sentValues.get(j, 0)));
+                        	System.out.println(String.format("0:x[%d,%d] = %f", ts + 1, j + 1, sentValues.get(j, 0)));
                         else
-                             System.out.println(String.format("1:%d,%d,%f,%f", ts + 1, j + 1, sentValues.get(j, 0) - (epsilon1), sentValues.get(j, 0) + (epsilon1)));
+                        	System.out.println(String.format("1:%d,%d,%f,%f", ts + 1, j + 1, sentValues.get(j, 0) - (epsilon1), sentValues.get(j, 0) + (epsilon1)));
                     /*System.out.println(String.format("1:%d,%d,%f,%f", ts+1, j+1, sentValues
                     .get(j, 0)
                     - (epsilon1),  sentValues.get(j, 0)
                     + (epsilon1)));*/
-                    } else if (known[j] && ntype[j].type == Interval.BAD) {
+                    } else if (known[j]==1 && ntype[j].type == Type.BAD) {
                         System.out.println(String.format("2:%d,%d,%f,%f", ts + 1, j + 1, sentValues.get(j, 0) - epsilon1, sentValues.get(j, 0) + epsilon1));
                     }
                 }

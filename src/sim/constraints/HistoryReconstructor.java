@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import sim.constraints.Interval.Type;
 import sim.nodes.Cluster;
 import sim.nodes.MVNModel;
 import sim.nodes.Network;
@@ -74,7 +75,7 @@ public class HistoryReconstructor {
 					double[] values = new double[net.baseStation.clusters[cluster].getNodeCount()];
 					int[] status = new int[net.baseStation.clusters[cluster].getNodeCount()];
 					extractValues(matcher.group(4), values, status, true);
-					net.baseStation.clusters[cluster].transmissionList.append(new TransmissionRecord(
+					net.baseStation.clusters[cluster].transmissionList.add(new TransmissionRecord(
 							time, type, values, status, true));
 					continue;
 				}
@@ -88,7 +89,7 @@ public class HistoryReconstructor {
 					double[] values = new double[net.baseStation.clusters[cluster].getNodeCount()];
 					int[] status = new int[net.baseStation.clusters[cluster].getNodeCount()];
 					extractValues(matcher.group(5), values, status, false);
-					net.baseStation.clusters[cluster].transmissionList.append(new TransmissionRecord(
+					net.baseStation.clusters[cluster].transmissionList.add(new TransmissionRecord(
 							time, type, values, status, false));
 					continue;
 				}
@@ -128,8 +129,7 @@ public class HistoryReconstructor {
         }
 
 	public void generateConstraints() {
-            Interval unknownInterval = new Interval(0,0,0,-1);
-            unknownInterval.type = Interval.UNKNOWN;
+        Interval unknownInterval = new Interval(0,0,Type.UNKNOWN,-1);
 		for (Cluster cluster : net.baseStation.clusters) {
 			MVNModel model = (MVNModel)(cluster.getModel());
 			model.epsilon1 = net.epsilon1;
@@ -137,7 +137,7 @@ public class HistoryReconstructor {
 			outputFirstEpoch(cluster.transmissionList.get(0));
 			TransmissionRecord txrec = cluster.transmissionList.get(0);
 			
-			model.makePrediction(Interval.GOOD, null, txrec.values, txrec.status);
+			model.makePrediction(Interval.Type.GOOD, null, txrec.values, txrec.status);
 			
 			//boolean shouldEnd = false;
 			int i = 1;
@@ -145,8 +145,8 @@ public class HistoryReconstructor {
 			int phis = 0;
 			int[] pint = new int[cluster.getNodeCount()];
 			IntervalList chis = net.baseStation.clusterHistory[cluster.id];
-			IntervalList[] nhis = net.baseStation.clusters[cluster.id].intervalLists;
-			int ctype; // cluster interval type
+			IntervalList[] nhis = cluster.intervalLists;
+			Type ctype; // cluster interval type
 			Interval[] ntype = new Interval[cluster.getNodeCount()];
 			while (i < net.timeSteps) {
 				if (phis == chis.size()-1 && i > chis.get(phis).end)
@@ -155,13 +155,13 @@ public class HistoryReconstructor {
 				while (phis < chis.size() && chis.get(phis).end < i)
 					phis++;
 
-				if (chis.get(phis).begin == i) {
+				if (chis.get(phis).begin <= i) {
 					ctype = chis.get(phis).type;
 				}
-				else if (chis.get(phis).begin < i)
-					ctype = Interval.GOOD; // suppression
+//				else if (chis.get(phis).begin < i)
+//					ctype = Type.GOOD; // suppression
 				else
-					ctype = Interval.UNKNOWN;
+					ctype = Type.UNKNOWN;
 				
 				// find right child intervals
 				for (int j=0; j<nhis.length; j++) {
@@ -229,7 +229,7 @@ public class HistoryReconstructor {
 	private IntervalList parseIntervals(IntervalList list, String s) {
 		Interval lastInterval;
 		if (list.size() == 0) {
-			lastInterval = new Interval(-1,-1,Interval.GOOD, -1);
+			lastInterval = new Interval(-1,-1,Interval.Type.GOOD, -1);
 		}
 		else {
 		lastInterval = list.get(list.size() - 1);
@@ -238,9 +238,9 @@ public class HistoryReconstructor {
 		//Interval[] ints = new Interval[sIntervals.length];
 		for (int i = 0; i < sIntervals.length; i++) {
 			String sInterval = sIntervals[i];
-			int type = Interval.GOOD;
+			Interval.Type type = Interval.Type.GOOD;
 			if (sInterval.startsWith("!")) {
-				type = Interval.BAD;
+				type = Interval.Type.BAD;
 				sInterval = sInterval.substring(1);
 			}
 			String[] nums = sInterval.split("-");

@@ -79,7 +79,7 @@ public class BaseStation {
 			// clusterHistory[id].add(time, ClusterHistory.Record.SUCCESS, msg);
 			processRedundancy(msg);
 			// add current msg to history
-			clusterHistory[msg.from].add(time, time, Interval.GOOD, msg.seq);
+			clusterHistory[msg.from].add(time, time, Interval.Type.GOOD, msg.seq);
 			logger.info(String.format("T %d C %d type %d %s", time, id, msg.type, Helper.toString(msg.content)));
 			logger.info(String.format("T %d C %d intervals %s", time, id, clusterHistory[msg.from]));
 		}
@@ -102,7 +102,7 @@ public class BaseStation {
 			processRedundancy1(msg);
 			
 			// add current msg to history
-			clusterHistory[msg.from].add(time, time, Interval.GOOD, msg.seq);
+			clusterHistory[msg.from].add(time, time, Interval.Type.GOOD, msg.seq);
 			logger.info(String.format("T %d C %d type %d %s", time, id, msg.type, Helper.toString(msg.content)));
 			logger.info(String.format("T %d C %d intervals %s", time, id, clusterHistory[id]));
 		}
@@ -131,7 +131,7 @@ public class BaseStation {
 			for (int i=res.size()-1; i>=0; i--) {
 				DecodeResult t = res.get(i);
 				if (!t.success) {
-					lq.add(t.time, res.get(i-1).time-1, Interval.BAD, t.seq);
+					lq.add(t.time, res.get(i-1).time-1, Interval.Type.BAD, t.seq);
 					logger.warn(String.format("T %d C %d failure found @ T %d type %d %s", time, msg.from, t.time, 3, Helper.toString(t.list)));
 				}
 			}
@@ -174,7 +174,7 @@ public class BaseStation {
 					h.get(h.size()-1).end =  q.get(i+1).time - 1;
 				}
 				if (m.time > lastTime) {
-					h.add(m.time, q.get(i+1).time-1, Interval.BAD, m.seq);
+					h.add(m.time, q.get(i+1).time-1, Interval.Type.BAD, m.seq);
 					logger.warn(String.format("T %d C %d failure found @ T %d type %d %s", time, msg.from, m.time, m.type, Helper.toString(m.content)));
 				}
 			}			
