@@ -28,17 +28,12 @@ public class NetworkConfiguration {
 	}
 	
 	public static Network createNetwork(String filename, boolean allocate) {
-		
-		//Network net = new Network();
-		
 		Network net = new Network();
 		globalNetwork = net;
 		HierarchicalConfiguration config = null;
 		try {
 			config = new XMLConfiguration(filename);
-			// config.setExpressionEngine(new XPathExpressionEngine());
 		} catch (ConfigurationException e2) {
-			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
 
@@ -58,6 +53,7 @@ public class NetworkConfiguration {
 		// read encoder configuration
 		net.coding = config.getBoolean("coding", false);
 		if (net.coding) {
+			int fieldsize = config.getInt("encoder.fieldsize");
 		    int memsize = config.getInt("encoder.memsize");
 		    int inputsize = config.getInt("encoder.inputsize");
 		    int outputsize = config.getInt("encoder.outputsize");
@@ -70,7 +66,7 @@ public class NetworkConfiguration {
 		        HierarchicalConfiguration sub = (HierarchicalConfiguration) obj;
 		        outputs[i++] = convertInt(sub.getList("spec"));
 		    }
-		    net.encoderConfiguration = new EncoderConfiguration(memsize, inputsize, outputsize, denom, outputs);		    
+		    net.encoderConfiguration = new EncoderConfiguration(fieldsize, memsize, inputsize, outputsize, denom, outputs);		    
 		}
 		
 		// read clusters
