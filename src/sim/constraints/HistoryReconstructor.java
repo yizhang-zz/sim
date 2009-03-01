@@ -185,7 +185,9 @@ public class HistoryReconstructor {
 				// find head -> base station message
 				while (ptx < cluster.transmissionList.size() && cluster.transmissionList.get(ptx).time < i)
 					ptx++;
-				if (cluster.transmissionList.get(ptx).time == i) {
+				if (ptx == cluster.transmissionList.size())
+					model.makePrediction(ctype, ntype, null, new int[cluster.getNodeCount()]);
+				else if (cluster.transmissionList.get(ptx).time == i) {
 					model.makePrediction(ctype, ntype, cluster.transmissionList.get(ptx).values, cluster.transmissionList.get(ptx).status);
 				}
 				else {
