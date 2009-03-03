@@ -1,7 +1,6 @@
 package sim.nodes;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.List;
@@ -283,6 +282,16 @@ public class Cluster {
 	}
 
 	private void updateNodeHistory(NodeMessage msg) {
+		/* If assuming no failures could happen, then all intervals are GOOD */
+		if (NetworkConfiguration.getGlobalNetwork().assumeNoFailures==1) {
+			IntervalList h = childHistory[msg.from];
+			if (h.size() > 0) {
+				h.get(h.size()-1).end = msg.epoch-1;
+			}
+			h.add(msg.epoch, msg.epoch, sim.constraints.Interval.Type.GOOD, msg.seq);
+			return;
+		}
+		
         IntervalList h = childHistory[msg.from];
         List<NodeMessage> q = msg.history;
         if (q != null && q.size() > 0) {
@@ -351,39 +360,5 @@ public class Cluster {
 
 	public void setModel(Model model) {
 		this.model = model;
-	}
-}
-
-
-class FailureList<E> extends ArrayList<E> {
-	public static final int MAX_CHILD_FAILURE_REPORT_SIZE  = 4;
-	public int node;
-	private int maxSize;
-	//public List<Integer> failureEpochs;
-	
-	public FailureList(int nodeId) {
-		this(nodeId, MAX_CHILD_FAILURE_REPORT_SIZE);
-	}
-	public FailureList(int nodeId, int maxSize) {
-		super();
-		node = nodeId;
-		this.maxSize = maxSize;
-	}
-	
-	@Override
-	public void add(int index, E element) {
-		super.add(index, element);
-		if (this.size() > maxSize) {
-			this.remove(0);
-		}
-	}
-	
-	@Override
-	public boolean add(E element) {
-		boolean b = super.add(element);
-		if (this.size() > maxSize) {
-			this.remove(0);
-		}
-		return b;
 	}
 }

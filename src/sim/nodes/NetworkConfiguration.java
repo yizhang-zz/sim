@@ -60,7 +60,6 @@ public class NetworkConfiguration {
 		    int inputsize = config.getInt("encoder.inputsize");
 		    int outputsize = config.getInt("encoder.outputsize");
 		    int[] denom = convertInt(config.getList("encoder.denominator"));
-		    //List outputs =  config.configurationsAt("encoder.output");
 		    List a = config.configurationsAt("encoder.output");
 	        int[][] outputs = new int[a.size()][];
 	        int i = 0;

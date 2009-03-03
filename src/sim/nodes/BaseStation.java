@@ -69,17 +69,21 @@ public class BaseStation {
 	public void receive(ClusterMessage msg) {
 		if (msg != null && msg.success) {
 			int id = msg.from;
-			//models[id].update(time, msg.content);
-
-			/*
-			 * Add current message to history buffer. The redundancy in msg includes
-			 * itself -- the current message, so we should first add this to our history
-			 * buffer to make comparison easy when looking for failures
-			 */
-			// clusterHistory[id].add(time, ClusterHistory.Record.SUCCESS, msg);
-			processRedundancy(msg);
+			if (NetworkConfiguration.getGlobalNetwork().assumeNoFailures == 1) {
+				int k;
+				// Extend previous interval
+				if ((k = clusterHistory[id].size()) > 0)
+					clusterHistory[id].get(k-1).end = time -1;
+				for (int i = 0; i < msg.childHistory.length; i++) {
+					logger.info(String.format("T %d C %d N %d intervals %s", time,
+							msg.from, i, msg.childHistory[i]));
+				}
+			}
+			else
+				processRedundancy(msg);
+			
 			// add current msg to history
-			clusterHistory[msg.from].add(time, time, Interval.Type.GOOD, msg.seq);
+			clusterHistory[id].add(time, time, Interval.Type.GOOD, msg.seq);
 			logger.info(String.format("T %d C %d type %d %s", time, id, msg.type, Helper.toString(msg.content)));
 			logger.info(String.format("T %d C %d intervals %s", time, id, clusterHistory[msg.from]));
 			if (NetworkConfiguration.getGlobalNetwork().maxTry2 != -1) {
@@ -94,18 +98,21 @@ public class BaseStation {
 		}
 		else if (msg.success) {
 			int id = msg.from;
-			//models[id].update(time, msg.content);
-
-			/*
-			 * Add current message to history buffer. The redundancy in msg includes
-			 * itself -- the current message, so we should first add this to our history
-			 * buffer to make comparison easy when looking for failures
-			 */
-			// clusterHistory[id].add(time, ClusterHistory.Record.SUCCESS, msg);
-			processRedundancy1(msg);
+			if (NetworkConfiguration.getGlobalNetwork().assumeNoFailures == 1) {
+				int k;
+				// Extend previous interval
+				if ((k = clusterHistory[id].size()) > 0)
+					clusterHistory[id].get(k-1).end = time -1;
+				for (int i = 0; i < msg.childHistory.length; i++) {
+					logger.info(String.format("T %d C %d N %d intervals %s", time,
+							msg.from, i, msg.childHistory[i]));
+				}
+			}
+			else
+				processRedundancy1(msg);
 			
 			// add current msg to history
-			clusterHistory[msg.from].add(time, time, Interval.Type.GOOD, msg.seq);
+			clusterHistory[id].add(time, time, Interval.Type.GOOD, msg.seq);
 			logger.info(String.format("T %d C %d type %d %s", time, id, msg.type, Helper.toString(msg.content)));
 			logger.info(String.format("T %d C %d intervals %s", time, id, clusterHistory[id]));
 			if (NetworkConfiguration.getGlobalNetwork().maxTry2 != -1) {
