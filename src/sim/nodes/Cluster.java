@@ -1,6 +1,8 @@
 package sim.nodes;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -27,7 +29,7 @@ public class Cluster {
 
 	private int nodeCount;
 	private int time;
-
+	private int maxTry = NetworkConfiguration.getGlobalNetwork().maxTry2;
 	private FailureGenerator failureGenerator;
 	private static Logger logger = Logger.getLogger(Cluster.class);
 	
@@ -202,16 +204,33 @@ public class Cluster {
 		// add redundancy info
 		msg.clusterHistory = history;
 		
-		// msg.success will tell if msg is transmitted successfully
-		if (!failureGenerator.isFailure()){
-			logger.info(String.format("T %d C %d success, transmitting %s", time, id, Helper.toString(msg.content)));
-			msg.success = true;
+		boolean failed = true;
+		int count = 0;
+		if (maxTry == -1) { // no retry, rely on redundancies
+			failed = failureGenerator.isFailure();
+			count++;
+		}
+		else if (maxTry == 0) { // try until success
+			while (failed) {
+				failed = failureGenerator.isFailure();
+				count++;
+			}
+		}
+		else { // try maxTry times
+			while(failed & count < maxTry) {
+				failed = failureGenerator.isFailure();
+				count++;				
+			}
+		}
+		
+		msg.success = !failed;
+		msg.tryCount = count;
+		if (failed) {
+			logger.info(String.format("T %d C %d failure, transmitting %s, tried %d times", time, id, Helper.toString(msg.content), count));
 		}
 		else {
-			logger.info(String.format("T %d C %d failure, transmitting %s", time, id, Helper.toString(msg.content)));
-			msg.success = false;
-			//return null;
-                }
+			logger.info(String.format("T %d C %d success, transmitting %s, tried %d times", time, id, Helper.toString(msg.content), count));
+		}
 		return msg;
 	}
 
@@ -223,7 +242,8 @@ public class Cluster {
 	 */
 	public void receive(NodeMessage[] msgs) {
 		hasNewFailure = false;
-		int[] bcast = new int[nodeCount];
+		//int[] bcast = new int[nodeCount];
+		Hashtable<Integer,Integer> bcast = new Hashtable<Integer,Integer>();
 		for (int i=0; i<nodeCount; i++) {
 			NodeMessage msg = msgs[i];
 			if (msg == null) {
@@ -231,7 +251,10 @@ public class Cluster {
 			else {
 				// If a child tried n times and succeeded on the last time, then head should ack on that try
 				// currently we assume acks are reliable
-				bcast[msg.tryCount-1] ++;
+				if (bcast.containsKey(msg.tryCount))
+					bcast.put(msg.tryCount, bcast.get(msg.tryCount)+1);
+				else
+					bcast.put(msg.tryCount, 1);
 				if (msg.protocol == NodeMessage.Protocol.TS) {
 					lastReceived[msg.from] = msg.value;
 					updateNodeHistory(msg);
@@ -247,11 +270,16 @@ public class Cluster {
 		/* Log ACK activity
 		 * ACK x1 x2 ... xn means n broadcast ACK messages, each ACKing xi child nodes 
 		 */
+		if (NetworkConfiguration.getGlobalNetwork().maxTry1 != -1) {
 		String s = "";
-		for (int i=0; i<nodeCount; i++)
-			if (bcast[i]>0)
-				s += " "+bcast[i];
+		Enumeration<Integer> keys = bcast.keys();
+		while (keys.hasMoreElements()) {
+			Integer key = keys.nextElement();
+			Integer val = bcast.get(key);
+			s += " "+val;
+		}
 		logger.info(String.format("T %d C %d ACK"+s, time, id));
+		}
 	}
 
 	private void updateNodeHistory(NodeMessage msg) {

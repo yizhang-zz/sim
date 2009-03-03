@@ -82,6 +82,9 @@ public class BaseStation {
 			clusterHistory[msg.from].add(time, time, Interval.Type.GOOD, msg.seq);
 			logger.info(String.format("T %d C %d type %d %s", time, id, msg.type, Helper.toString(msg.content)));
 			logger.info(String.format("T %d C %d intervals %s", time, id, clusterHistory[msg.from]));
+			if (NetworkConfiguration.getGlobalNetwork().maxTry2 != -1) {
+				logger.info(String.format("T %d BS ACK 1", time));
+			}
 		}
 		time++;
 	}
@@ -105,6 +108,9 @@ public class BaseStation {
 			clusterHistory[msg.from].add(time, time, Interval.Type.GOOD, msg.seq);
 			logger.info(String.format("T %d C %d type %d %s", time, id, msg.type, Helper.toString(msg.content)));
 			logger.info(String.format("T %d C %d intervals %s", time, id, clusterHistory[id]));
+			if (NetworkConfiguration.getGlobalNetwork().maxTry2 != -1) {
+				logger.info(String.format("T %d BS ACK 1", time));
+			}
 		}
 		else {
 			processRedundancy1(msg);

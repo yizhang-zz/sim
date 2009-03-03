@@ -23,7 +23,7 @@ public class Node {
 	// private boolean bufferFull;
 
 	private Cluster parent;
-	private static int maxTry = NetworkConfiguration.getGlobalNetwork().maxTry;
+	private int maxTry = NetworkConfiguration.getGlobalNetwork().maxTry1;
 	
 	public Node(Cluster c, int id, double epsilon) {
 		this.id = id;
@@ -103,9 +103,15 @@ public class Node {
 		if (msg == null)
 			log.info(String.format("T %d N %d suppression", (epoch-1), id));
 		else {
-			if (maxTry <= 0) {
+			if (maxTry == -1) {
 				failed = failureGenerator.isFailure();
 				count = 1;
+			}
+			else if (maxTry == 0) {
+				while (failed) {
+					failed = failureGenerator.isFailure();
+					count++;					
+				}
 			}
 			else {
 				while (count < maxTry && failed) {

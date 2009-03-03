@@ -38,6 +38,7 @@ public class ClusterMessage {
 	
 	public Symbol[] codedMsg;
 	public boolean success;
+	public int tryCount;
 	public int seq;
 	//public int[] beginKnowns;
 	//public int[] endKnowns;

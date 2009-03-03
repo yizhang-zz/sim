@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- maxTry=0 means try once and no ack, redundancy is used instead
+<!-- maxTry=0 means try until succeed; -1 means no retry and redundancy is used
 encoder/fieldsize : # bits in a symbol
  -->
 <network>
@@ -10,13 +10,16 @@ encoder/fieldsize : # bits in a symbol
     <nodeCount>4</nodeCount>
     <epsilon1>0</epsilon1>
     <epsilon2>1</epsilon2>
-    <failureRate1>0</failureRate1>
+    <failureRate1>0.3</failureRate1>
     <failureRate2>0.3</failureRate2>
     <nodeRedundancy>2</nodeRedundancy>
     <nodeRedundancyFromHeadToBase>2</nodeRedundancyFromHeadToBase>
     <headRedundancy>2</headRedundancy>
 
-    <maxTry>0</maxTry>
+    <maxTry1>-1</maxTry1>
+    <maxTry2>0</maxTry2>
+    
+    <assumeNoFailures>0</assumeNoFailures>
 
     <coding>false</coding>
 

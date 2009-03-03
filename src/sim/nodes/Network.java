@@ -9,11 +9,12 @@ public class Network {
 	public int nodeCount;
 	public double epsilon1;
 	public double epsilon2;
-	public int maxTry;
+	public int maxTry1;
+	public int maxTry2;
 	public int nodeRedundancy;
 	public int nodeRedundancyFromHeadToBase;
 	public int headRedundancy;
-	//public int headHistorySize;
+	public int assumeNoFailures;
 	
 	public BaseStation baseStation;
 	public Cluster[] clusters;

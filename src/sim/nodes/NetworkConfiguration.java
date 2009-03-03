@@ -42,7 +42,9 @@ public class NetworkConfiguration {
 		net.nodeCount = config.getInt("nodeCount", 0);
 		net.epsilon1 = config.getDouble("epsilon1", .5);
 		net.epsilon2 = config.getDouble("epsilon2", .5);
-		net.maxTry = config.getInt("maxTry", 0);
+		net.maxTry1 = config.getInt("maxTry1", -1);
+		net.maxTry2 = config.getInt("maxTry2", -1);
+		net.assumeNoFailures = config.getInt("assumeNoFailures",0);
 		net.failureRate1 = config.getDouble("failureRate1");
 		net.failureRate2 = config.getDouble("failureRate2");
 		net.nodeRedundancy = config.getInt("nodeRedundancy");
