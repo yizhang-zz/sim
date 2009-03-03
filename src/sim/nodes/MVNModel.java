@@ -197,6 +197,11 @@ public class MVNModel implements Model {
             }
         }
 
+        for (int j=0; j<m; j++)
+        	if (ntype[j].type!=Type.UNKNOWN && ntype[j].begin!=ts) {
+        		System.out.println(String.format("3:%f;%f;%f,%d,%d;%f,%d,%d",-epsilon1,epsilon1,1.0,ts+1,j+1,-1.0,ntype[j].begin+1,j+1));
+        }
+
         /* last transmission for any components is known, so numeric computation */
         if (allKnown()) {
         	// Only happens when current time is in a Good interval
@@ -230,7 +235,7 @@ public class MVNModel implements Model {
                     }
                 } else if (ntype[j].type == Type.BAD) {
                     if (predictIndex[j] == -1) {
-                        // type 2: x[i,j] <a or x[i,j] >b
+                        // type 2: x[i,j] <a or x[i,j] >b; omit
                     	// Seems we can't derive this, can we?
                         // System.out.println(String.format("2:%d,%d,%f,%f", ts + 1, j + 1, sentValues.get(j, 0) - epsilon1, sentValues.get(j, 0) + epsilon1));
                     } else {
