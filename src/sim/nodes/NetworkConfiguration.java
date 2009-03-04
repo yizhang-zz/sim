@@ -55,6 +55,7 @@ public class NetworkConfiguration {
 		// read encoder configuration
 		net.coding = config.getBoolean("coding", false);
 		if (net.coding) {
+			net.codeValue = config.getBoolean("codeValue", false);
 			int fieldsize = config.getInt("encoder.fieldsize");
 		    int memsize = config.getInt("encoder.memsize");
 		    int inputsize = config.getInt("encoder.inputsize");

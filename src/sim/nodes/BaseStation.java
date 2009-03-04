@@ -1,6 +1,7 @@
 package sim.nodes;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -20,6 +21,7 @@ public class BaseStation {
 	//MVNModel[] models;
 	//private ClusterHistory[] clusterHistory;
 	public IntervalList[] clusterHistory;
+	public Hashtable<Integer,List<IndexValuePair>>[] clusterMsgs;
 
 	//List<FailureList<Integer>> recentFailures;
 	
@@ -32,6 +34,7 @@ public class BaseStation {
 		//recentFailures.add(new FailureList<Integer>(id, FAIL_BUF_SIZE_PER_CLUSTER));
 		//clusterHistory[id] = new ClusterHistory();
 		clusterHistory[id] = new IntervalList();
+		clusterMsgs[id] = new Hashtable<Integer,List<IndexValuePair>>();
 		return clusters[id];
 	}
 	
@@ -42,6 +45,7 @@ public class BaseStation {
 		//recentFailures = new ArrayList<FailureList<Integer>>(clusterCount);
 		//clusterHistory = new ClusterHistory[clusterCount];
 		clusterHistory = new IntervalList[clusterCount];
+		clusterMsgs = new Hashtable[clusterCount];
 		if (net.coding)
 		    decoder = new Decoder(net.encoderConfiguration);
 	}
@@ -59,16 +63,18 @@ public class BaseStation {
 	}
 */
 	public void receive() {
-		for(Cluster c: clusters)
+		for(Cluster c: clusters) {
 		    if (net.coding)
 		        receive1(c.send());
 		    else
 		        receive(c.send());
+		}
 	}
 	
 	public void receive(ClusterMessage msg) {
 		if (msg != null && msg.success) {
 			int id = msg.from;
+			clusterMsgs[id].put(time, msg.content);
 			if (NetworkConfiguration.getGlobalNetwork().assumeNoFailures == 1) {
 				int k;
 				// Extend previous interval
@@ -93,39 +99,47 @@ public class BaseStation {
 		time++;
 	}
 	
+	/**
+	 * Process received cluster head message when coding is used.
+	 */
 	public void receive1(ClusterMessage msg) {
 		if (msg == null) {			
 		}
-		else if (msg.success) {
-			int id = msg.from;
-			if (NetworkConfiguration.getGlobalNetwork().assumeNoFailures == 1) {
-				int k;
-				// Extend previous interval
-				if ((k = clusterHistory[id].size()) > 0)
-					clusterHistory[id].get(k-1).end = time -1;
-				for (int i = 0; i < msg.childHistory.length; i++) {
-					logger.info(String.format("T %d C %d N %d intervals %s", time,
-							msg.from, i, msg.childHistory[i]));
+		else {
+			if (msg.content != null)
+				clusterMsgs[msg.from].put(time, msg.content);
+			if (msg.success) {
+				int id = msg.from;
+				if (NetworkConfiguration.getGlobalNetwork().assumeNoFailures == 1) {
+					int k;
+					// Extend previous interval
+					if ((k = clusterHistory[id].size()) > 0)
+						clusterHistory[id].get(k-1).end = time -1;
+					for (int i = 0; i < msg.childHistory.length; i++) {
+						logger.info(String.format("T %d C %d N %d intervals %s", time,
+								msg.from, i, msg.childHistory[i]));
+					}
+				}
+				else
+					processRedundancy1(msg);
+				
+				// add current msg to history
+				clusterHistory[id].add(time, time, Interval.Type.GOOD, msg.seq);
+				logger.info(String.format("T %d C %d type %d %s", time, id, msg.type, Helper.toString(msg.content)));
+				logger.info(String.format("T %d C %d intervals %s", time, id, clusterHistory[id]));
+				if (NetworkConfiguration.getGlobalNetwork().maxTry2 != -1) {
+					logger.info(String.format("T %d BS ACK 1", time));
 				}
 			}
-			else
+			else {
 				processRedundancy1(msg);
-			
-			// add current msg to history
-			clusterHistory[id].add(time, time, Interval.Type.GOOD, msg.seq);
-			logger.info(String.format("T %d C %d type %d %s", time, id, msg.type, Helper.toString(msg.content)));
-			logger.info(String.format("T %d C %d intervals %s", time, id, clusterHistory[id]));
-			if (NetworkConfiguration.getGlobalNetwork().maxTry2 != -1) {
-				logger.info(String.format("T %d BS ACK 1", time));
 			}
-		}
-		else {
-			processRedundancy1(msg);
 		}
 		time++;
 	}
 
-	/*
+	/**
+	 * Process redundancy by decoding when message is coded.
 	 * Currently assume if a cluster message is of type ONLYFAILURE,
 	 * then no coded content is sent so no need to encode or decode.
 	 */
@@ -139,20 +153,34 @@ public class BaseStation {
 			//List<ClusterMessage> lp = msg.clusterHistory;
 			IntervalList lq = clusterHistory[msg.from];
 			if (msg.type!=ClusterMessage.ONLYFAILURE) { // sentIndex is not empty
-			ArrayList<DecodeResult> res = decoder.decode(msg.codedMsg, time, msg.seq);
+			ArrayList<DecodeResult> res = decoder.decode(true, msg.codedMsg, time, msg.seq);
 			if (res != null)
 			for (int i=res.size()-1; i>=0; i--) {
 				DecodeResult t = res.get(i);
 				if (!t.success) {
-					lq.add(t.time, res.get(i-1).time-1, Interval.Type.BAD, t.seq);
-					logger.warn(String.format("T %d C %d failure found @ T %d type %d %s", time, msg.from, t.time, 3, Helper.toString(t.list)));
+					/* If only bitmap+timestamp is coded, since real values are unknown,
+					 * the message is treated as a recovered failure, just as a failure
+					 * discovered by using repetition redundancy. However, if transmitted
+					 * values are coded, then the message is (almost) fully recovered,
+					 * except the forwarded redundancies of the child nodes as we do not
+					 * include that info in the coded message.
+					 */
+					
+					if (!net.codeValue) {
+						lq.add(t.time, res.get(i-1).time-1, Interval.Type.BAD, t.seq);
+						logger.warn(String.format("T %d C %d failure found @ T %d type %d %s", time, msg.from, t.time, 3, Helper.toString(t.list)));
+					}
+					else {
+						lq.add(t.time, res.get(i-1).time-1, Interval.Type.GOOD, t.seq);
+						logger.info(String.format("T %d C %d type %d %s", t.time, msg.from, ClusterMessage.ONLYDATA, Helper.toString(clusterMsgs[msg.from].get(t.time))));
+					}
 				}
 			}
 			}			
 		}
 		else {
 			if (msg.type!=ClusterMessage.ONLYFAILURE)
-				decoder.decode(null, time, msg.seq);
+				decoder.decode(false, msg.codedMsg, time, msg.seq);
 		}
 	}
 	

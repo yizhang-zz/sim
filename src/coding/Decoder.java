@@ -2,6 +2,8 @@ package coding;
 
 import java.util.*;
 
+import sim.nodes.ClusterMessage;
+
 //import sim.nodes.IndexValuePair;
 //import sim.nodes.NetworkConfiguration;
 
@@ -92,8 +94,8 @@ public class Decoder {
 			*/
 	}
 
-	public ArrayList<DecodeResult> decode(Symbol[] output, int time, int seq) {
-		if (output == null) {
+	public ArrayList<DecodeResult> decode(boolean success, Symbol[] output, int time, int seq) {
+		if (!success) {
 			// for a failed transmission, nothing is received, so enumerate all
 			// possible successive states as the next state
 			LinkedList<StateTrace> newStates = new LinkedList<StateTrace>();

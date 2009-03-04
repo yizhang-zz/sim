@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- maxTry=0 means try until succeed; -1 means no retry and redundancy is used
+<!-- 
+maxTry=0 means try until succeed; -1 means no retry and redundancy is used
 encoder/fieldsize : # bits in a symbol
  -->
 <network>
@@ -17,11 +18,12 @@ encoder/fieldsize : # bits in a symbol
     <headRedundancy>2</headRedundancy>
 
     <maxTry1>-1</maxTry1>
-    <maxTry2>0</maxTry2>
+    <maxTry2>-1</maxTry2>
     
     <assumeNoFailures>0</assumeNoFailures>
 
-    <coding>false</coding>
+    <coding>true</coding>
+    <codeValue>true</codeValue>
 
     <encoder>
         <fieldsize>4</fieldsize>

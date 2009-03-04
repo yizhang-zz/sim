@@ -26,11 +26,9 @@ public class Network {
 
 	public EncoderConfiguration encoderConfiguration;
 	public boolean coding = false;
+	public boolean codeValue = false; // Value or bitmap being coded
 	
 	public Network() {
-//		for (Cluster c : clusters) {
-//			c.init(epsilon1, epsilon2, allocate);
-//		}
 	}
 	
 	public BaseStation createBaseStation() {
