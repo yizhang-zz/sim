@@ -340,7 +340,8 @@ public class MVNModel implements Model {
         Matrix UL = cov.copy();
         Matrix LL = a.times(cov.getMatrix(lastIndex, 0, dim - 1));
         // oldCov.print(0, 0);
-        Matrix UR = cov.inverse().getMatrix(0, dim - 1, lastIndex).times(a.transpose());
+        //Matrix UR = cov.getMatrix(0, dim - 1, lastIndex).times(a.transpose());
+        Matrix UR = LL.transpose();
         Matrix temp = new Matrix(m, dim);
         temp.setMatrix(0, m - 1, dim - m, dim - 1, a);
         Matrix LR = sigma.plus(temp.times(cov).times(temp.transpose()));
