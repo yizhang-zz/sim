@@ -74,7 +74,8 @@ public class BaseStation {
 	public void receive(ClusterMessage msg) {
 		if (msg != null && msg.success) {
 			int id = msg.from;
-			clusterMsgs[id].put(time, msg.content);
+			if (msg.content != null)
+				clusterMsgs[id].put(time, msg.content);
 			if (NetworkConfiguration.getGlobalNetwork().assumeNoFailures == 1) {
 				int k;
 				// Extend previous interval
