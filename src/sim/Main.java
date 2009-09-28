@@ -20,6 +20,7 @@ public class Main {
     	net.startSimulation();
 
     	System.out.println(MVNModel.stat_sentCount);
+    	System.out.println(MVNModel.stat_tx);
     	System.out.println(((double)MVNModel.stat_sentCount)/(net.nodeCount * net.timeSteps));
         //conf.startSimulation(conf.clusters[0], 1, "sim.nodes.LinearModel");
     	System.out.println(new java.io.File(configFile).getAbsolutePath());

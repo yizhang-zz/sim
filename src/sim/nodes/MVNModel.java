@@ -11,18 +11,18 @@ import Jama.Matrix;
 public class MVNModel implements Model {
     // private static Logger logger = Logger.getLogger(Model.class);
 
-    public int m; // # of nodes
+    /** number of nodes */
+    public int m;
 
     public static int stat_sentCount = 0;
+    public static int stat_tx = 0;
 
-    // public Cluster[] clusters;
-    // public int[] inverseClusterTable;
     public Matrix c;
     public Matrix a;
     public Matrix sigma;
     double epsilon;
     public double epsilon1;
-    Matrix sentValues;
+    private Matrix sentValues;
     
     /** if each (child) component of head-to-base transmission is known;
      * 1 : Transmitted and value known,
@@ -42,16 +42,16 @@ public class MVNModel implements Model {
     int[] lastFailureTime;
     /** type of transmission from child to head last time */
     Type[] lastTypes;
+    
+    private SubsetSelector subsetSelector;
 
     public MVNModel(double epsilon, Matrix c, Matrix a, Matrix sigma) {
-        // c = (Matrix) (cluster.params.get("c"));
-        // a = (Matrix) (cluster.params.get("a"));
-        // sigma = (Matrix) (cluster.params.get("sigma"));
         this.c = c;
         this.a = a;
         this.sigma = sigma;
         m = c.getRowDimension();
         this.epsilon = epsilon;
+        subsetSelector = new GreedySubsetSelector(this);
     }
 
     private int[] remainingIndex(int total, int[] state) {
@@ -82,7 +82,7 @@ public class MVNModel implements Model {
         int[] remain = remainingIndex(dim, state);
         mean = mean.getMatrix(remain, 0, 0);
         cov = cov.getMatrix(remain, remain);
-        reset(lastIndex, remain.length - m);
+        Helper.reset(lastIndex, remain.length - m);
         int j = 0, x = 0;
         for (int i = 0; i < m; i++) {
             if (state[i] != 0) {
@@ -135,8 +135,8 @@ public class MVNModel implements Model {
 
             sentIndex = new int[m];
             lastIndex = new int[m];
-            reset(sentIndex, 0);
-            reset(lastIndex, 0);
+            Helper.reset(sentIndex, 0);
+            Helper.reset(lastIndex, 0);
 
             known = new int[m];
             lastFailureTime = new int[m];
@@ -358,8 +358,8 @@ public class MVNModel implements Model {
         // cov is full now
         // lastTimeBegin = m;
         // lastTimeEnd = END;
-        reset(sentIndex, 0);
-        reset(lastIndex, m);
+        Helper.reset(sentIndex, 0);
+        Helper.reset(lastIndex, m);
     }
 
     //@Override
@@ -380,10 +380,11 @@ public class MVNModel implements Model {
 
             sentIndex = new int[m];
             lastIndex = new int[m];
-            reset(sentIndex, 0);
-            reset(lastIndex, 0);
+            Helper.reset(sentIndex, 0);
+            Helper.reset(lastIndex, 0);
 
             stat_sentCount += m;
+            stat_tx += 1;
 
             return sentIndex;
         }
@@ -405,7 +406,7 @@ public class MVNModel implements Model {
         /*
          * subset selection
          */
-        int[] newSentIndex = GreedySelectSubset(mean, cov, sentValues, currentValues,
+        int[] newSentIndex = subsetSelector.select(mean, cov, sentValues, currentValues,
                 epsilon);
         int subsetSize = newSentIndex.length;
         // for (int j = 0; j < newSentIndex.length; j++) {
@@ -414,6 +415,7 @@ public class MVNModel implements Model {
         // }
         // }
         stat_sentCount += subsetSize;
+        stat_tx += (subsetSize !=0 ?1:0);
 
         // compact mean and cov by dropping useless entries
         // newly selected indices overwrite previous ones
@@ -440,7 +442,7 @@ public class MVNModel implements Model {
         mean = mean.getMatrix(newIndex, 0, 0);
         cov = cov.getMatrix(newIndex, newIndex);
         dim -= subsetSize;
-        reset(lastIndex, m - subsetSize);
+        Helper.reset(lastIndex, m - subsetSize);
 
         int x = 0; // how many have been dropped so far
 
@@ -473,12 +475,6 @@ public class MVNModel implements Model {
         // }
         // sentIndex = newSentIndex;
         return newSentIndex;
-    }
-
-    private void reset(int[] d, int start) {
-        for (int i = 0; i < d.length; i++) {
-            d[i] = start + i;
-        }
     }
 
     private boolean isBounded(Matrix a, Matrix b, double e) {
@@ -527,7 +523,8 @@ public class MVNModel implements Model {
      *            values of sent elements
      * @return the prediction matrix (a column vector)
      */
-    private Matrix predict(Matrix mean, Matrix cov, int[] sentIndex, int[] predictIndex,
+    @Override
+    public Matrix predict(Matrix mean, Matrix cov, int[] sentIndex, int[] predictIndex,
             Matrix sentValues) {
         predictIndex = pack(predictIndex); // remove -1 elements
 
@@ -536,101 +533,6 @@ public class MVNModel implements Model {
                 cov.getMatrix(sentIndex, sentIndex).inverse()).times(
                 sentValues.minus(mean.getMatrix(sentIndex, 0, 0))));
         return predictMean;
-    }
-
-    /**
-     * Greedily selects a minimal subset of readings, so that the predictions for others
-     * are bounded by e.
-     * 
-     * @param mean
-     * @param cov
-     * @param sentValues
-     *            sent values from last time (before selecting a subset)
-     * @param currentValues
-     *            real values for current readings
-     * @param e
-     *            the epsilon bound
-     * @return index of selected elements
-     */
-    private int[] GreedySelectSubset(Matrix mean, Matrix cov, Matrix sentValues,
-            Matrix currentValues, double e) {
-        int subsetSize = 0;
-        int unboundedSize = 1;
-        int m = mean.getRowDimension() / 2;
-        int[] sentIndex = new int[m];
-        int[] predictIndex = new int[m];
-        reset(sentIndex, 0);
-        reset(predictIndex, m);
-
-        while (unboundedSize != 0) {
-            int min = Integer.MAX_VALUE;
-            int minIndex = 0;
-            for (int i = 0; i < predictIndex.length; i++) {
-                if (predictIndex[i] == -1) {
-                    continue;
-                // backup
-                }
-                int tmpIndex = sentIndex[i];
-                double tmpValue = sentValues.get(i, 0);
-
-                sentIndex[i] = predictIndex[i];
-                predictIndex[i] = -1; // needn't predict this one
-
-                sentValues.set(i, 0, currentValues.get(i, 0));
-                // we don't kick the ith component out of predictIndex cause
-                // that doesn't affect prediction for others
-                Matrix p = predict(mean, cov, sentIndex, predictIndex, sentValues);
-                int count = countUnbounded(p, currentValues, predictIndex, e);
-                if (count < min) {
-                    min = count;
-                    minIndex = i;
-                }
-
-                // restore
-                predictIndex[i] = sentIndex[i];
-                sentIndex[i] = tmpIndex;
-                sentValues.set(i, 0, tmpValue);
-            }
-            unboundedSize = min;
-            // update indices and values
-            sentIndex[minIndex] = predictIndex[minIndex];
-            sentValues.set(minIndex, 0, currentValues.get(minIndex, 0));
-            predictIndex[minIndex] = -1;
-            subsetSize++;
-        }
-
-        // print
-        int[] result = new int[subsetSize];
-        int k = 0;
-        // System.out.print("MVN Sending nodes:");
-        for (int i = 0; i < m; i++) {
-            if (predictIndex[i] == -1) {
-                // System.out.print(" " + i);
-                result[k++] = i;
-            }
-        }
-        // System.out.println();
-
-        // return sentIndex;
-        return result;
-
-    }
-
-    static int countUnbounded(Matrix a, Matrix b, int[] predictIndex, double e) {
-        int count = 0;
-        int n = predictIndex.length;
-        int i = 0,  j = 0;
-        for (; j < n; j++) {
-            // skip unused ones
-            if (predictIndex[j] == -1) {
-                continue;
-            }
-            if (Math.abs(a.get(i, 0) - b.get(j, 0)) > e) {
-                count++;
-            }
-            i++;
-        }
-        return count;
     }
 
     public double getEpsilon() {
@@ -652,8 +554,8 @@ public class MVNModel implements Model {
             dim = m;
             sentIndex = new int[m];
             lastIndex = new int[m];
-            reset(sentIndex, 0);
-            reset(lastIndex, 0);
+            Helper.reset(sentIndex, 0);
+            Helper.reset(lastIndex, 0);
 
             sentValues = new Matrix(m, 1); // last sent value for each node
 
@@ -700,7 +602,7 @@ public class MVNModel implements Model {
             mean = mean.getMatrix(newIndex, 0, 0);
             cov = cov.getMatrix(newIndex, newIndex);
             dim -= size;
-            reset(lastIndex, m - size);
+            Helper.reset(lastIndex, m - size);
             int x = 0; // how many have been dropped so far
 
             int k = 0;
@@ -724,7 +626,7 @@ public class MVNModel implements Model {
 
         // check if we have sth to predict
         int[] predictIndex = new int[m];
-        reset(predictIndex, dim - m);
+        Helper.reset(predictIndex, dim - m);
         if (size < m) {
             Matrix prediction = predict(mean, cov, sentIndex, predictIndex, sentValues);
 

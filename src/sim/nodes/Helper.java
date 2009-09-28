@@ -2,6 +2,8 @@ package sim.nodes;
 
 import java.util.AbstractList;
 
+import Jama.Matrix;
+
 public class Helper {
 	public static <T> String toString(Iterable<T> l) {
 		StringBuffer buf = new StringBuffer("[ ");
@@ -11,7 +13,29 @@ public class Helper {
 		buf.append("]");
 		return buf.toString();
 	}
+	
+    public static int countUnbounded(Matrix a, Matrix b, int[] predictIndex, double e) {
+        int count = 0;
+        int n = predictIndex.length;
+        int i = 0,  j = 0;
+        for (; j < n; j++) {
+            // skip unused ones
+            if (predictIndex[j] == -1) {
+                continue;
+            }
+            if (Math.abs(a.get(i, 0) - b.get(j, 0)) > e) {
+                count++;
+            }
+            i++;
+        }
+        return count;
+    }
 
+    public static void reset(int[] d, int start) {
+        for (int i = 0; i < d.length; i++) {
+            d[i] = start + i;
+        }
+    }
 }
 
 /*
