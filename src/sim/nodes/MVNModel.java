@@ -9,9 +9,7 @@ import sim.constraints.Interval.Type;
 import Jama.Matrix;
 
 public class MVNModel implements Model {
-    //private static Logger logger = Logger.getLogger(Model.class);
-    // public int timeSteps;
-    // public int clusterCount;
+    // private static Logger logger = Logger.getLogger(Model.class);
 
     public int m; // # of nodes
 
@@ -25,10 +23,16 @@ public class MVNModel implements Model {
     double epsilon;
     public double epsilon1;
     Matrix sentValues;
-    /** if each (child) component of head-to-base transmission is known*/
+    
+    /** if each (child) component of head-to-base transmission is known;
+     * 1 : Transmitted and value known,
+     * -1: transmitted but value unknown,
+     * 0 : don't know if transmitted or not */
     int[] known;
-    int dim; // total dimension of the distribution; last m dimensions are always for
-    // latest epoch
+    /** total dimension of the distribution; 
+     * last m dimensions are always for last epoch
+     */
+    int dim; 
 
     Matrix mean, cov;
     int[] sentIndex;
@@ -39,7 +43,6 @@ public class MVNModel implements Model {
     /** type of transmission from child to head last time */
     Type[] lastTypes;
 
-    // boolean hasUnknown = false;
     public MVNModel(double epsilon, Matrix c, Matrix a, Matrix sigma) {
         // c = (Matrix) (cluster.params.get("c"));
         // a = (Matrix) (cluster.params.get("a"));
@@ -51,13 +54,6 @@ public class MVNModel implements Model {
         this.epsilon = epsilon;
     }
 
-    // @Override
-    // public void setParams(Hashtable<String, Object> params) {
-    // c = (Matrix) (params.get("c"));
-    // a = (Matrix) (params.get("a"));
-    // sigma = (Matrix) (params.get("sigma"));
-    // m = cluster.getNodeCount();
-    // }
     private int[] remainingIndex(int total, int[] state) {
         int count = 0;
         for (int s : state) {
