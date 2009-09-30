@@ -73,7 +73,7 @@ public class Node {
 			msg.seq = seq++;
 			history.add(msg);
             msg.history = history;
-			log.info(String.format("T %d N %d success, transmitting %f, tried 1 times", (epoch-1), id, msg.value));
+			log.info(String.format("T %d N %d success, transmitting %f, tried 1 times", (epoch-1), getGlobalID(), msg.value));
 			return msg;
 		}
 		
@@ -101,7 +101,7 @@ public class Node {
 		int count = 0;
 		
 		if (msg == null)
-			log.info(String.format("T %d N %d suppression", (epoch-1), id));
+			log.info(String.format("T %d N %d suppression", (epoch-1), getGlobalID()));
 		else {
 			if (maxTry == -1) {
 				failed = failureGenerator.isFailure();
@@ -121,12 +121,12 @@ public class Node {
 			}
 			
 			if (failed) {
-				log.info(String.format("T %d N %d failure, tried %d times", (epoch-1), id, count));
+				log.info(String.format("T %d N %d failure, tried %d times", (epoch-1), getGlobalID(), count));
 				msg = null;
 			}
 			else {
 				msg.tryCount = count;
-				log.info(String.format("T %d N %d success, transmitting %f, tried %d times", (epoch-1), id, msg.value, count));
+				log.info(String.format("T %d N %d success, transmitting %f, tried %d times", (epoch-1), getGlobalID(), msg.value, count));
 			}
 		}
 		return msg;

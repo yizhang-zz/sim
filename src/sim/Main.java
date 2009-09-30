@@ -16,6 +16,7 @@ public class Main {
 	String configFile = "4_config.xml";
     	if (args.length > 0)
     		configFile = args[0];
+    	try {
     	Network net = NetworkConfiguration.createNetwork(configFile);
     	net.startSimulation();
 
@@ -24,5 +25,9 @@ public class Main {
     	System.out.println(((double)MVNModel.stat_sentCount)/(net.nodeCount * net.timeSteps));
         //conf.startSimulation(conf.clusters[0], 1, "sim.nodes.LinearModel");
     	System.out.println(new java.io.File(configFile).getAbsolutePath());
+    	}
+    	catch(Exception e) {
+    		e.printStackTrace();
+    	}
     }
 }

@@ -6,8 +6,8 @@ encoder/fieldsize : # bits in a symbol
  -->
 <network>
     <dataFile>multi4.txt</dataFile>
-    <timeSteps>100</timeSteps>
-    <clusterCount>1</clusterCount>
+    <timeSteps>10</timeSteps>
+    <clusterCount>2</clusterCount>
     <nodeCount>4</nodeCount>
     <epsilon1>0</epsilon1>
     <epsilon2>1</epsilon2>
@@ -22,8 +22,8 @@ encoder/fieldsize : # bits in a symbol
     
     <assumeNoFailures>0</assumeNoFailures>
 
-    <coding>true</coding>
-    <codeValue>true</codeValue>
+    <coding>false</coding>
+    <codeValue>false</codeValue>
 
     <encoder>
         <fieldsize>4</fieldsize>
@@ -40,7 +40,7 @@ encoder/fieldsize : # bits in a symbol
     </encoder>
 
     <clusters>
-        <cluster>
+        <!--cluster>
             <nodes>0,1,2,3</nodes>
             <params>
                 <c>2,1,1.2,1.3</c>
@@ -49,6 +49,30 @@ encoder/fieldsize : # bits in a symbol
                 </a>
                 <sigma>
                     1,0.778800783071405,0.70218850132656,0.778800783071405,0.778800783071405,1,0.778800783071405,0.70218850132656,0.70218850132656,0.778800783071405,1,0.778800783071405,0.778800783071405,0.70218850132656,0.778800783071405,1
+                </sigma>
+            </params>
+        </cluster-->
+                <cluster>
+            <nodes>0,1</nodes>
+            <params>
+                <c>2,1</c>
+                <a>
+                    0.6,0.2,0.1,0.2
+                </a>
+                <sigma>
+                    1,0.778800783071405,0.70218850132656,0.778800783071405
+                </sigma>
+            </params>
+        </cluster>
+                <cluster>
+            <nodes>2,3</nodes>
+            <params>
+                <c>1.2,1.3</c>
+                <a>
+                    0.6,0.2,0.1,0.2
+                </a>
+                <sigma>
+                    1,0.778800783071405,0.70218850132656,0.778800783071405
                 </sigma>
             </params>
         </cluster>

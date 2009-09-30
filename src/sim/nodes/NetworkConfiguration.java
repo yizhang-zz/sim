@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package sim.nodes;
 
 import java.util.List;
@@ -15,6 +10,7 @@ import Jama.Matrix;
 import coding.EncoderConfiguration;
 
 /**
+ * Used to represent the overall configuration of a suppression sensor network.
  * 
  * @author Yi Zhang
  */
@@ -23,11 +19,11 @@ public class NetworkConfiguration {
 	private static DataProvider globalDataProvider = null;
 	private static Network globalNetwork = null;
 	
-	public static Network createNetwork(String filename) {
+	public static Network createNetwork(String filename) throws Exception {
 		return createNetwork(filename, true);
 	}
 	
-	public static Network createNetwork(String filename, boolean allocate) {
+	public static Network createNetwork(String filename, boolean allocate) throws Exception {
 		Network net = new Network();
 		globalNetwork = net;
 		HierarchicalConfiguration config = null;
@@ -84,43 +80,49 @@ public class NetworkConfiguration {
 			//Cluster cluster = net.clusters[i] = new Cluster();
 			HierarchicalConfiguration sub = (HierarchicalConfiguration) obj;
 			List nodeList = sub.getList("nodes");
-			Cluster cluster = bs.createCluster(i, nodeList.size());			
+			int nodecount = nodeList.size();
+			Cluster cluster = bs.createCluster(i, nodecount);			
 
 			//cluster.setNodeCount(nodeList.size());
 			
 			// let cluster remember its members' global ids
 			// for mapping of data
-			cluster.nodeGlobalIDs = new int[cluster.getNodeCount()];
-			for (int j = 0; j < cluster.getNodeCount(); j++) {
+			cluster.nodeGlobalIDs = new int[nodecount];
+			for (int j = 0; j < nodecount; j++) {
 				cluster.nodeGlobalIDs[j] = Integer.parseInt(nodeList.get(j).toString());
 			}
 
 			// read model params
 			Matrix c = new Jama.Matrix(
-					convertDouble(sub.getList("params.c")), net.nodeCount);
+					convertDouble(sub.getList("params.c")), nodecount);
 			Matrix a = new Jama.Matrix(
-					convertDouble(sub.getList("params.a")), net.nodeCount);
-			Matrix sigma = new Jama.Matrix(convertDouble(sub
-					.getList("params.sigma")), net.nodeCount);
-			/*cluster.params.put("c", new Jama.Matrix(
-					convertDouble(sub.getList("params.c")), net.nodeCount));
-			cluster.params.put("a", new Jama.Matrix(
-					convertDouble(sub.getList("params.a")), net.nodeCount));
-			cluster.params.put("sigma", new Jama.Matrix(convertDouble(sub
-					.getList("params.sigma")), net.nodeCount));
-			*/
-			
+					convertDouble(sub.getList("params.a")), nodecount);
+			// Covariance matrix can be in the form of a given matrix or can be specified by two parameters--sigmasq and phi:
+			// cov(i,j) = sigmasq * exp(-phi * |loc_i-loc_j|)
+			Matrix sigma;
+			if (sub.containsKey("params.sigma")) {
+				sigma = new Jama.Matrix(convertDouble(sub
+					.getList("params.sigma")), nodecount);
+			}
+			else if (sub.containsKey("params.sigmasq")) {
+				double sigmasq = sub.getDouble("params.sigmasq");
+				double phi = sub.getDouble("params.phi");
+				double[] x = convertDouble(sub.getList("params.x"));
+				double[] y = convertDouble(sub.getList("params.y"));
+				sigma = new Jama.Matrix(nodecount, nodecount);
+				for (int j=0; j<nodecount; j++)
+					for (int k =j; k< nodecount;k++) {
+						double v = sigmasq * Math.exp(-phi*Math.sqrt((x[j]-x[k])*(x[j]-x[k])+(y[j]-y[k])*(y[j]-y[k])));
+						sigma.set(j, k, v);
+						sigma.set(k, j, v);
+					}				
+			}
+			else {
+				throw new Exception("Can't find covariance parameter");
+			}			
 			cluster.setModel(new MVNModel(net.epsilon2, c, a, sigma));
-			
-			//cluster.init(net.epsilon1, net.epsilon2, allocate);
-			// cluster.init();
-			// conf.a.print(0, 7);
-			// conf.sigma.print(0, 7);
 			i++;
 		}
-
-		// init models etc
-		//net.init();
 
 		// allocate space for data; read into a DataProvider
 		if (allocate) {
@@ -155,22 +157,4 @@ public class NetworkConfiguration {
         }
         return d;
     }
-
-// try {
-// Class modelClass = Class.forName(model);
-//			Model m = (Model) modelClass.newInstance();
-//			//m.setNetworkConfiguration(this);
-//			//m.startSimulation(cluster, e);
-//		} catch (ClassNotFoundException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//			// System.err.println("Class "+model+" not found!");
-//		} catch (InstantiationException ie) {
-//			// TODO Auto-generated catch block
-//			ie.printStackTrace();
-//		} catch (IllegalAccessException ile) {
-//			// TODO Auto-generated catch block
-//			ile.printStackTrace();
-//		}
-
 }

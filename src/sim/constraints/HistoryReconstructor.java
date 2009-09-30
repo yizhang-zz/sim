@@ -30,7 +30,12 @@ public class HistoryReconstructor {
 	public void reconstruct() throws FileNotFoundException {
 
 		// don't allocate space for raw data
-		net = NetworkConfiguration.createNetwork(confFile, false);
+		try {
+			net = NetworkConfiguration.createNetwork(confFile, false);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+			System.exit(-1);
+		}
 
 		// initialize intervallists for each cluster
 		for (Cluster c : net.baseStation.clusters) {

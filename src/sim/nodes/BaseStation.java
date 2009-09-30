@@ -27,6 +27,10 @@ public class BaseStation {
 	
 	private Network net;
 	private Decoder decoder;
+	
+	private int getNodeGlobalID(int node, int cluster) {
+		return clusters[cluster].nodeGlobalIDs[node];
+	}
 
 	public Cluster createCluster(int id, int nodeCount) {
 		clusters[id] = new Cluster(nodeCount, net.epsilon1, net.epsilon2);
@@ -83,7 +87,7 @@ public class BaseStation {
 					clusterHistory[id].get(k-1).end = time -1;
 				for (int i = 0; i < msg.childHistory.length; i++) {
 					logger.info(String.format("T %d C %d N %d intervals %s", time,
-							msg.from, i, msg.childHistory[i]));
+							id, getNodeGlobalID(i,id), msg.childHistory[i]));
 				}
 			}
 			else
@@ -107,10 +111,10 @@ public class BaseStation {
 		if (msg == null) {			
 		}
 		else {
+			int id = msg.from;
 			if (msg.content != null)
-				clusterMsgs[msg.from].put(time, msg.content);
+				clusterMsgs[id].put(time, msg.content);
 			if (msg.success) {
-				int id = msg.from;
 				if (NetworkConfiguration.getGlobalNetwork().assumeNoFailures == 1) {
 					int k;
 					// Extend previous interval
@@ -118,7 +122,7 @@ public class BaseStation {
 						clusterHistory[id].get(k-1).end = time -1;
 					for (int i = 0; i < msg.childHistory.length; i++) {
 						logger.info(String.format("T %d C %d N %d intervals %s", time,
-								msg.from, i, msg.childHistory[i]));
+								id, getNodeGlobalID(i,id), msg.childHistory[i]));
 					}
 				}
 				else
@@ -146,10 +150,11 @@ public class BaseStation {
 	 */
 	private void processRedundancy1(ClusterMessage msg) {
 		if (msg.success) {
+			int cid = msg.from;
 			// child-to-head historical intervals
 			for (int i = 0; i < msg.childHistory.length; i++) {
 				logger.info(String.format("T %d C %d N %d intervals %s", time,
-						msg.from, i, msg.childHistory[i]));
+						cid, getNodeGlobalID(i,cid), msg.childHistory[i]));
 			}
 			//List<ClusterMessage> lp = msg.clusterHistory;
 			IntervalList lq = clusterHistory[msg.from];
@@ -169,11 +174,11 @@ public class BaseStation {
 					
 					if (!net.codeValue) {
 						lq.add(t.time, res.get(i-1).time-1, Interval.Type.BAD, t.seq);
-						logger.warn(String.format("T %d C %d failure found @ T %d type %d %s", time, msg.from, t.time, 3, Helper.toString(t.list)));
+						logger.warn(String.format("T %d C %d failure found @ T %d type %d %s", time, cid, t.time, 3, Helper.toString(t.list)));
 					}
 					else {
 						lq.add(t.time, res.get(i-1).time-1, Interval.Type.GOOD, t.seq);
-						logger.info(String.format("T %d C %d type %d %s", t.time, msg.from, ClusterMessage.ONLYDATA, Helper.toString(clusterMsgs[msg.from].get(t.time))));
+						logger.info(String.format("T %d C %d type %d %s", t.time, cid, ClusterMessage.ONLYDATA, Helper.toString(clusterMsgs[cid].get(t.time))));
 					}
 				}
 			}
@@ -186,10 +191,11 @@ public class BaseStation {
 	}
 	
 	private void processRedundancy(ClusterMessage msg) {
+		int cid = msg.from;
 		// child-to-head historical intervals
 		for (int i = 0; i < msg.childHistory.length; i++) {
 			logger.info(String.format("T %d C %d N %d intervals %s", time,
-					msg.from, i, msg.childHistory[i]));
+					cid, getNodeGlobalID(i,cid), msg.childHistory[i]));
 		}
 
 		/*for (int i = 0; i < msg.beginKnowns.length; i++) {
@@ -200,7 +206,7 @@ public class BaseStation {
 		
 		// discover head-to-base failures and derive intervals
 		List<ClusterMessage> q = msg.clusterHistory;
-		IntervalList h = clusterHistory[msg.from];
+		IntervalList h = clusterHistory[cid];
 		/* q always contains msg as its last element, so q.size() >=1 */
 		if (q != null && q.size() > 1) {
 			// size of lp must be > 1 because the last element is current msg
@@ -217,7 +223,7 @@ public class BaseStation {
 				}
 				if (m.time > lastTime) {
 					h.add(m.time, q.get(i+1).time-1, Interval.Type.BAD, m.seq);
-					logger.warn(String.format("T %d C %d failure found @ T %d type %d %s", time, msg.from, m.time, m.type, Helper.toString(m.content)));
+					logger.warn(String.format("T %d C %d failure found @ T %d type %d %s", time, cid, m.time, m.type, Helper.toString(m.content)));
 				}
 			}			
 		}

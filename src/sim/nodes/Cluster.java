@@ -257,8 +257,8 @@ public class Cluster {
 				if (msg.protocol == NodeMessage.Protocol.TS) {
 					lastReceived[msg.from] = msg.value;
 					updateNodeHistory(msg);
-					logger.info(String.format("T %d N %d value %f",time,msg.from,msg.value));
-					logger.info(String.format("T %d N %d intervals %s", time, msg.from, childHistory[msg.from]));
+					logger.info(String.format("T %d N %d value %f", time, nodeGlobalIDs[msg.from], msg.value));
+					logger.info(String.format("T %d N %d intervals %s", time, nodeGlobalIDs[msg.from], childHistory[msg.from]));
 					/*logger.info(String.format(
 							"T %d N %d redundancy %s recovered history %s known interval %d to %d", time,
 							msg.from, Helper.list2string(msg.history), Helper
