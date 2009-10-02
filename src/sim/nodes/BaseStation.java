@@ -12,31 +12,22 @@ import coding.DecodeResult;
 import coding.Decoder;
 
 public class BaseStation {
-	//private static final int FAIL_BUF_SIZE_PER_CLUSTER = 4;
-	//private static final int HIST_BUF_SIZE_PER_CLUSTER = 4;
-	private static Logger logger = Logger.getLogger(BaseStation.class);
+	private static Logger logger = Logger.getLogger(BaseStation.class.getSimpleName());
 	private int time = 0;
 	
 	public Cluster[] clusters;
-	//MVNModel[] models;
-	//private ClusterHistory[] clusterHistory;
 	public IntervalList[] clusterHistory;
 	public Hashtable<Integer,List<IndexValuePair>>[] clusterMsgs;
-
-	//List<FailureList<Integer>> recentFailures;
 	
 	private Network net;
-	private Decoder decoder;
+	private Decoder[] decoders;
 	
 	private int getNodeGlobalID(int node, int cluster) {
-		return clusters[cluster].nodeGlobalIDs[node];
+		return clusters[cluster].getNodeGlobalID(node);
 	}
 
-	public Cluster createCluster(int id, int nodeCount) {
-		clusters[id] = new Cluster(nodeCount, net.epsilon1, net.epsilon2);
-		//models[id] = new MVNModel(clusters[id]);
-		//recentFailures.add(new FailureList<Integer>(id, FAIL_BUF_SIZE_PER_CLUSTER));
-		//clusterHistory[id] = new ClusterHistory();
+	public Cluster createCluster(int id, int nodeCount, int[] nodeGlobalIDs) {
+		clusters[id] = new Cluster(id, nodeCount, nodeGlobalIDs, net.epsilon1, net.epsilon2);
 		clusterHistory[id] = new IntervalList();
 		clusterMsgs[id] = new Hashtable<Integer,List<IndexValuePair>>();
 		return clusters[id];
@@ -45,34 +36,25 @@ public class BaseStation {
 	public BaseStation(Network net, int clusterCount) {
 		this.net = net;
 		clusters = new Cluster[clusterCount];
-		//models = new MVNModel[clusterCount];
-		//recentFailures = new ArrayList<FailureList<Integer>>(clusterCount);
-		//clusterHistory = new ClusterHistory[clusterCount];
 		clusterHistory = new IntervalList[clusterCount];
 		clusterMsgs = new Hashtable[clusterCount];
-		if (net.coding)
-		    decoder = new Decoder(net.encoderConfiguration);
-	}
-	
-	/*@SuppressWarnings("unchecked")
-	public void init(Cluster[] clusters) {
-		models = new MVNModel[clusters.length];
-		recentFailures = new ArrayList<FailureList<Integer>>(clusters.length);
-		clusterHistory = new ClusterHistory[clusters.length];
-		for (int i = 0; i < models.length; i++) {
-			models[i] = new MVNModel(clusters[i]);
-			recentFailures.add(new FailureList<Integer>(i, FAIL_BUF_SIZE_PER_CLUSTER));
-			clusterHistory[i] = new ClusterHistory();
+		if (net.coding) {
+		    decoders = new Decoder[clusterCount];
+		    for (int i=0; i<clusterCount; i++)
+		        decoders[i] = new Decoder(net.encoderConfiguration);
 		}
 	}
-*/
+	
 	public void receive() {
+	    // Receive messages from each cluster
 		for(Cluster c: clusters) {
 		    if (net.coding)
 		        receive1(c.send());
 		    else
 		        receive(c.send());
 		}
+		
+		time++;
 	}
 	
 	public void receive(ClusterMessage msg) {
@@ -101,7 +83,6 @@ public class BaseStation {
 				logger.info(String.format("T %d BS ACK 1", time));
 			}
 		}
-		time++;
 	}
 	
 	/**
@@ -140,7 +121,6 @@ public class BaseStation {
 				processRedundancy1(msg);
 			}
 		}
-		time++;
 	}
 
 	/**
@@ -159,7 +139,7 @@ public class BaseStation {
 			//List<ClusterMessage> lp = msg.clusterHistory;
 			IntervalList lq = clusterHistory[msg.from];
 			if (msg.type!=ClusterMessage.ONLYFAILURE) { // sentIndex is not empty
-			ArrayList<DecodeResult> res = decoder.decode(true, msg.codedMsg, time, msg.seq);
+			ArrayList<DecodeResult> res = decoders[cid].decode(true, msg.codedMsg, time, msg.seq);
 			if (res != null)
 			for (int i=res.size()-1; i>=0; i--) {
 				DecodeResult t = res.get(i);
@@ -186,7 +166,7 @@ public class BaseStation {
 		}
 		else {
 			if (msg.type!=ClusterMessage.ONLYFAILURE)
-				decoder.decode(false, msg.codedMsg, time, msg.seq);
+				decoders[msg.from].decode(false, msg.codedMsg, time, msg.seq);
 		}
 	}
 	
@@ -252,6 +232,9 @@ public class BaseStation {
 	 * Let each cluster clean its Interval history by sorting according to the seq no.
 	 */
     public void cleanup() {
+        // Time is incremented after each iteration of simulation.
+        // Return to the last time epoch here.
+        time--;
         for (Cluster c : clusters) {
             int id = c.id;
             clusterHistory[id].sort();

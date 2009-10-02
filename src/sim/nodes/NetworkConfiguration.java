@@ -81,16 +81,13 @@ public class NetworkConfiguration {
 			HierarchicalConfiguration sub = (HierarchicalConfiguration) obj;
 			List nodeList = sub.getList("nodes");
 			int nodecount = nodeList.size();
-			Cluster cluster = bs.createCluster(i, nodecount);			
-
-			//cluster.setNodeCount(nodeList.size());
-			
-			// let cluster remember its members' global ids
-			// for mapping of data
-			cluster.nodeGlobalIDs = new int[nodecount];
-			for (int j = 0; j < nodecount; j++) {
-				cluster.nodeGlobalIDs[j] = Integer.parseInt(nodeList.get(j).toString());
-			}
+            // let cluster remember its members' global ids
+            // for mapping of data
+            int[] globalIDs = new int[nodecount];
+            for (int j = 0; j < nodecount; j++) {
+                globalIDs[j] = Integer.parseInt(nodeList.get(j).toString());
+            }
+			Cluster cluster = bs.createCluster(i, nodecount, globalIDs);						
 
 			// read model params
 			Matrix c = new Jama.Matrix(
@@ -120,13 +117,17 @@ public class NetworkConfiguration {
 			else {
 				throw new Exception("Can't find covariance parameter");
 			}			
-			cluster.setModel(new MVNModel(net.epsilon2, c, a, sigma));
+			cluster.setModel(new MVNModel(cluster, net.epsilon2, c, a, sigma));
 			i++;
 		}
 
 		// allocate space for data; read into a DataProvider
 		if (allocate) {
-			globalDataProvider = new DataProvider(net.nodeCount, net.timeSteps);
+		    List IDs = config.getList("nodeIDs");
+		    int[] iIDs = new int[IDs.size()];
+		    for (int j=0; j<IDs.size(); j++)
+		        iIDs[j] = Integer.parseInt(IDs.get(j).toString());
+			globalDataProvider = new DataProvider(net.nodeCount, net.timeSteps, iIDs);
 			globalDataProvider.read(dataFile);
 		}
 

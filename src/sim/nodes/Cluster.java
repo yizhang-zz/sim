@@ -2,6 +2,7 @@ package sim.nodes;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -14,59 +15,52 @@ import coding.Symbol;
 
 public class Cluster {
 
-	//Head head;
-	Node[] nodes;
+    private static Logger logger = Logger.getLogger(Cluster.class.getSimpleName());
 
 	public int id;
-	public int[] nodeGlobalIDs; // real node Ids in index order
-	//public double[][] data; // [node][time]
-	public Hashtable<String, Object> params;
 
-	// suppression parameters
+	// Suppression parameters
 	public double epsilon1;
 	public double epsilon2;
+    private int maxTry = NetworkConfiguration.getGlobalNetwork().maxTry2;
+    
+    private Model model;
+    private FailureGenerator failureGenerator;
 
 	private int nodeCount;
-	private int time;
-	private int maxTry = NetworkConfiguration.getGlobalNetwork().maxTry2;
-	private FailureGenerator failureGenerator;
-	private static Logger logger = Logger.getLogger(Cluster.class);
-	
-	public IntervalList[] intervalLists;
-	//public List<Integer>[] failureLists;
-	public TransmissionList transmissionList = new TransmissionList();
-	
-	double[] lastReceived;
-	// double[] lastSent;
-	private Model model;
-	// transmission history (success/failure) for all child nodes
-	IntervalList[] childHistory;
+    private Node[] nodes;
+    private int[] nodeGlobalIDs; // Global node Ids in index order
+    private HashMap<Integer, Integer> nodeIDMap;
+    
+    // Suppression state and history
+	private int time;	
+	private double[] lastReceived;
+    private List<ClusterMessage> history;
+	private IntervalList[] childHistory;
+    private boolean hasNewFailure;
+    public IntervalList[] intervalLists;
+    public TransmissionList transmissionList = new TransmissionList();
 
-	List<ClusterMessage> history;
-
-	private boolean hasNewFailure;
-
-	// how many past msgs (to basestation) do we keep as redundancies
-	//int MAX_HISTORY_SIZE = 4;
-
-	// how many past msgs (from children) do we keep as redundancies (and to discover
-	// failures)
-	// int MAX_CHILD_HISTORY_SIZE = 8;
-
-	Encoder encoder;
+    // Coding related
+	private Encoder encoder;
 	private int seq = 0;
-	public Cluster(int nodeCount, double epsilon1, double epsilon2) {
+	
+	
+	public Cluster(int id, int nodeCount, int[] nodeGlobalIDs, double epsilon1, double epsilon2) {
+	    this.id = id;
 		this.nodeCount = nodeCount;
+		this.nodeGlobalIDs = nodeGlobalIDs;
 		this.epsilon1  = epsilon1;
 		this.epsilon2 = epsilon2;
+		
+		nodeIDMap = new HashMap<Integer, Integer>();
+		for (int i=0; i<nodeCount; i++)
+		    nodeIDMap.put(nodeGlobalIDs[i], i);
 		
 		failureGenerator = new SimpleFailureGenerator(NetworkConfiguration.getGlobalNetwork().failureRate2, id);
 
 		createNodes();
-		params = new Hashtable<String, Object>();
-		//head = new Head();
-		//head.setModel(new MVNModel(this));
-		//model = new MVNModel(this);
+
 		time = -1;
 		history = new ArrayList<ClusterMessage>();
 		childHistory = new IntervalList[nodeCount];
@@ -80,30 +74,21 @@ public class Cluster {
 		    encoder = new Encoder(net.encoderConfiguration);
 		}
 	}
-
-	/*public void init(double epsilon1, double epsilon2, boolean allocate) {
-		this.epsilon1  = epsilon1;
-		this.epsilon2 = epsilon2;
-		epoch = -1;
-		if (allocate)
-			createNodes();
-		head.setNodeCount(nodeCount);
-		head.setModel(new MVNModel(this));
+	
+	public int getNodeGlobalID(int i) {
+	    return nodeGlobalIDs[i];
 	}
-	*/
+	
+	public int getNodeLocalID(int g) {
+	    return nodeIDMap.get(g);
+	}
+	
 	public void initIntervalLists() {
 		intervalLists = new IntervalList[nodeCount];
 		for (int i=0; i< nodeCount; i++) {
 			intervalLists[i] = new IntervalList();
 		}
 	}
-	
-	/*public void initFailureLists() {
-		failureLists = new ArrayList[nodeCount];
-		for (int i=0; i< nodeCount; i++) {
-			failureLists[i] = new ArrayList<Integer>();
-		}
-	}*/
 
 	/**
 	 * Sends a message to the base station for the whole cluster. A wrapper for
@@ -147,7 +132,7 @@ public class Cluster {
 			msg.seq = -1;
 		}
 		
-		// add known intervals to the message
+//      add known intervals to the message
 //		msg.beginKnowns = new int[nodeCount];
 //		msg.endKnowns = new int[nodeCount];
 //		for (int i=0; i<nodeCount; i++) {
@@ -348,9 +333,6 @@ public class Cluster {
 		nodes = new Node[nodeCount];
 		for (int i = 0; i < nodeCount; i++) {
 			nodes[i] = new Node(this, i, epsilon1);
-			//nodes[i].setData(data[i]);
-			//nodes[i].setEpsilon(epsilon1);
-			//nodes[i].setRedundancyLevel(redundancyLevel);
 		}
 	}
 

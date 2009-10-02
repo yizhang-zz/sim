@@ -6,7 +6,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 public class Node {
-	private static Logger log = Logger.getLogger(Node.class);
+	private static Logger log = Logger.getLogger(Node.class.getSimpleName());
 	private int id;
 	//private double[] data;
 	private double epsilon;
@@ -40,7 +40,7 @@ public class Node {
 	}
 
 	public int getGlobalID () {
-		return parent.nodeGlobalIDs[id];
+		return parent.getNodeGlobalID(id);
 	}
 	
 	public double getEpsilon() {

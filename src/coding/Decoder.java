@@ -10,14 +10,14 @@ import sim.nodes.ClusterMessage;
 class StateTrace {
 	public Vector<StateTrace> parents;
 	public Vector<StateTrace> children;
-	public State cur;
+	public StateDiagram.State cur;
 	public Vector<Symbol> inputs;
 	public int time;
     // whether the transmission succeeded or not
 	public boolean success;
 	public int seq;
 	
-	public StateTrace(State current, StateTrace parent, Symbol input, int time, boolean success, int seq) {
+	public StateTrace(StateDiagram.State current, StateTrace parent, Symbol input, int time, boolean success, int seq) {
 		this.cur = current;
 		this.parents = new Vector<StateTrace>();
 		this.children = new Vector<StateTrace>();
@@ -48,7 +48,7 @@ public class Decoder {
                 history.add(curStates);
 	}
 
-	private void insertNewState(LinkedList<StateTrace> list, State to,
+	private void insertNewState(LinkedList<StateTrace> list, StateDiagram.State to,
 			StateTrace parent, Symbol input, int time, boolean success, int seq) {
 		int len = list.size();
 		if (len ==0) {
@@ -109,7 +109,7 @@ public class Decoder {
 			// possible successive states as the next state
 			LinkedList<StateTrace> newStates = new LinkedList<StateTrace>();
 			for (StateTrace s : curStates) {
-				for (Edge e : s.cur.edges.values()) {
+				for (StateDiagram.Edge e : s.cur.edges.values()) {
 					// insert into sorted newStates
 					insertNewState(newStates, e.to, s, e.input, time, false, seq);
 				}
@@ -124,9 +124,9 @@ public class Decoder {
 		// so we just do a search in the Trellis diagram
 		LinkedList<StateTrace> newStates = new LinkedList<StateTrace>();
 		boolean prune = false;
-		int outid = State.outputToId(output);
+		int outid = diag.outputToId(output);
 		for (StateTrace s : curStates) {
-			Edge e;
+			StateDiagram.Edge e;
 			if ((e = s.cur.edges.get(outid)) != null) {
 				insertNewState(newStates, e.to, s, e.input, time, true, seq);
 			}

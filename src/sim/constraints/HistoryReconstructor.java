@@ -22,6 +22,11 @@ public class HistoryReconstructor {
 	private String confFile;
 	private Network net;
 
+	/**
+	 * Implements algorithms for reconstructing transmission history.
+	 * @param confFile XML configuration file of the network
+	 * @param logFile Log file of base station's activities
+	 */
 	public HistoryReconstructor(String confFile, String logFile) {
 		this.logFile = logFile;
 		this.confFile = confFile;
@@ -29,7 +34,7 @@ public class HistoryReconstructor {
 
 	public void reconstruct() throws FileNotFoundException {
 
-		// don't allocate space for raw data
+		// Don't allocate space for raw data
 		try {
 			net = NetworkConfiguration.createNetwork(confFile, false);
 		} catch (Exception e1) {
@@ -37,14 +42,17 @@ public class HistoryReconstructor {
 			System.exit(-1);
 		}
 
-		// initialize intervallists for each cluster
+		// Initialize IntervalLists for each cluster
 		for (Cluster c : net.baseStation.clusters) {
 			c.initIntervalLists();
-			//c.initFailureLists();
 		}
 
 		Pattern pattern1 = Pattern.compile("T (\\d+) C (\\d+) N (\\d+) intervals (.+)");
-		// with capital letters INTERVALS, all intervals are sorted and cleaned after simulation
+		
+		/*
+		 *  With capital letters INTERVALS, all cluster intervals are cleaned
+		 *  (merged and sorted) at the end of simulation.
+		 */
 		Pattern pattern2 = Pattern
 				.compile("T (\\d+) C (\\d+) INTERVALS (.+)");
 		Pattern pattern3 = Pattern
@@ -55,23 +63,31 @@ public class HistoryReconstructor {
 		String str;
 		try {
 			while ((str = in.readLine()) != null) {
-				Matcher matcher = pattern1.matcher(str);
+				Matcher matcher;
+				
+				// 1. Extract child node intervals.
+				matcher = pattern1.matcher(str);
 				if (matcher.find()) {
 					// int time = Integer.parseInt(matcher.group(1));
-					int cluster = Integer.parseInt(matcher.group(2));
-					int node = Integer.parseInt(matcher.group(3));
-					parseIntervals(net.baseStation.clusters[cluster].intervalLists[node], matcher.group(4));
+					int cid = Integer.parseInt(matcher.group(2));
+					int nid = Integer.parseInt(matcher.group(3));
+					Cluster cluster = net.baseStation.clusters[cid]; 
+					parseIntervals(cluster.intervalLists[cluster.getNodeLocalID(nid)], matcher.group(4));
 					// int begin = Integer.parseInt(matcher.group(4));
 					// int end = Integer.parseInt(matcher.group(5));
 					// conf.clusters[cluster].intervalLists[node].add(begin, end);
 					continue;
 				}
+				
+				// 2. Extract head node intervals.
 				matcher = pattern2.matcher(str);
 				if (matcher.find()) {
 					int cluster = Integer.parseInt(matcher.group(2));
 					parseIntervals(net.baseStation.clusterHistory[cluster], matcher.group(3));
 					continue;
 				}
+				
+				// 3. Extract head node messages.
 				matcher = pattern3.matcher(str);
 				if (matcher.find()) {
 					int time = Integer.parseInt(matcher.group(1));
@@ -85,7 +101,7 @@ public class HistoryReconstructor {
 					continue;
 				}
 
-				
+				// 4. Extract failed messages from head nodes.
 				matcher = pattern4.matcher(str);
 				if (matcher.find()) {
 					int cluster = Integer.parseInt(matcher.group(2));
@@ -102,20 +118,6 @@ public class HistoryReconstructor {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		// print intervals
-		//for (IntervalList il : net.baseStation.clusters[0].intervalLists) {
-		//	System.out.println("node " + il);
-		//}
-		//for (List<Integer> il : net.clusters[0].failureLists) {
-		//	System.out.println("failures " + sim.nodes.Helper.toString(il));
-		//}
-		//System.out.println("cluster tx "
-		//		+ sim.nodes.Helper.toString(net.baseStation.clusters[0].transmissionList));
-		
-		//System.out.println("cluster history "
-		//				+ sim.nodes.Helper.toString(net.baseStation.clusterHistory[0]));
-		//System.out.println("cluster tx "+sim.nodes.Helper.toString(net.baseStation.clusters[0].transmissionList));
 	}
         
         public void writeNodeHistory(String file) {
@@ -138,20 +140,22 @@ public class HistoryReconstructor {
 		for (Cluster cluster : net.baseStation.clusters) {
 			MVNModel model = (MVNModel)(cluster.getModel());
 			model.epsilon1 = net.epsilon1;
-			// first epoch is always equality constraint
-			outputFirstEpoch(cluster.transmissionList.get(0));
-			TransmissionRecord txrec = cluster.transmissionList.get(0);
-			
+
+			/*
+			 * First epoch is specially handled because all nodes transmit
+			 * (which produces equality constraints).
+			 */
+			outputFirstEpoch(cluster, cluster.transmissionList.get(0));
+			TransmissionRecord txrec = cluster.transmissionList.get(0);			
 			model.makePrediction(Interval.Type.GOOD, null, txrec.values, txrec.status);
 			
-			//boolean shouldEnd = false;
 			int i = 1;
 			int ptx = 0;
 			int phis = 0;
 			int[] pint = new int[cluster.getNodeCount()];
 			IntervalList chis = net.baseStation.clusterHistory[cluster.id];
 			IntervalList[] nhis = cluster.intervalLists;
-			Type ctype; // cluster interval type
+			Type ctype;                  // cluster interval type
 			Interval[] ntype = new Interval[cluster.getNodeCount()];
 			while (i < net.timeSteps) {
 				if (phis == chis.size()-1 && i > chis.get(phis).end)
@@ -203,9 +207,9 @@ public class HistoryReconstructor {
 		}
 	}
 
-	private void outputFirstEpoch(TransmissionRecord rec) {
+	private void outputFirstEpoch(Cluster cluster, TransmissionRecord rec) {
 		for (int i = 0; i < rec.values.length; i++)
-			System.out.println(String.format("0:x[%d,%d] = %f",  0+1,i+1, rec.values[i]));
+			System.out.println(String.format("0:x[%d,%d] = %f", 0+1, cluster.getNodeGlobalID(i), rec.values[i]));
 	}
 
 /*	private int[] convert2Int(String[] str) {

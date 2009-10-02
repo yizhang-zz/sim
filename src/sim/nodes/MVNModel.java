@@ -1,5 +1,6 @@
 package sim.nodes;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
@@ -44,8 +45,10 @@ public class MVNModel implements Model {
     Type[] lastTypes;
     
     private SubsetSelector subsetSelector;
+    private Cluster cluster;
 
-    public MVNModel(double epsilon, Matrix c, Matrix a, Matrix sigma) {
+    public MVNModel(Cluster cluster, double epsilon, Matrix c, Matrix a, Matrix sigma) {
+        this.cluster = cluster;
         this.c = c;
         this.a = a;
         this.sigma = sigma;
@@ -102,6 +105,38 @@ public class MVNModel implements Model {
             res = res && (b==1);
         }
         return res;
+    }
+    
+    private void printConstraint(int type, Object... obj) {
+        switch(type) {
+        case 0:
+            int t       = (Integer) obj[0];
+            int j       = (Integer) obj[1];
+            double v    = (Double) obj[2]; 
+            System.out.println(String.format("0:x[%d,%d] = %f", t, cluster.getNodeGlobalID(j), v));
+            break;
+        case 1:
+        case 2:
+            t           = (Integer) obj[0];
+            j           = (Integer) obj[1];
+            double v1   = (Double) obj[2];
+            double v2   = (Double) obj[3]; 
+            System.out.println(String.format("%d:%d,%d,%f,%f", type, t, cluster.getNodeGlobalID(j), v1, v2));
+            break;
+        case 3:
+            ArrayList list = (ArrayList) obj[2];
+            v1          = (Double) obj[0];
+            v2          = (Double) obj[1];
+            String s = String.format("3:%f;%f", v1, v2);
+            for (int i=0; i<list.size(); i+=3) {
+                double c    = (Double) list.get(i);
+                int t1      = (Integer) list.get(i+1);
+                int j1      = (Integer) list.get(i+2);
+                s += String.format(";%f,%d,%d", c, t1, cluster.getNodeGlobalID(j1));
+            }
+            System.out.println(s);
+            break;
+        }
     }
 
     /**
@@ -195,7 +230,14 @@ public class MVNModel implements Model {
 
         for (int j=0; j<m; j++)
         	if (ntype[j].type!=Type.UNKNOWN && ntype[j].begin!=ts) {
-        		System.out.println(String.format("3:%f;%f;%f,%d,%d;%f,%d,%d",-epsilon1,epsilon1,1.0,ts+1,j+1,-1.0,ntype[j].begin+1,j+1));
+        	    ArrayList<Object> list = new ArrayList<Object>(6);
+        	    list.add(1.0);
+        	    list.add(ts+1);
+        	    list.add(j);
+        	    list.add(-1.0);
+        	    list.add(ntype[j].begin+1);
+        	    list.add(j);
+        		printConstraint(3,-epsilon1,epsilon1,list);
         }
 
         /* last transmission for any components is known, so numeric computation */
@@ -218,16 +260,20 @@ public class MVNModel implements Model {
                         {
                         	// both tiers transmit, equality constraint
                         	// type 0: x[i,j] = a
-                            System.out.println(String.format("0:x[%d,%d] = %f", ts + 1, j + 1, sentValues.get(j, 0)));
+                            // System.out.println(String.format("0:x[%d,%d] = %f", ts + 1, j + 1, sentValues.get(j, 0)));
+                            printConstraint(0, ts + 1, j, sentValues.get(j, 0));
                         } else {
-                            System.out.println(String.format("1:%d,%d,%f,%f", ts + 1, j + 1, sentValues.get(j, 0) - (epsilon1), sentValues.get(j, 0) + (epsilon1)));
+                            // System.out.println(String.format("1:%d,%d,%f,%f", ts + 1, j + 1, sentValues.get(j, 0) - (epsilon1), sentValues.get(j, 0) + (epsilon1)));
+                            printConstraint(1,ts + 1, j, sentValues.get(j, 0) - epsilon1, sentValues.get(j, 0) + epsilon1);
                         }
                     } else {
                         // type 1: a <= x[i,j] <= b
                         if (ntype[j].begin == ts)
-                        	System.out.println(String.format("1:%d,%d,%f,%f", ts + 1, j + 1, prediction.get(j - x, 0) - epsilon, prediction.get(j - x, 0) +  epsilon));
+                        	// System.out.println(String.format("1:%d,%d,%f,%f", ts + 1, j + 1, prediction.get(j - x, 0) - epsilon, prediction.get(j - x, 0) +  epsilon));
+                            printConstraint(1,ts + 1, j, prediction.get(j - x, 0) - epsilon, prediction.get(j - x, 0) +  epsilon);
                         else
-                        	System.out.println(String.format("1:%d,%d,%f,%f", ts + 1, j + 1, prediction.get(j - x, 0) - (epsilon1 + epsilon), prediction.get(j - x, 0) + (epsilon1 + epsilon)));
+                        	// System.out.println(String.format("1:%d,%d,%f,%f", ts + 1, j + 1, prediction.get(j - x, 0) - (epsilon1 + epsilon), prediction.get(j - x, 0) + (epsilon1 + epsilon)));
+                            printConstraint(1,ts + 1, j, prediction.get(j - x, 0) - (epsilon1 + epsilon), prediction.get(j - x, 0) + (epsilon1 + epsilon));
                     }
                 } else if (ntype[j].type == Type.BAD) {
                     if (predictIndex[j] == -1) {
@@ -279,26 +325,34 @@ public class MVNModel implements Model {
                             right +=  (epsilon + epsilon1);
                         }
                         double temp = 0, relax = 0;
-                        String sVar = "";
+                        //String sVar = "";
+                        ArrayList<Object> list = new ArrayList<Object>();
+                        list.add(1.0);
+                        list.add(ts+1);
+                        list.add(j);
+                        
                         for (int k = 0; k < m; k++) {
                             if (known[k]==1) {
                                 temp += coef.get(j - x, k) * sentValues.get(k, 0);
                             } else {
                                 // NOTE: Symbolic variable here is NOT real reading, but view of the head.
                                 // So additional relaxation of the bounds should be considered. 
-                                sVar += String.format(";%f,%d,%d", -coef.get(j - x, k), lastFailureTime[k] + 1, k + 1);
+                                // sVar += String.format(";%f,%d,%d", -coef.get(j - x, k), lastFailureTime[k] + 1, k + 1);
+                                list.add(-coef.get(j - x, k));
+                                list.add(lastFailureTime[k] + 1);
+                                list.add(k);
+                                
                                 relax += Math.abs(coef.get(j - x, k)) * epsilon1;
-                            // relax could be more tight when view of the head *is* actually the real reading
+                                // TODO relax could be tighter when view of the head *is* actually the real reading
                             }
                         }
                         left += (temp - relax);
                         right += (temp + relax);
-                        StringBuffer output = new StringBuffer(String.valueOf("3:" + left + ";" + right));//= String.format("%f <=, arg1)
-
-                        output.append(";1," + (ts + 1) + "," + (1 + j));
-                        output.append(sVar);
-                        //output.append("<= "+right);
-                        System.out.println(output);
+//                        StringBuffer output = new StringBuffer(String.valueOf("3:" + left + ";" + right));
+//                        output.append(";1," + (ts + 1) + "," + (1 + j));
+//                        output.append(sVar);
+//                        System.out.println(output);
+                        printConstraint(3, left, right, list);
                     }
                     else if (ntype[j].type == Type.BAD) {
                     }
@@ -306,15 +360,19 @@ public class MVNModel implements Model {
                     x++;
                     if (known[j]==1 && ntype[j].type == Type.GOOD) {
                         if (ntype[j].begin == ts)
-                        	System.out.println(String.format("0:x[%d,%d] = %f", ts + 1, j + 1, sentValues.get(j, 0)));
+                        	// System.out.println(String.format("0:x[%d,%d] = %f", ts + 1, j + 1, sentValues.get(j, 0)));
+                            printConstraint(0, ts + 1, j, sentValues.get(j, 0));
                         else
-                        	System.out.println(String.format("1:%d,%d,%f,%f", ts + 1, j + 1, sentValues.get(j, 0) - (epsilon1), sentValues.get(j, 0) + (epsilon1)));
-                    /*System.out.println(String.format("1:%d,%d,%f,%f", ts+1, j+1, sentValues
-                    .get(j, 0)
-                    - (epsilon1),  sentValues.get(j, 0)
-                    + (epsilon1)));*/
+                        	// System.out.println(String.format("1:%d,%d,%f,%f", ts + 1, j + 1, sentValues.get(j, 0) - (epsilon1), sentValues.get(j, 0) + (epsilon1)));
+                            printConstraint(1, ts + 1, j, sentValues.get(j, 0) - epsilon1, sentValues.get(j, 0) + epsilon1);
+                    
+//                        System.out.println(String.format("1:%d,%d,%f,%f", ts+1, j+1, sentValues
+//                    .get(j, 0)
+//                    - (epsilon1),  sentValues.get(j, 0)
+//                    + (epsilon1)));
                     } else if (known[j]==1 && ntype[j].type == Type.BAD) {
-                        System.out.println(String.format("2:%d,%d,%f,%f", ts + 1, j + 1, sentValues.get(j, 0) - epsilon1, sentValues.get(j, 0) + epsilon1));
+                        // System.out.println(String.format("2:%d,%d,%f,%f", ts + 1, j + 1, sentValues.get(j, 0) - epsilon1, sentValues.get(j, 0) + epsilon1));
+                        printConstraint(2, ts + 1, j, sentValues.get(j, 0) - epsilon1, sentValues.get(j, 0) + epsilon1);
                     }
                 }
             }
@@ -636,11 +694,5 @@ public class MVNModel implements Model {
                 }
             }
         }
-
-    // update mean and cov to drop useless terms
-    // dim -=
-    // System.out.println("===== prediction @ base station");
-    // prediction.print(0, 7);
-
     }
 }
