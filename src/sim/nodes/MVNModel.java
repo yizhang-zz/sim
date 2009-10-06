@@ -113,7 +113,7 @@ public class MVNModel implements Model {
             int t       = (Integer) obj[0];
             int j       = (Integer) obj[1];
             double v    = (Double) obj[2]; 
-            System.out.println(String.format("0:x[%d,%d] = %f", t, cluster.getNodeGlobalID(j), v));
+            System.out.println(String.format("0:x[%d,%d] = %.9f", t, cluster.getNodeGlobalID(j), v));
             break;
         case 1:
         case 2:
@@ -121,18 +121,18 @@ public class MVNModel implements Model {
             j           = (Integer) obj[1];
             double v1   = (Double) obj[2];
             double v2   = (Double) obj[3]; 
-            System.out.println(String.format("%d:%d,%d,%f,%f", type, t, cluster.getNodeGlobalID(j), v1, v2));
+            System.out.println(String.format("%d:%d,%d,%.9f,%.9f", type, t, cluster.getNodeGlobalID(j), v1, v2));
             break;
         case 3:
             ArrayList list = (ArrayList) obj[2];
             v1          = (Double) obj[0];
             v2          = (Double) obj[1];
-            String s = String.format("3:%f;%f", v1, v2);
+            String s = String.format("3:%.9f;%.9f", v1, v2);
             for (int i=0; i<list.size(); i+=3) {
                 double c    = (Double) list.get(i);
                 int t1      = (Integer) list.get(i+1);
                 int j1      = (Integer) list.get(i+2);
-                s += String.format(";%f,%d,%d", c, t1, cluster.getNodeGlobalID(j1));
+                s += String.format(";%.9f,%d,%d", c, t1, cluster.getNodeGlobalID(j1));
             }
             System.out.println(s);
             break;
