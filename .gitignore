@@ -1,2 +1,6 @@
 bin/
 *.class
+bstrace.*
+clustertrace.*
+nodetrace.*
+*.xml
