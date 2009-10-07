@@ -12,9 +12,11 @@ public class Symbol {
 	    data = 0;
 	}
 	
+	@Override
 	public boolean equals(Object o) {
 		return (o!=null) && (o instanceof Symbol) && (((Symbol)o).data==this.data);
 	}
+	
 	public Symbol(int n) {
 		data = n;
 	}
@@ -30,8 +32,13 @@ public class Symbol {
 		return Integer.toBinaryString(data);
 	}
 	
+	@Override
 	public int hashCode(){
 		return data;
+	}
+	
+	public int toInt() {
+	    return data;
 	}
 
 	public static String id(Symbol[] s) {
