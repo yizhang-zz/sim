@@ -21,6 +21,13 @@ public class State {
             n |= (symbols[i].toInt() << (i * conf.fieldsize));
         return n;
     }
+    
+    public static int toInt(Symbol[] symbols, EncoderConfiguration conf) {
+        int n = 0;
+        for (int i = 0; i < symbols.length; i++)
+            n |= (symbols[i].toInt() << (i * conf.fieldsize));
+        return n;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -41,7 +48,7 @@ public class State {
         setSymbols(s);
     }
 
-    public void buildEdges() {
+    private void buildEdges() {
         Encoder encoder = new Encoder(conf);
         int inputSize = (int) Math.pow(2, conf.fieldsize);
         // for each state, there're 2^fieldsize possible inputs; generate
@@ -67,14 +74,14 @@ public class State {
         // id = n;
     }
 
-    // public void setId(int id) {
-    // this.id = id;
-    // symbols = new Symbol[conf.memsize];
-    // for (int i = 0; i < conf.memsize; i++) {
-    // symbols[i] = new Symbol((id >>> (i * conf.fieldsize))
-    // & ((1 << conf.fieldsize) - 1));
-    // }
-    // }
+     public State(int id, EncoderConfiguration conf) {
+         this.conf = conf;
+         symbols = new Symbol[conf.memsize];
+         for (int i = 0; i < conf.memsize; i++) {
+             symbols[i] = new Symbol((id >>> (i * conf.fieldsize))
+                     & ((1 << conf.fieldsize) - 1));
+         }
+     }
 
     public String toString() {
         String s = symbols[0].toString();
@@ -83,13 +90,13 @@ public class State {
         return s;
     }
 
-    public Collection<Edge> getEdges() {
+    private Collection<Edge> getEdges() {
         if (edges.size() == 0)
             buildEdges();
         return edges.values();
     }
 
-    public Edge getEdge(Symbol[] output) {
+    private Edge getEdge(Symbol[] output) {
         Encoder encoder = new Encoder(conf);
         int inputSize = (int) Math.pow(2, conf.fieldsize);
         // for each state, there're 2^fieldsize possible inputs; generate
